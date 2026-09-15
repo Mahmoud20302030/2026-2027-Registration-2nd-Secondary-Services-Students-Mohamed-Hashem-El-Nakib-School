@@ -1,0 +1,2886 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>المنظومة الإلكترونية لتسجيل وتنسيق مسارات الثانوية العامة | مدرسة محمد هاشم النقيب الثانوية المشتركة</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Changa:wght@600;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #00d2ff;
+            --primary-glow: rgba(0, 210, 255, 0.65);
+            --secondary-color: #0066ff;
+            --secondary-glow: rgba(0, 102, 255, 0.5);
+            --accent-cyan: #38bdf8;
+            --accent-blue: #2563eb;
+            --laser-glow: #00f0ff;
+            --bg-deep: #010612;
+            --bg-surface: rgba(5, 14, 34, 0.92);
+            --bg-card: rgba(8, 22, 54, 0.85);
+            --border-glow: rgba(0, 210, 255, 0.32);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --success: #10b981;
+            --success-glow: rgba(16, 185, 129, 0.45);
+            --warning: #f59e0b;
+            --warning-glow: rgba(245, 158, 11, 0.45);
+            --danger: #ef4444;
+            --danger-glow: rgba(239, 68, 68, 0.45);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 8px;
+            --font-main: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+            --font-title: 'Changa', 'Cairo', sans-serif;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(0, 102, 255, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(0, 210, 255, 0.15) 0%, transparent 50%),
+                linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 210, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+            color: var(--text-main);
+            font-family: var(--font-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .ambient-glow {
+            position: fixed;
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(140px);
+            opacity: 0.3;
+            animation: floatGlow 12s infinite alternate ease-in-out;
+        }
+        .glow-1 { top: -120px; right: -120px; background: #00d2ff; }
+        .glow-2 { bottom: 80px; left: -140px; background: #0055ff; }
+
+        @keyframes floatGlow {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+            100% { transform: translate(40px, 35px) scale(1.18); opacity: 0.45; }
+        }
+
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 1750px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .royal-header {
+            background: var(--bg-surface);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid var(--border-glow);
+            border-radius: var(--radius-lg);
+            padding: 22px 28px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 210, 255, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .royal-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00d2ff, #0066ff, #38bdf8, #00d2ff);
+            background-size: 250% 100%;
+            animation: gradientAnim 5s linear infinite;
+        }
+
+        @keyframes gradientAnim {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .sovereign-badge {
+            width: 78px;
+            height: 78px;
+            background: linear-gradient(135deg, rgba(0, 210, 255, 0.25), rgba(0, 102, 255, 0.15));
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 38px;
+            box-shadow: 0 0 25px var(--primary-glow);
+            flex-shrink: 0;
+            animation: pulseEmblem 3s infinite alternate;
+        }
+
+        @keyframes pulseEmblem {
+            0% { transform: scale(1); filter: drop-shadow(0 0 10px var(--primary-glow)); }
+            100% { transform: scale(1.06); filter: drop-shadow(0 0 22px var(--primary-glow)); }
+        }
+
+        .header-titles h1 {
+            font-family: var(--font-title);
+            font-size: 1.65rem;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            text-shadow: 0 0 16px rgba(0, 210, 255, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-titles h1 span {
+            color: var(--primary-color);
+            background: linear-gradient(135deg, #00d2ff, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-titles .sub-creds {
+            font-size: 0.98rem;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .sub-creds span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sub-creds span::after {
+            content: '•';
+            margin-right: 12px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        .sub-creds span:last-child::after { content: ''; }
+
+        .header-tools {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .sync-badge-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            font-weight: 800;
+            background: rgba(2, 8, 26, 0.9);
+            border: 1px solid rgba(0, 210, 255, 0.35);
+            cursor: pointer;
+            transition: var(--transition);
+            user-select: none;
+        }
+        .sync-badge-status:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 14px var(--primary-glow);
+        }
+
+        .sync-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+            transition: var(--transition);
+        }
+        .sync-dot.syncing {
+            background: #00d2ff;
+            box-shadow: 0 0 14px #00d2ff;
+            animation: pulseFast 0.8s infinite alternate;
+        }
+        .sync-dot.offline {
+            background: #f59e0b;
+            box-shadow: 0 0 10px #f59e0b;
+        }
+        .sync-dot.error {
+            background: #ef4444;
+            box-shadow: 0 0 10px #ef4444;
+        }
+
+        @keyframes pulseFast {
+            from { transform: scale(0.8); opacity: 0.5; }
+            to { transform: scale(1.2); opacity: 1; }
+        }
+
+        .tool-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-main);
+            font-size: 0.92rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            text-decoration: none;
+            user-select: none;
+        }
+
+        .btn-admin-access {
+            background: linear-gradient(135deg, #0055ff, #00d2ff);
+            color: #ffffff;
+            box-shadow: 0 4px 20px var(--primary-glow);
+        }
+        .btn-admin-access:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 210, 255, 0.8);
+        }
+
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border-color: rgba(0, 210, 255, 0.35);
+        }
+        .btn-glass:hover {
+            background: rgba(0, 210, 255, 0.15);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .clock-pill {
+            background: rgba(1, 6, 18, 0.7);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            border-radius: var(--radius-md);
+            padding: 8px 14px;
+            font-family: monospace;
+            font-size: 0.92rem;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .laser-border-box {
+            position: relative;
+            border-radius: var(--radius-lg);
+            padding: 3px;
+            background: transparent;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 35px rgba(0, 210, 255, 0.28);
+        }
+
+        .laser-border-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent, 
+                rgba(0, 102, 255, 0.2), 
+                #00d2ff, 
+                #38bdf8, 
+                #ffffff, 
+                #00d2ff, 
+                transparent 45%
+            );
+            animation: rotateLaserBeam 4s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes rotateLaserBeam {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .urgent-warning-banner {
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(135deg, rgba(8, 20, 52, 0.97), rgba(3, 9, 25, 0.98));
+            border-radius: calc(var(--radius-lg) - 3px);
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .banner-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            flex: 1;
+        }
+
+        .banner-badge-icon {
+            font-size: 2.4rem;
+            line-height: 1;
+            animation: bounceWarn 2.2s infinite;
+            filter: drop-shadow(0 0 12px rgba(0, 210, 255, 0.8));
+        }
+
+        @keyframes bounceWarn {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-7px); }
+            60% { transform: translateY(-3px); }
+        }
+
+        .banner-text h3 {
+            font-size: 1.22rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .urgent-tag {
+            background: linear-gradient(135deg, #ef4444, #b91c1c);
+            color: #fff;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.76rem;
+            font-weight: 900;
+            box-shadow: 0 0 14px var(--danger-glow);
+        }
+
+        .banner-text p {
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            line-height: 1.75;
+            font-weight: 600;
+        }
+
+        .countdown-widget {
+            background: rgba(2, 7, 20, 0.9);
+            border: 1.5px solid rgba(0, 210, 255, 0.4);
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 220px;
+            flex-shrink: 0;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.6);
+        }
+
+        .countdown-heading {
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .countdown-grid {
+            display: flex;
+            gap: 8px;
+            font-family: monospace;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .countdown-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .block-val {
+            background: linear-gradient(180deg, #0e224e, #040c20);
+            border: 1px solid rgba(0, 210, 255, 0.45);
+            border-radius: 8px;
+            padding: 5px 8px;
+            min-width: 38px;
+            text-align: center;
+            color: var(--primary-color);
+            box-shadow: 0 0 12px rgba(0, 210, 255, 0.35);
+        }
+
+        .block-lbl {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            font-weight: 700;
+        }
+
+        .live-kpis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .kpi-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
+            border-radius: var(--radius-md);
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+        .kpi-box:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.25);
+        }
+
+        .kpi-content .kpi-title {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .kpi-content .kpi-num {
+            font-size: 1.95rem;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-top: 4px;
+            font-family: var(--font-title);
+        }
+
+        .kpi-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            background: rgba(0, 210, 255, 0.12);
+            color: var(--primary-color);
+            border: 1px solid rgba(0, 210, 255, 0.35);
+        }
+
+        .completion-bar-wrapper {
+            grid-column: 1 / -1;
+            background: rgba(5, 14, 34, 0.7);
+            border: 1px solid rgba(0, 210, 255, 0.25);
+            border-radius: var(--radius-md);
+            padding: 14px 22px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .completion-progress {
+            flex: 1;
+            height: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .completion-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #0055ff, #00d2ff);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.8s ease-in-out;
+            box-shadow: 0 0 18px var(--primary-glow);
+        }
+
+        .completion-text {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            min-width: 160px;
+            text-align: left;
+        }
+
+        .workspace-split {
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .input-panel {
+            background: var(--bg-surface);
+            backdrop-filter: blur(18px);
+            border: 1px solid var(--border-glow);
+            border-radius: var(--radius-lg);
+            padding: 26px;
+            box-shadow: 0 16px 45px rgba(0,0,0,0.65);
+            position: sticky;
+            top: 20px;
+        }
+
+        .panel-headline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 22px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(0, 210, 255, 0.22);
+        }
+
+        .panel-headline h2 {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .panel-headline h2 span { color: var(--primary-color); }
+
+        .secure-lock-tag {
+            font-size: 0.78rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: rgba(0, 210, 255, 0.15);
+            color: var(--primary-color);
+            border: 1px solid rgba(0, 210, 255, 0.4);
+        }
+
+        .field-group { margin-bottom: 16px; }
+
+        .field-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+        }
+        .field-group label span.req { color: #ef4444; margin-right: 4px; }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(2, 7, 22, 0.88);
+            border: 1.5px solid rgba(0, 210, 255, 0.32);
+            border-radius: var(--radius-md);
+            color: #ffffff;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            transition: var(--transition);
+            outline: none;
+        }
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 16px rgba(0, 210, 255, 0.4);
+            background: rgba(4, 14, 38, 0.98);
+        }
+        .form-control[readonly], .form-control:disabled {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--accent-cyan);
+            font-weight: 800;
+            cursor: not-allowed;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        select.form-control { cursor: pointer; }
+        select.form-control option { background: #061128; color: #ffffff; }
+
+        .code-verification-status {
+            margin-top: 6px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            min-height: 20px;
+        }
+        .status-verified { color: #34d399; }
+        .status-unverified { color: #f87171; }
+        .status-idle { color: var(--text-muted); }
+
+        .btn-submit-choice {
+            width: 100%;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, #0055ff, #00d2ff);
+            border: none;
+            border-radius: var(--radius-md);
+            color: #ffffff;
+            font-family: var(--font-main);
+            font-size: 1.08rem;
+            font-weight: 900;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px var(--primary-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 18px;
+        }
+        .btn-submit-choice:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(0, 210, 255, 0.75);
+        }
+        .btn-submit-choice:disabled {
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.3);
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .btn-clear-fields {
+            width: 100%;
+            padding: 10px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            font-family: var(--font-main);
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 8px;
+        }
+        .btn-clear-fields:hover {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .roster-panel {
+            background: var(--bg-surface);
+            backdrop-filter: blur(18px);
+            border: 1px solid var(--border-glow);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: 0 16px 45px rgba(0,0,0,0.65);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .roster-actions-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .search-wrapper {
+            position: relative;
+            flex: 1;
+            min-width: 270px;
+        }
+        .search-wrapper input {
+            width: 100%;
+            padding: 11px 44px 11px 16px;
+            background: rgba(2, 7, 22, 0.88);
+            border: 1.5px solid rgba(0, 210, 255, 0.32);
+            border-radius: var(--radius-md);
+            color: #ffffff;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+        .search-wrapper input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.35);
+        }
+        .search-icon-symbol {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-cyan);
+            font-size: 18px;
+            pointer-events: none;
+        }
+
+        .filter-tags-cluster {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 210, 255, 0.25);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            user-select: none;
+        }
+        .filter-pill:hover { border-color: var(--primary-color); color: #fff; }
+        .filter-pill.active {
+            background: linear-gradient(135deg, #0055ff, #00d2ff);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 0 14px var(--primary-glow);
+        }
+
+        .table-viewport {
+            overflow-x: auto;
+            border: 1px solid rgba(0, 210, 255, 0.22);
+            border-radius: var(--radius-md);
+            background: rgba(2, 6, 18, 0.75);
+        }
+
+        .sovereign-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            font-size: 0.94rem;
+        }
+        .sovereign-table th {
+            background: linear-gradient(180deg, #0a1b3f, #030a1b);
+            color: var(--accent-cyan);
+            padding: 14px 16px;
+            font-weight: 900;
+            border-bottom: 2px solid var(--primary-color);
+            white-space: nowrap;
+        }
+        .sovereign-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            color: #e2e8f0;
+            vertical-align: middle;
+        }
+        .sovereign-table tbody tr:hover td { background: rgba(0, 210, 255, 0.08); }
+
+        .id-col { width: 50px; text-align: center; font-weight: 900; color: var(--accent-cyan); }
+        .code-col { font-family: monospace; font-weight: 900; color: #38bdf8; white-space: nowrap; }
+        .name-col { font-weight: 800; color: #ffffff; min-width: 240px; }
+
+        .badge-track {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+        .track-med { background: rgba(16, 185, 129, 0.18); border: 1px solid #10b981; color: #34d399; }
+        .track-eng { background: rgba(59, 130, 246, 0.18); border: 1px solid #3b82f6; color: #60a5fa; }
+        .track-bus { background: rgba(245, 158, 11, 0.18); border: 1px solid #f59e0b; color: #fbbf24; }
+        .track-art { background: rgba(168, 85, 247, 0.18); border: 1px solid #a855f7; color: #c084fc; }
+        .track-none { background: rgba(239, 68, 68, 0.12); border: 1px dashed rgba(239, 68, 68, 0.4); color: #fca5a5; }
+
+        .badge-subject {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .badge-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.76rem;
+            font-weight: 800;
+        }
+        .status-ok { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .status-wait { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+
+        .btn-table-fill {
+            background: rgba(0, 210, 255, 0.12);
+            border: 1px solid rgba(0, 210, 255, 0.35);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 0.78rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-table-fill:hover {
+            background: var(--primary-color);
+            color: #010612;
+        }
+
+        .modal-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(1, 4, 12, 0.88);
+            backdrop-filter: blur(14px);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-screen.active { display: flex; opacity: 1; }
+
+        .modal-box {
+            background: linear-gradient(145deg, #071536, #020716);
+            border: 2px solid var(--primary-color);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 680px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 32px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 45px var(--primary-glow);
+            position: relative;
+            transform: scale(0.94);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .modal-screen.active .modal-box { transform: scale(1); }
+
+        .modal-close {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .modal-close:hover { background: #ef4444; transform: rotate(90deg); }
+
+        .thank-you-layout { text-align: center; }
+        .sovereign-crown {
+            font-size: 55px;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 0 16px var(--primary-glow));
+            animation: crownPulse 2s infinite alternate;
+        }
+        @keyframes crownPulse { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+
+        .thank-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 6px;
+            text-shadow: 0 0 15px rgba(0, 210, 255, 0.8);
+            font-family: var(--font-title);
+        }
+
+        .official-speech-card {
+            background: rgba(2, 8, 25, 0.88);
+            border: 1px solid rgba(0, 210, 255, 0.35);
+            border-right: 6px solid var(--primary-color);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            text-align: right;
+            font-size: 0.96rem;
+            line-height: 1.85;
+            color: #f1f5f9;
+            margin-bottom: 20px;
+        }
+
+        .official-speech-signature {
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(0, 210, 255, 0.3);
+            text-align: left;
+            font-weight: 900;
+            color: var(--primary-color);
+        }
+
+        .receipt-summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            text-align: right;
+            margin-bottom: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .receipt-item .lbl { font-size: 0.75rem; color: var(--text-muted); }
+        .receipt-item .val { font-size: 0.95rem; font-weight: 800; color: #ffffff; margin-top: 2px; }
+
+        .admin-dashboard-box { max-width: 1280px; }
+
+        .admin-kpis-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .admin-metric-card {
+            background: rgba(2, 8, 25, 0.85);
+            border: 1px solid rgba(0, 210, 255, 0.25);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            text-align: center;
+        }
+        .admin-metric-card .m-title { font-size: 0.85rem; color: var(--text-muted); font-weight: 700; }
+        .admin-metric-card .m-num {
+            font-size: 1.9rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin: 5px 0;
+            font-family: var(--font-title);
+        }
+        .admin-metric-card .m-desc { font-size: 0.75rem; color: #cbd5e1; }
+
+        .tracks-breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .track-stat-pill {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 14px;
+        }
+        .track-stat-pill h4 {
+            font-size: 0.95rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+        .track-detail-line {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.84rem;
+            margin-bottom: 5px;
+            color: #cbd5e1;
+        }
+
+        .cloud-sync-config-box {
+            background: rgba(0, 102, 255, 0.08);
+            border: 1.5px solid rgba(0, 210, 255, 0.4);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            margin-bottom: 24px;
+        }
+
+        .private-table-container {
+            max-height: 340px;
+            overflow-y: auto;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            border-radius: var(--radius-sm);
+        }
+
+        .btn-edit-inline {
+            background: rgba(0, 210, 255, 0.15);
+            border: 1px solid var(--primary-color);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-left: 4px;
+        }
+        .btn-edit-inline:hover { background: var(--primary-color); color: #010612; }
+
+        .btn-delete-inline {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid var(--danger);
+            color: #fca5a5;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .btn-delete-inline:hover { background: var(--danger); color: #fff; }
+
+        .audit-log-section {
+            background: rgba(2, 6, 20, 0.9);
+            border: 1px solid rgba(0, 210, 255, 0.2);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        .audit-log-container {
+            max-height: 180px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: #cbd5e1;
+        }
+        .audit-log-item {
+            padding: 5px 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .admin-command-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 18px;
+            border-top: 1px solid rgba(0, 210, 255, 0.22);
+        }
+
+        #toastContainer {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 100000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            pointer-events: none;
+        }
+        .toast-msg {
+            background: rgba(4, 15, 42, 0.96);
+            border: 1px solid var(--primary-color);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 800;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 15px var(--primary-glow);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideInToast 0.3s ease-out forwards;
+            pointer-events: auto;
+        }
+        @keyframes slideInToast {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                font-family: 'Cairo', Arial, sans-serif !important;
+            }
+            .ambient-glow, .laser-border-box, .input-panel, .royal-header, 
+            .footer-wrapper, .modal-screen, .roster-actions-bar, .btn-table-fill,
+            .live-kpis-grid, .modal-close, .header-tools, #toastContainer {
+                display: none !important;
+            }
+            .main-wrapper { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+            .workspace-split { display: block !important; }
+            .roster-panel { border: none !important; box-shadow: none !important; background: transparent !important; padding: 0 !important; }
+            .table-viewport { border: 1px solid #000 !important; background: transparent !important; }
+            .sovereign-table { font-size: 9.5pt !important; color: #000 !important; }
+            .sovereign-table th { background: #f1f5f9 !important; color: #000 !important; border: 1px solid #000 !important; }
+            .sovereign-table td { color: #000 !important; border: 1px solid #ccc !important; }
+            .badge-track, .badge-subject, .badge-status { border: 1px solid #555 !important; background: transparent !important; color: #000 !important; }
+            .print-official-header {
+                display: block !important;
+                text-align: center;
+                margin-bottom: 20px;
+                border-bottom: 2px solid #000;
+                padding-bottom: 12px;
+            }
+            .print-signatures {
+                display: flex !important;
+                justify-content: space-around;
+                margin-top: 40px;
+                page-break-inside: avoid;
+            }
+        }
+        .print-official-header, .print-signatures { display: none; }
+
+        @media (max-width: 1100px) {
+            .workspace-split { grid-template-columns: 1fr; }
+            .input-panel { position: static; }
+        }
+
+        .footer-wrapper {
+            padding: 70px 20px; 
+            background: rgba(2, 5, 10, 0.98); 
+            border-top: 3px solid var(--primary-color); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            margin-top: auto;
+            position: relative; 
+            height: 480px; 
+            flex-shrink: 0; 
+        }
+
+        .circle-container { 
+            position: relative; 
+            width: 440px; 
+            height: 440px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
+
+        .rotating-svg { 
+            position: absolute; 
+            top: 0; left: 0; width: 100%; height: 100%; 
+            animation: rotateText 22s linear infinite; 
+            z-index: 2; 
+        }
+        @keyframes rotateText { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        .text-path-style { font-size: 19px; fill: #ffffff; font-family: 'Arial Black', Impact, sans-serif; letter-spacing: 5px; }
+        .name-highlight { font-size: 26px; font-weight: 900; fill: var(--primary-color); letter-spacing: 4px; }
+
+        .center-prayer {
+            position: relative; 
+            width: 320px; 
+            text-align: center; 
+            font-size: 2rem; 
+            font-weight: 900; 
+            color: var(--primary-color); 
+            line-height: 1.8; 
+            z-index: 10;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.9), 0 0 35px var(--primary-glow);
+        }
+        .center-prayer::before, .center-prayer::after { content: "🦅"; font-size: 2rem; margin: 10px 0; }
+        .center-prayer::after { transform: scaleX(-1); }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <div id="toastContainer"></div>
+
+    <div class="print-official-header" id="printOfficialHeader">
+        <h2>جمهورية مصر العربية - وزارة التربية والتعليم والتعليم الفني</h2>
+        <h3>مديرية التربية والتعليم بالدقهلية - إدارة ميت غمر التعليمية</h3>
+        <h4>مدرسة محمد هاشم النقيب الثانوية المشتركة (فصول الخدمات)</h4>
+        <h3 style="margin-top: 10px;" id="printReportTitle">كشف رغبات وتوزيع مسارات الصف الثاني الثانوي - العام الدراسي 2026 / 2027 م</h3>
+    </div>
+
+    <div class="main-wrapper">
+
+        <header class="royal-header">
+            <div class="header-brand">
+                <div class="sovereign-badge" title="جمهورية مصر العربية">🦅</div>
+                <div class="header-titles">
+                    <h1>منظومة اختيار المسارات <span>الأكاديمية المتقدمة</span></h1>
+                    <div class="sub-creds">
+                        <span>إدارة ميت غمر التعليمية</span>
+                        <span>مدرسة محمد هاشم النقيب الثانوية المشتركة</span>
+                        <span>فصول الخدمات - الصف الثاني الثانوي</span>
+                        <span>العام الدراسي 2026 / 2027 م</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-tools">
+                <div class="sync-badge-status" id="liveSyncStatusBadge" onclick="triggerManualSync()" title="اضغط لمزامنة يدوية فورية">
+                    <span class="sync-dot" id="liveSyncDot"></span>
+                    <span id="liveSyncStatusText">مزامنة سحابية نشطة</span>
+                </div>
+
+                <div class="clock-pill">
+                    <span>🕒</span> <span id="realtimeClockDisplay">--:--:--</span>
+                </div>
+
+                <button class="tool-btn btn-glass" id="audioToggleBtn" onclick="toggleAppAudio()">
+                    <span id="audioIcon">🔊</span> الصوت: مفعل
+                </button>
+
+                <button class="tool-btn btn-glass" onclick="toggleSmartboardFullScreen()">
+                    <span>⛶</span> ملء الشاشة
+                </button>
+
+                <button class="tool-btn btn-admin-access" onclick="openAdminGateModal()">
+                    <span>🔐</span> لوحة التحكم الإدارية
+                </button>
+            </div>
+        </header>
+
+        <div class="laser-border-box">
+            <section class="urgent-warning-banner">
+                <div class="banner-info">
+                    <div class="banner-badge-icon">⚠️</div>
+                    <div class="banner-text">
+                        <h3>
+                            تنويه رسمي عاجل وهام ومشدد لجميع طلاب وطالبات فصول الخدمات
+                            <span class="urgent-tag">إلزامـي وفـوري</span>
+                        </h3>
+                        <p>
+                            تهيب إدارة <strong>مدرسة محمد هاشم النقيب الثانوية المشتركة (إدارة ميت غمر التعليمية)</strong> بكافة طلاب وطالبات <strong>فصول الخدمات - الصف الثاني الثانوي للعام الدراسي 2026 / 2027 م</strong> بضرورة وسرعة إدخال كود الطالب الموحد وتأكيد البيانات وتحديد <strong>المسار التخصصي (الطب - الهندسة - الأعمال - أداب وفنون)</strong> والمادة المقررة فوراً قبل انقضاء المهلة الرسمية المحددة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="countdown-widget">
+                    <div class="countdown-heading">⏱️ غلق باب التنسيق خلال:</div>
+                    <div class="countdown-grid">
+                        <div class="countdown-block">
+                            <div class="block-val" id="timerDays">02</div>
+                            <div class="block-lbl">يوم</div>
+                        </div>
+                        <span>:</span>
+                        <div class="countdown-block">
+                            <div class="block-val" id="timerHours">18</div>
+                            <div class="block-lbl">ساعة</div>
+                        </div>
+                        <span>:</span>
+                        <div class="countdown-block">
+                            <div class="block-val" id="timerMinutes">45</div>
+                            <div class="block-lbl">دقيقة</div>
+                        </div>
+                        <span>:</span>
+                        <div class="countdown-block">
+                            <div class="block-val" id="timerSeconds">30</div>
+                            <div class="block-lbl">ثانية</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="live-kpis-grid">
+            <div class="kpi-box">
+                <div class="kpi-content">
+                    <div class="kpi-title">إجمالي طلاب فصول الخدمات</div>
+                    <div class="kpi-num" id="statTotalStudents">44</div>
+                </div>
+                <div class="kpi-icon">👥</div>
+            </div>
+
+            <div class="kpi-box">
+                <div class="kpi-content">
+                    <div class="kpi-title">الرغبات المسجلة بنجاح</div>
+                    <div class="kpi-num" style="color: var(--success);" id="statRegisteredCount">0</div>
+                </div>
+                <div class="kpi-icon" style="color: var(--success);">✅</div>
+            </div>
+
+            <div class="kpi-box">
+                <div class="kpi-content">
+                    <div class="kpi-title">متبقي لم يحددوا الرغبة</div>
+                    <div class="kpi-num" style="color: var(--warning);" id="statPendingCount">44</div>
+                </div>
+                <div class="kpi-icon" style="color: var(--warning);">⏳</div>
+            </div>
+
+            <div class="kpi-box">
+                <div class="kpi-content">
+                    <div class="kpi-title">المسار الأكثر طلباً</div>
+                    <div class="kpi-num" style="font-size: 1.35rem; color: var(--accent-cyan);" id="statTopTrack">-</div>
+                </div>
+                <div class="kpi-icon">🔥</div>
+            </div>
+
+            <div class="completion-bar-wrapper">
+                <div style="font-size: 0.95rem; font-weight: 800; color: #cbd5e1; white-space: nowrap;">نسبة الإنجاز العام للتسجيل:</div>
+                <div class="completion-progress">
+                    <div class="completion-fill" id="completionProgressBar"></div>
+                </div>
+                <div class="completion-text" id="completionProgressText">0% مكتمل</div>
+            </div>
+        </section>
+
+        <main class="workspace-split">
+
+            <aside class="input-panel">
+                <div class="panel-headline">
+                    <h2>✍️ <span>استمارة تسجيل الرغبات</span></h2>
+                    <span class="secure-lock-tag" id="panelCapacityTag">🔒 فصول الخدمات</span>
+                </div>
+
+                <form id="studentRegistrationForm" onsubmit="submitStudentForm(event)">
+                    
+                    <div class="field-group">
+                        <label for="inputStudentCode"><span class="req">*</span> كود الطالب الأكاديمي (9 أرقام):</label>
+                        <input type="text" id="inputStudentCode" class="form-control" placeholder="اكتب كود الطالب للتحقق الفوري..." oninput="handleCodeVerification(this.value)" autocomplete="off" required>
+                        <div class="code-verification-status" id="codeVerifyFeedback">
+                            <span class="status-idle">ℹ️ اكتب الكود المعتمد لظهور اسم الطالب تلقائياً.</span>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="inputStudentName">اسم الطالب (معتمد تلقائياً):</label>
+                        <input type="text" id="inputStudentName" class="form-control" placeholder="يظهر الاسم تلقائياً بعد مطابقة الكود" readonly required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="inputStudentAddress"><span class="req">*</span> العنوان ومحل الإقامة بالتفصيل:</label>
+                        <input type="text" id="inputStudentAddress" class="form-control" placeholder="مثال: ميت غمر - شارع المعاهدة" oninput="saveInputDraft()" disabled required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="inputStudentPhone"><span class="req">*</span> رقم هاتف الطالب / ولي الأمر:</label>
+                        <input type="tel" id="inputStudentPhone" class="form-control" placeholder="010xxxxxxxx أو 011xxxxxxxx" pattern="^01[0125][0-9]{8}$" title="رقم مصري صحيح من 11 رقم" oninput="saveInputDraft()" disabled required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="selectStudentTrack"><span class="req">*</span> حدد المسار الأكاديمي المستهدف:</label>
+                        <select id="selectStudentTrack" class="form-control" onchange="handleTrackChange(this.value); saveInputDraft();" disabled required>
+                            <option value="">-- اضغط لتحديد المسار --</option>
+                            <option value="الطب">🩺 مسار الطب</option>
+                            <option value="الهندسة">📐 مسار الهندسة</option>
+                            <option value="أعمال">💼 مسار الأعمال</option>
+                            <option value="أداب وفنون">🎨 مسار أداب وفنون</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="selectStudentSubject"><span class="req">*</span> المادة التخصصية المقررة:</label>
+                        <select id="selectStudentSubject" class="form-control" onchange="saveInputDraft()" disabled required>
+                            <option value="">-- اختر المسار أولاً --</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-submit-choice" id="submitFormBtn" disabled>
+                        <span>تأكيد واعتماد الرغبة رسمياً ✨</span>
+                    </button>
+
+                    <button type="button" class="btn-clear-fields" onclick="resetFormState()">
+                        إلغاء وإدخال طالب آخر
+                    </button>
+                </form>
+            </aside>
+
+            <section class="roster-panel">
+                <div class="roster-actions-bar">
+                    <div class="search-wrapper">
+                        <span class="search-icon-symbol">🔍</span>
+                        <input type="text" id="rosterSearchBox" placeholder="بحث باسم أو كود الطالب..." oninput="filterRosterTable(this.value)">
+                    </div>
+
+                    <div class="filter-tags-cluster">
+                        <div class="filter-pill active" onclick="applyRosterFilter('all', this)">الكل (<span id="filterAllCount">0</span>)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('registered', this)">المسجلين</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('pending', this)">غير المسجلين</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('الطب', this)">الطب</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('الهندسة', this)">الهندسة</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('أعمال', this)">الأعمال</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('أداب وفنون', this)">الآداب</div>
+                    </div>
+                </div>
+
+                <div class="table-viewport">
+                    <table class="sovereign-table" id="studentsMainRoster">
+                        <thead>
+                            <tr>
+                                <th class="id-col">م</th>
+                                <th>كود الطالب</th>
+                                <th>اسم الطالب</th>
+                                <th>المسار</th>
+                                <th>المادة المقررة</th>
+                                <th>حالة التسجيل</th>
+                                <th>إجراء</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsRosterBody">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="print-signatures">
+                    <div style="text-align: center;">
+                        <strong>مسئول وحدة المعلومات بالمدرسة</strong>
+                        <p style="margin-top: 35px;">............................</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <strong>وكيل المدرسة لشئون الطلاب</strong>
+                        <p style="font-weight: 900; margin-top: 5px;">أ/ عبد الحميد عثمان</p>
+                        <p style="margin-top: 15px;">............................</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <strong>يعتمد،، مدير المدرسة</strong>
+                        <p style="margin-top: 35px;">............................</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <div class="modal-screen" id="thankYouModal">
+        <div class="modal-box thank-you-layout">
+            <button class="modal-close" onclick="closeThankYouModal()">✕</button>
+            <div class="sovereign-crown">🌟</div>
+            <h2 class="thank-title">تم اعتماد وتسجيل الرغبات بنجاح تام</h2>
+            <div class="thank-subtitle">مدرسة محمد هاشم النقيب الثانوية المشتركة</div>
+
+            <div class="official-speech-card">
+                <p>
+                    « أبنائي وبناتي طلاب وطالبات فصول الخدمات، يطيب لإدارة المدرسة أن تبارك لكم إتمام تحديد مساركم التخصصي للعام الدراسي 2026 / 2027 م متمنين لكم دوام الرفعة والتميز والتفوق العلمي. »
+                </p>
+                <div class="official-speech-signature">
+                    عبد الحميد عثمان
+                    <small style="display:block; color:var(--text-muted);">وكيل المدرسة لشئون الطلاب</small>
+                </div>
+            </div>
+
+            <div class="receipt-summary-grid" id="modalStudentDetails">
+            </div>
+
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button class="tool-btn btn-admin-access" onclick="printStudentReceipt()">
+                    <span>🖨️</span> طباعة إيصال الرغبة
+                </button>
+                <button class="tool-btn btn-glass" onclick="shareStudentChoiceWhatsApp()">
+                    <span>📱</span> إرسال عبر واتساب
+                </button>
+                <button class="tool-btn btn-glass" onclick="closeThankYouModal()">
+                    <span>✔️</span> إغلاق
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-screen" id="adminPasswordModal">
+        <div class="modal-box" style="max-width: 440px; text-align: center;">
+            <button class="modal-close" onclick="closeAdminPasswordModal()">✕</button>
+            <div style="font-size: 44px; margin-bottom: 10px;">🔐</div>
+            <h3 style="font-size: 1.3rem; font-weight: 900; color: #fff; margin-bottom: 6px;">لوحة التحكم الإدارية</h3>
+            <p style="color: var(--text-muted); font-size: 0.86rem; margin-bottom: 18px;">أدخل كلمة المرور المصرح بها</p>
+
+            <div class="field-group" style="text-align: right;">
+                <label for="adminPassInputField">كلمة المرور الأمنية:</label>
+                <input type="password" id="adminPassInputField" class="form-control" placeholder="كلمة المرور..." onkeydown="if(event.key==='Enter') executeAdminLogin()">
+            </div>
+
+            <div id="adminAuthFeedback" style="color: #ef4444; font-size: 0.85rem; font-weight: 800; margin-bottom: 12px; display: none;">
+                ❌ كلمة المرور غير صحيحة!
+            </div>
+
+            <button class="btn-submit-choice" onclick="executeAdminLogin()" style="margin-top: 0;">
+                <span>تحقق ودخول 🔓</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="modal-screen" id="adminDashboardModal">
+        <div class="modal-box admin-dashboard-box">
+            <button class="modal-close" onclick="closeAdminDashboardModal()">✕</button>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0, 210, 255, 0.25); padding-bottom: 14px; margin-bottom: 20px;">
+                <div>
+                    <h2 style="font-size: 1.4rem; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px;">
+                        <span>📊</span> لوحة القيادة الإحصائية والإدارة المتقدمة
+                    </h2>
+                    <div style="color: var(--accent-cyan); font-size: 0.86rem; font-weight: 700;">
+                        إدارة ميت غمر التعليمية | فصول الخدمات 2026 / 2027 م
+                    </div>
+                </div>
+                <button class="tool-btn btn-glass" style="padding: 6px 12px; font-size: 0.82rem;" onclick="logoutAdminDashboard()">
+                    <span>🚪</span> خروج
+                </button>
+            </div>
+
+            <div class="cloud-sync-config-box">
+                <h4 style="color: var(--primary-color); margin-bottom: 8px; font-size: 1rem;">
+                    <span>🌐</span> إعدادات الربط السحابي التلقائي (Google Sheets Webhook)
+                </h4>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <input type="url" id="cloudEndpointUrlInput" class="form-control" style="flex: 1; min-width: 280px; font-size: 0.85rem;" placeholder="ضع رابط Google Apps Script Web App URL هنا...">
+                    <button class="tool-btn btn-admin-access" style="padding: 10px 18px; font-size: 0.85rem;" onclick="saveCloudEndpointConfig()">
+                        <span>💾</span> حفظ وتفعيل
+                    </button>
+                    <button class="tool-btn btn-glass" style="padding: 10px 18px; font-size: 0.85rem;" onclick="triggerManualSync()">
+                        <span>⚡</span> مزامنة فورية
+                    </button>
+                </div>
+            </div>
+
+            <div class="admin-kpis-row">
+                <div class="admin-metric-card">
+                    <div class="m-title">إجمالي المقيدين</div>
+                    <div class="m-num" id="dashTotalStudentsCount">44</div>
+                    <div class="m-desc">كشف الخدمات الحالي</div>
+                </div>
+                <div class="admin-metric-card">
+                    <div class="m-title">تم تسجيل رغباتهم</div>
+                    <div class="m-num" style="color: var(--success);" id="dashCountRegistered">0</div>
+                    <div class="m-desc" id="dashPercentRegistered">0%</div>
+                </div>
+                <div class="admin-metric-card">
+                    <div class="m-title">الطلاب المتأخرين</div>
+                    <div class="m-num" style="color: var(--danger);" id="dashCountPending">44</div>
+                    <div class="m-desc">لم يسجلوا بعد</div>
+                </div>
+                <div class="admin-metric-card">
+                    <div class="m-title">حالة المزامنة والنسخ</div>
+                    <div class="m-num" style="color: var(--primary-color); font-size: 1.25rem; padding-top: 8px;" id="dashSyncHealthText">متزامن بالكامل ⚡</div>
+                    <div class="m-desc" id="dashLastSyncTimeLabel">آخر حفظ: الآن</div>
+                </div>
+            </div>
+
+            <div class="tracks-breakdown-grid">
+                <div class="track-stat-pill" style="border-right: 4px solid #10b981;">
+                    <h4><span>🩺 مسار الطب</span> <strong id="dashTotalMed" style="color: #10b981;">0</strong></h4>
+                    <div class="track-detail-line"><span>فيزياء:</span> <strong id="dashSubMedPhys">0</strong></div>
+                    <div class="track-detail-line"><span>رياضة:</span> <strong id="dashSubMedMath">0</strong></div>
+                </div>
+
+                <div class="track-stat-pill" style="border-right: 4px solid #3b82f6;">
+                    <h4><span>📐 مسار الهندسة</span> <strong id="dashTotalEng" style="color: #3b82f6;">0</strong></h4>
+                    <div class="track-detail-line"><span>برمجة:</span> <strong id="dashSubEngProg">0</strong></div>
+                    <div class="track-detail-line"><span>كيمياء:</span> <strong id="dashSubEngChem">0</strong></div>
+                </div>
+
+                <div class="track-stat-pill" style="border-right: 4px solid #f59e0b;">
+                    <h4><span>💼 مسار الأعمال</span> <strong id="dashTotalBus" style="color: #f59e0b;">0</strong></h4>
+                    <div class="track-detail-line"><span>محاسبة:</span> <strong id="dashSubBusAcc">0</strong></div>
+                    <div class="track-detail-line"><span>إدارة أعمال:</span> <strong id="dashSubBusMgt">0</strong></div>
+                </div>
+
+                <div class="track-stat-pill" style="border-right: 4px solid #a855f7;">
+                    <h4><span>🎨 أداب وفنون</span> <strong id="dashTotalArt" style="color: #a855f7;">0</strong></h4>
+                    <div class="track-detail-line"><span>علم نفس:</span> <strong id="dashSubArtPsych">0</strong></div>
+                    <div class="track-detail-line"><span>لغة فرنسية:</span> <strong id="dashSubArtFrench">0</strong></div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                    <h4 style="font-size: 1.05rem; color: var(--accent-cyan);">
+                        <span>🔒</span> جدول الإدارة الخاص (تعديل - حذف - إضافة طلاب)
+                    </h4>
+                    <button class="tool-btn btn-admin-access" style="padding: 6px 14px; font-size: 0.82rem;" onclick="openNewStudentModal()">
+                        <span>➕</span> إضافة طالب جديد
+                    </button>
+                </div>
+                <div class="private-table-container">
+                    <table class="sovereign-table" style="font-size: 0.86rem;">
+                        <thead>
+                            <tr>
+                                <th style="width: 35px;">م</th>
+                                <th>كود الطالب</th>
+                                <th>اسم الطالب</th>
+                                <th>المسار والمادة</th>
+                                <th>العنوان</th>
+                                <th>الهاتف</th>
+                                <th>التاريخ</th>
+                                <th style="text-align: center; width: 140px;">إدارة وتحكم</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashPrivateDataTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="audit-log-section">
+                <h4 style="color: var(--accent-cyan); margin-bottom: 8px; font-size: 0.9rem;">
+                    <span>🛡️</span> سجل العمليات والمراقبة (Audit Trail):
+                </h4>
+                <div class="audit-log-container" id="adminAuditLogList">
+                </div>
+            </div>
+
+            <div class="admin-command-bar">
+                <button class="tool-btn btn-admin-access" onclick="exportDataExcel()">
+                    <span>📊</span> تصدير Excel / CSV
+                </button>
+                <label class="tool-btn btn-glass" style="margin: 0; cursor: pointer;">
+                    <span>📥</span> استيراد ملف CSV / Excel
+                    <input type="file" id="csvUploadInput" accept=".csv" style="display: none;" onchange="importCSVFile(event)">
+                </label>
+                <button class="tool-btn btn-glass" onclick="backupJSONExport()">
+                    <span>💾</span> تصدير نسخة JSON
+                </button>
+                <label class="tool-btn btn-glass" style="margin: 0; cursor: pointer;">
+                    <span>📥</span> استيراد نسخة JSON
+                    <input type="file" id="jsonUploadInput" accept=".json" style="display: none;" onchange="restoreJSONBackup(event)">
+                </label>
+                <button class="tool-btn btn-glass" onclick="printOfficialRoster()">
+                    <span>🖨️</span> طباعة الكشف العام
+                </button>
+                <button class="tool-btn btn-glass" onclick="printLateStudentsReport()">
+                    <span>⚠️</span> طباعة كشف المتأخرين
+                </button>
+                <button class="tool-btn btn-glass" style="color: #fca5a5; border-color: rgba(239, 68, 68, 0.4);" onclick="resetAllDataFactory()">
+                    <span>🔄</span> إعادة ضبط المنظومة
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal-screen" id="adminEditStudentModal">
+        <div class="modal-box" style="max-width: 520px;">
+            <button class="modal-close" onclick="closeAdminEditModal()">✕</button>
+            <h3 style="font-size: 1.25rem; font-weight: 900; color: #fff; margin-bottom: 14px;">✏️ تعديل بيانات الطالب</h3>
+            
+            <form id="adminEditStudentForm" onsubmit="saveAdminStudentEdit(event)">
+                <input type="hidden" id="editStudentOriginalCode">
+                <div class="field-group">
+                    <label for="editStudentCodeField">كود الطالب الأكاديمي:</label>
+                    <input type="text" id="editStudentCodeField" class="form-control" required>
+                </div>
+                <div class="field-group">
+                    <label for="editStudentNameField">اسم الطالب الرباعي:</label>
+                    <input type="text" id="editStudentNameField" class="form-control" required>
+                </div>
+                <div class="field-group">
+                    <label for="editStudentAddressField">العنوان:</label>
+                    <input type="text" id="editStudentAddressField" class="form-control">
+                </div>
+                <div class="field-group">
+                    <label for="editStudentPhoneField">رقم الهاتف:</label>
+                    <input type="tel" id="editStudentPhoneField" class="form-control">
+                </div>
+                <div class="field-group">
+                    <label for="editStudentTrackSelect">المسار الأكاديمي:</label>
+                    <select id="editStudentTrackSelect" class="form-control" onchange="handleEditTrackChange(this.value)">
+                        <option value="">-- بدون مسار --</option>
+                        <option value="الطب">🩺 مسار الطب</option>
+                        <option value="الهندسة">📐 مسار الهندسة</option>
+                        <option value="أعمال">💼 مسار الأعمال</option>
+                        <option value="أداب وفنون">🎨 مسار أداب وفنون</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label for="editStudentSubjectSelect">المادة المقررة:</label>
+                    <select id="editStudentSubjectSelect" class="form-control">
+                        <option value="">-- بدون مادة --</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 14px;">
+                    <button type="submit" class="btn-submit-choice" style="margin-top: 0;">
+                        <span>حفظ ومزامنة 💾</span>
+                    </button>
+                    <button type="button" class="btn-clear-fields" style="margin-top: 0;" onclick="closeAdminEditModal()">
+                        إلغاء
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-screen" id="adminAddStudentModal">
+        <div class="modal-box" style="max-width: 520px;">
+            <button class="modal-close" onclick="closeAdminAddModal()">✕</button>
+            <h3 style="font-size: 1.25rem; font-weight: 900; color: #fff; margin-bottom: 14px;">➕ إضافة طالب جديد</h3>
+            
+            <form id="adminAddStudentForm" onsubmit="saveAdminNewStudent(event)">
+                <div class="field-group">
+                    <label for="addStudentCodeField"><span class="req">*</span> كود الطالب (9 أرقام):</label>
+                    <input type="text" id="addStudentCodeField" class="form-control" placeholder="كود الطالب الجديد..." required>
+                </div>
+                <div class="field-group">
+                    <label for="addStudentNameField"><span class="req">*</span> الاسم الرباعي / الخماسي:</label>
+                    <input type="text" id="addStudentNameField" class="form-control" placeholder="اسم الطالب..." required>
+                </div>
+                <div class="field-group">
+                    <label for="addStudentAddressField">العنوان ومحل الإقامة:</label>
+                    <input type="text" id="addStudentAddressField" class="form-control">
+                </div>
+                <div class="field-group">
+                    <label for="addStudentPhoneField">رقم الهاتف:</label>
+                    <input type="tel" id="addStudentPhoneField" class="form-control">
+                </div>
+                <div class="field-group">
+                    <label for="addStudentTrackSelect">المسار الأكاديمي (اختياري):</label>
+                    <select id="addStudentTrackSelect" class="form-control" onchange="handleAddTrackChange(this.value)">
+                        <option value="">-- بانتظار التسجيل --</option>
+                        <option value="الطب">🩺 مسار الطب</option>
+                        <option value="الهندسة">📐 مسار الهندسة</option>
+                        <option value="أعمال">💼 مسار الأعمال</option>
+                        <option value="أداب وفنون">🎨 مسار أداب وفنون</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label for="addStudentSubjectSelect">المادة المقررة:</label>
+                    <select id="addStudentSubjectSelect" class="form-control" disabled>
+                        <option value="">-- حدد المسار أولاً --</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 14px;">
+                    <button type="submit" class="btn-submit-choice" style="margin-top: 0;">
+                        <span>إضافة وحفظ 💾</span>
+                    </button>
+                    <button type="button" class="btn-clear-fields" style="margin-top: 0;" onclick="closeAdminAddModal()">
+                        إلغاء
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-wrapper">
+        <div class="circle-container">
+            <svg viewBox="0 0 500 500" class="rotating-svg">
+                <defs><path id="textCirclePath" d="M 250, 440 A 190,190 0 1,1 250,60 A 190,190 0 1,1 250,440" /></defs>
+                <circle cx="250" cy="250" r="215" fill="none" stroke="rgba(0, 210, 255, 0.3)" stroke-width="4" />
+                <circle cx="250" cy="250" r="165" fill="none" stroke="rgba(0, 210, 255, 0.3)" stroke-width="4" />
+                <text><textPath href="#textCirclePath" startOffset="50%" text-anchor="middle" class="text-path-style">
+                    ALL RIGHTS RESERVED ®© DESIGNED & DEVELOPED BY <tspan class="name-highlight">MAHMOUD MOHAMED</tspan>
+                </textPath></text>
+            </svg>
+            <div class="center-prayer">
+                <span>ولا تنسونا من خالص دعائكم بظهر الغيب</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const OFFICIAL_STUDENTS_LIST = [
+            {"id": 1, "code": "471017032", "name": "احمد السيد فتحى السيد احمد احمد الصعيدي"},
+            {"id": 2, "code": "471266563", "name": "احمد محمد نبيل محمود عثمان"},
+            {"id": 3, "code": "472682940", "name": "اسراء صبحى السيد محمد محمد حجازی"},
+            {"id": 4, "code": "472440171", "name": "السيد رضا رمضان السيد السيد حجازي"},
+            {"id": 5, "code": "471017175", "name": "السيد محمد محمد السيد عبد الفتاح النقيب"},
+            {"id": 6, "code": "472447159", "name": "امال محمد الشحات محمد محمد الدسوقي"},
+            {"id": 7, "code": "472943687", "name": "ایمان السيد عبد العزيز السيد الصفطي"},
+            {"id": 8, "code": "472684036", "name": "ایمان سامح عوض احمد محجوب السبع"},
+            {"id": 9, "code": "471001017", "name": "ايه احمد فرج متولى فرج عوف"},
+            {"id": 10, "code": "472939491", "name": "آیه عبد الرحمن مصطفى شعبان خلیفه"},
+            {"id": 11, "code": "476502605", "name": "تبارك السيد حسن سليم حسن عامر"},
+            {"id": 12, "code": "464213126", "name": "تفريح السيد عبد الله محمد عبد الفتاح"},
+            {"id": 13, "code": "472980584", "name": "حبيبه احمد رضا عبد الفتاح محمد بدوى"},
+            {"id": 14, "code": "471264612", "name": "حبيبه الشحات جوده احمد ابوالخیر"},
+            {"id": 15, "code": "471263964", "name": "دينا عصام عبد المجيد صالح هلال"},
+            {"id": 16, "code": "471511440", "name": "رحمه سعد ابو الفتوح محمد عبد الله الفواخري"},
+            {"id": 17, "code": "469961437", "name": "روان فتحی محمد شعبان عبد المقصود الحمل"},
+            {"id": 18, "code": "463712839", "name": "ريناد رفعت عبد الفتاح محمد عبد الرحمن"},
+            {"id": 19, "code": "476503386", "name": "سعاد محمد امین منصور زید"},
+            {"id": 20, "code": "472687697", "name": "سما وحيد عثمان عوض الله غانم"},
+            {"id": 21, "code": "472640604", "name": "سما وليد صبحى عبد الفتاح البيومي"},
+            {"id": 22, "code": "471511124", "name": "عبد الرحمن مجدى شعبان ابو المعاطى"},
+            {"id": 23, "code": "471321928", "name": "عبد اللطيف السعيد عبد اللطيف السعيد النجار"},
+            {"id": 24, "code": "472640677", "name": "عماد ابراهيم عبد الفتاح على زاهر"},
+            {"id": 25, "code": "471740171", "name": "عماد السيد عبد الهادي السعيد هلال"},
+            {"id": 26, "code": "473045937", "name": "عمر محمد عبد الحميد عبد الحق أحمد"},
+            {"id": 27, "code": "472640702", "name": "عمر هاني عزب محمد عزب رشوان"},
+            {"id": 28, "code": "471015962", "name": "فاطمه احمد عبد الرحيم طه عبد الفتاح الشافعي"},
+            {"id": 29, "code": "471284077", "name": "محمد حسن محمد حسن عبد المعطى البحراوي"},
+            {"id": 30, "code": "472444126", "name": "محمد عطية عطية على عثمان"},
+            {"id": 31, "code": "472682166", "name": "محمود سامى ابراهيم على العوضى"},
+            {"id": 32, "code": "472681575", "name": "مصطفى علاء ابراهيم عبد العظيم محمد عثمان"},
+            {"id": 33, "code": "471265833", "name": "ملك سعد محمد طه فوده"},
+            {"id": 34, "code": "472691028", "name": "ملك هاني ابراهيم ابراهيم عبد الله الفواخري"},
+            {"id": 35, "code": "471265496", "name": "منار اسامه السيد محمد سالم بدر"},
+            {"id": 36, "code": "471265063", "name": "منى حسن محمد عبدالوهاب الدسوقى"},
+            {"id": 37, "code": "472691463", "name": "نادية هاني ابراهيم ابراهيم عبدالله الفواخري"},
+            {"id": 38, "code": "472199442", "name": "نور الدین خالد همام محمد همام جليلة"},
+            {"id": 39, "code": "472692480", "name": "وعد صبرى رمضان السيد السيد حجازي"},
+            {"id": 40, "code": "472692549", "name": "ياسمين خالد كمال عبدالله محمد"},
+            {"id": 41, "code": "471000501", "name": "ياسمين وليد السيد متولى عامر"},
+            {"id": 42, "code": "472681926", "name": "يوسف محمد يوسف محمد سليمان"},
+            {"id": 43, "code": "471254068", "name": "يوسف محمد يوسف يوسف محمد ابراهيم الاقطع"},
+            {"id": 44, "code": "472682025", "name": "يوسف مصطفى احمد عباده الخولى"}
+        ];
+
+        const TRACKS_SUBJECTS_MAP = {
+            "الطب": { "badge": "track-med", "icon": "🩺", "subjects": ["فيزياء", "رياضه"] },
+            "الهندسة": { "badge": "track-eng", "icon": "📐", "subjects": ["برمجة", "كيمياء"] },
+            "أعمال": { "badge": "track-bus", "icon": "💼", "subjects": ["محاسبة", "أعمال"] },
+            "أداب وفنون": { "badge": "track-art", "icon": "🎨", "subjects": ["علم نفس", "فرنساوي"] }
+        };
+
+        const DEFAULT_CLOUD_ENDPOINT = "https://script.google.com/macros/s/AKfycbyvBEtNZYE57bcVdgGRXTYK2q2-5ey0SSK0RLIgc69ckUPQh0Y7Kd2gK1buVRXXhq3w/exec";
+        const LOCAL_STORAGE_KEY = "NAQEEB_2026_TRACKS_SERVICE_ROSTER";
+        const CLOUD_CONFIG_KEY = "NAQEEB_CLOUD_ENDPOINT_URL";
+        const AUDIT_LOG_KEY = "NAQEEB_AUDIT_LOGS_TRAIL";
+        const DRAFT_STORAGE_KEY = "NAQEEB_STUDENT_FORM_DRAFT";
+        const SNAPSHOT_ROTATION_KEY = "NAQEEB_SNAPSHOTS_ROTATION";
+        const BROADCAST_CHANNEL_NAME = "NAQEEB_ROSTER_SYNC_CHANNEL";
+        const ADMIN_SECRET = "A&M";
+
+        let studentsRegistry = [];
+        let auditLogs = [];
+        let activeFilter = "all";
+        let activeSearchTerm = "";
+        let audioFXActive = true;
+        let recentSuccessStudent = null;
+        let syncBroadcastChannel = null;
+        let autoSyncDebounceTimer = null;
+        let isSyncingActive = false;
+
+        function showToast(message, icon = '⚡') {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            const toast = document.createElement('div');
+            toast.className = 'toast-msg';
+            toast.innerHTML = `<span>${icon}</span> <span>${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.transition = 'all 0.35s ease';
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(10px)';
+                setTimeout(() => toast.remove(), 350);
+            }, 3200);
+        }
+
+        function logAuditAction(action, details, actor = 'System') {
+            const entry = {
+                time: new Date().toLocaleTimeString('ar-EG', { hour12: true }),
+                date: new Date().toLocaleDateString('ar-EG'),
+                action, details, actor
+            };
+            auditLogs.unshift(entry);
+            if (auditLogs.length > 80) auditLogs.pop();
+            localStorage.setItem(AUDIT_LOG_KEY, JSON.stringify(auditLogs));
+            renderAuditLogsUI();
+        }
+
+        function renderAuditLogsUI() {
+            const container = document.getElementById('adminAuditLogList');
+            if (!container) return;
+            if (auditLogs.length === 0) {
+                container.innerHTML = '<div style="padding: 6px; color: var(--text-muted);">لا توجد حركات مسجلة.</div>';
+                return;
+            }
+            container.innerHTML = auditLogs.map(l => `
+                <div class="audit-log-item">
+                    <span>🕒 [${l.date} ${l.time}] <strong>${l.action}</strong>: ${l.details}</span>
+                    <span style="color: var(--primary-color);">(${l.actor})</span>
+                </div>
+            `).join('');
+        }
+
+        let audioContextInstance = null;
+        function triggerSoundEffect(type) {
+            if (!audioFXActive) return;
+            try {
+                if (!audioContextInstance) audioContextInstance = new (window.AudioContext || window.webkitAudioContext)();
+                const now = audioContextInstance.currentTime;
+                const osc = audioContextInstance.createOscillator();
+                const gain = audioContextInstance.createGain();
+                osc.connect(gain);
+                gain.connect(audioContextInstance.destination);
+
+                if (type === 'success') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(523.25, now);
+                    osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.28);
+                    gain.gain.setValueAtTime(0.2, now);
+                    gain.gain.linearRampToValueAtTime(0, now + 0.35);
+                    osc.start(now); osc.stop(now + 0.35);
+                } else if (type === 'click') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(550, now);
+                    gain.gain.setValueAtTime(0.06, now);
+                    gain.gain.linearRampToValueAtTime(0, now + 0.08);
+                    osc.start(now); osc.stop(now + 0.08);
+                } else if (type === 'delete') {
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(320, now);
+                    osc.frequency.setValueAtTime(140, now + 0.2);
+                    gain.gain.setValueAtTime(0.18, now);
+                    gain.gain.linearRampToValueAtTime(0, now + 0.25);
+                    osc.start(now); osc.stop(now + 0.25);
+                } else if (type === 'error') {
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(220, now);
+                    gain.gain.setValueAtTime(0.2, now);
+                    gain.gain.linearRampToValueAtTime(0, now + 0.28);
+                    osc.start(now); osc.stop(now + 0.28);
+                }
+            } catch(e) {}
+        }
+
+        function toggleAppAudio() {
+            audioFXActive = !audioFXActive;
+            const btn = document.getElementById('audioToggleBtn');
+            btn.innerHTML = `<span id="audioIcon">${audioFXActive ? '🔊' : '🔇'}</span> الصوت: ${audioFXActive ? 'مفعل' : 'مكتوم'}`;
+            if (audioFXActive) triggerSoundEffect('click');
+        }
+
+        function toggleSmartboardFullScreen() {
+            triggerSoundEffect('click');
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {});
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+            }
+        }
+
+        function initRealtimeClock() {
+            const el = document.getElementById('realtimeClockDisplay');
+            setInterval(() => {
+                el.textContent = new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+            }, 1000);
+        }
+
+        function initCountdownTimer() {
+            const end = new Date();
+            end.setDate(end.getDate() + 2);
+            end.setHours(end.getHours() + 18);
+
+            setInterval(() => {
+                const diff = end - new Date();
+                if (diff <= 0) return;
+                document.getElementById('timerDays').textContent = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                document.getElementById('timerHours').textContent = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+                document.getElementById('timerMinutes').textContent = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
+                document.getElementById('timerSeconds').textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+            }, 1000);
+        }
+
+        function getCloudEndpoint() {
+            return localStorage.getItem(CLOUD_CONFIG_KEY) || DEFAULT_CLOUD_ENDPOINT;
+        }
+
+        function initDataStore() {
+            try { auditLogs = JSON.parse(localStorage.getItem(AUDIT_LOG_KEY) || '[]'); } catch(e) { auditLogs = []; }
+
+            const currentEndpoint = getCloudEndpoint();
+            const epInput = document.getElementById('cloudEndpointUrlInput');
+            if (epInput) epInput.value = currentEndpoint;
+
+            const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
+            if (raw) {
+                try {
+                    studentsRegistry = JSON.parse(raw);
+                    if (!Array.isArray(studentsRegistry) || studentsRegistry.length === 0) resetToDefaultData();
+                } catch(e) { resetToDefaultData(); }
+            } else {
+                resetToDefaultData();
+            }
+
+            setupInterTabSynchronization();
+            setupNetworkListeners();
+            restoreInputDraft();
+            takeSnapshotBackup();
+            setInterval(takeSnapshotBackup, 5 * 60 * 1000);
+
+            pullFromCloud();
+            setInterval(pullFromCloud, 20000);
+        }
+
+        function resetToDefaultData() {
+            studentsRegistry = OFFICIAL_STUDENTS_LIST.map(st => ({
+                id: st.id,
+                code: st.code,
+                name: st.name,
+                address: "",
+                phone: "",
+                track: "",
+                subject: "",
+                isRegistered: false,
+                registrationDate: "",
+                updatedAt: Date.now(),
+                isDeleted: false
+            }));
+            persistData(false);
+        }
+
+        function persistData(triggerCloud = true) {
+            recalculateSequenceIds();
+            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(studentsRegistry));
+            renderAllViews();
+
+            if (syncBroadcastChannel) {
+                syncBroadcastChannel.postMessage({
+                    type: 'SYNC_UPDATE',
+                    payload: studentsRegistry,
+                    timestamp: Date.now()
+                });
+            }
+
+            document.getElementById('dashLastSyncTimeLabel').textContent = `آخر حفظ: ${new Date().toLocaleTimeString('ar-EG')}`;
+
+            if (triggerCloud) {
+                updateSyncStatusUI('syncing');
+                clearTimeout(autoSyncDebounceTimer);
+                autoSyncDebounceTimer = setTimeout(() => {
+                    pushToCloud();
+                }, 500);
+            }
+        }
+
+        function recalculateSequenceIds() {
+            let activeIndex = 1;
+            studentsRegistry.forEach(s => {
+                if (!s.isDeleted) {
+                    s.id = activeIndex++;
+                }
+            });
+        }
+
+        function setupInterTabSynchronization() {
+            if ('BroadcastChannel' in window) {
+                syncBroadcastChannel = new BroadcastChannel(BROADCAST_CHANNEL_NAME);
+                syncBroadcastChannel.onmessage = (e) => {
+                    if (e.data && e.data.type === 'SYNC_UPDATE') {
+                        mergeIncomingData(e.data.payload, 'شاشة أخرى متصلة');
+                    }
+                };
+            }
+
+            window.addEventListener('storage', (e) => {
+                if (e.key === LOCAL_STORAGE_KEY && e.newValue) {
+                    try { mergeIncomingData(JSON.parse(e.newValue), 'نافذة متزامنة'); } catch(err) {}
+                }
+            });
+        }
+
+        function mergeIncomingData(incoming, sourceTitle) {
+            if (!Array.isArray(incoming)) return;
+            let changesCount = 0;
+
+            incoming.forEach(rem => {
+                const idx = studentsRegistry.findIndex(l => l.code === rem.code);
+                if (idx !== -1) {
+                    if ((rem.updatedAt || 0) > (studentsRegistry[idx].updatedAt || 0)) {
+                        studentsRegistry[idx] = rem;
+                        changesCount++;
+                    }
+                } else if (!rem.isDeleted) {
+                    studentsRegistry.push(rem);
+                    changesCount++;
+                }
+            });
+
+            if (changesCount > 0) {
+                recalculateSequenceIds();
+                localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(studentsRegistry));
+                renderAllViews();
+                showToast(`تمت مزامنة وتحديث البيانات من (${sourceTitle})`, '🔄');
+            }
+        }
+
+        async function pushToCloud() {
+            const endpoint = getCloudEndpoint();
+            if (!endpoint) {
+                updateSyncStatusUI('local');
+                return;
+            }
+
+            if (!navigator.onLine) {
+                updateSyncStatusUI('offline');
+                return;
+            }
+
+            isSyncingActive = true;
+            updateSyncStatusUI('syncing');
+
+            try {
+                await fetch(endpoint, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({
+                        action: 'SYNC_ALL_STUDENTS',
+                        data: studentsRegistry,
+                        timestamp: Date.now()
+                    })
+                });
+
+                updateSyncStatusUI('online');
+                isSyncingActive = false;
+            } catch (err) {
+                updateSyncStatusUI('error');
+                isSyncingActive = false;
+            }
+        }
+
+        async function pullFromCloud() {
+            const endpoint = getCloudEndpoint();
+            if (!endpoint || !navigator.onLine) return;
+
+            try {
+                const res = await fetch(`${endpoint}?action=GET_ALL_STUDENTS&t=${Date.now()}`);
+                if (!res.ok) return;
+                const result = await res.json();
+                if (result && Array.isArray(result.data)) {
+                    mergeIncomingData(result.data, 'السحابة الرسمية');
+                }
+                updateSyncStatusUI('online');
+            } catch(e) {}
+        }
+
+        function triggerManualSync() {
+            triggerSoundEffect('click');
+            showToast('بدء المزامنة الفورية الشاملة...', '⚡');
+            pullFromCloud();
+            pushToCloud();
+        }
+
+        function saveCloudEndpointConfig() {
+            const val = document.getElementById('cloudEndpointUrlInput').value.trim();
+            if (val) {
+                localStorage.setItem(CLOUD_CONFIG_KEY, val);
+                showToast('تم حفظ رابط السحابة وتفعيل المزامنة!', '✅');
+                triggerSoundEffect('success');
+                pushToCloud();
+            } else {
+                localStorage.removeItem(CLOUD_CONFIG_KEY);
+                document.getElementById('cloudEndpointUrlInput').value = DEFAULT_CLOUD_ENDPOINT;
+                showToast('تم استعادة الرابط السحابي الافتراضي.', 'ℹ️');
+                pushToCloud();
+            }
+        }
+
+        function updateSyncStatusUI(status) {
+            const dot = document.getElementById('liveSyncDot');
+            const text = document.getElementById('liveSyncStatusText');
+            const health = document.getElementById('dashSyncHealthText');
+
+            dot.className = 'sync-dot';
+            if (status === 'online') {
+                dot.style.background = '#10b981';
+                text.textContent = 'مزامنة سحابية نشطة ⚡';
+                if (health) health.textContent = 'سحابي متزامن ⚡';
+            } else if (status === 'syncing') {
+                dot.classList.add('syncing');
+                text.textContent = 'جاري الحفظ والمزامنة...';
+                if (health) health.textContent = 'جاري المزامنة...';
+            } else if (status === 'offline') {
+                dot.classList.add('offline');
+                text.textContent = 'حفظ محلي (بدون إنترنت ⚠️)';
+                if (health) health.textContent = 'حفظ محلي فقط';
+            } else {
+                dot.style.background = '#00d2ff';
+                text.textContent = 'مزامنة محلية فورية 🟢';
+                if (health) health.textContent = 'محلي لحظي 🟢';
+            }
+        }
+
+        function setupNetworkListeners() {
+            window.addEventListener('online', () => {
+                showToast('تم استعادة الاتصال بالإنترنت، جاري المزامنة...', '🌐');
+                pushToCloud();
+                pullFromCloud();
+            });
+            window.addEventListener('offline', () => {
+                showToast('انقطع الإنترنت: النظام يعمل بالحفظ المحلي الآمن.', '⚠️');
+                updateSyncStatusUI('offline');
+            });
+            window.addEventListener('beforeunload', (e) => {
+                if (isSyncingActive) {
+                    e.preventDefault();
+                    e.returnValue = 'جاري مزامنة بيانات الطلاب، هل تريد المغادرة حقاً؟';
+                }
+            });
+        }
+
+        function saveInputDraft() {
+            sessionStorage.setItem(DRAFT_STORAGE_KEY, JSON.stringify({
+                code: document.getElementById('inputStudentCode').value.trim(),
+                address: document.getElementById('inputStudentAddress').value,
+                phone: document.getElementById('inputStudentPhone').value,
+                track: document.getElementById('selectStudentTrack').value,
+                subject: document.getElementById('selectStudentSubject').value
+            }));
+        }
+
+        function restoreInputDraft() {
+            try {
+                const draft = JSON.parse(sessionStorage.getItem(DRAFT_STORAGE_KEY) || '{}');
+                if (draft.code) {
+                    document.getElementById('inputStudentCode').value = draft.code;
+                    handleCodeVerification(draft.code);
+                    if (draft.address) document.getElementById('inputStudentAddress').value = draft.address;
+                    if (draft.phone) document.getElementById('inputStudentPhone').value = draft.phone;
+                    if (draft.track) {
+                        document.getElementById('selectStudentTrack').value = draft.track;
+                        populateSubjectsDropdown(draft.track, 'selectStudentSubject');
+                        if (draft.subject) document.getElementById('selectStudentSubject').value = draft.subject;
+                    }
+                }
+            } catch(e) {}
+        }
+
+        function takeSnapshotBackup() {
+            if (studentsRegistry.length === 0) return;
+            try {
+                let snaps = JSON.parse(localStorage.getItem(SNAPSHOT_ROTATION_KEY) || '[]');
+                snaps.unshift({
+                    timestamp: Date.now(),
+                    dateStr: new Date().toLocaleString('ar-EG'),
+                    data: studentsRegistry
+                });
+                if (snaps.length > 5) snaps.pop();
+                localStorage.setItem(SNAPSHOT_ROTATION_KEY, JSON.stringify(snaps));
+            } catch(e) {}
+        }
+
+        function handleCodeVerification(enteredCode) {
+            const code = enteredCode.trim();
+            const feedbackEl = document.getElementById('codeVerifyFeedback');
+            const nameField = document.getElementById('inputStudentName');
+            const addressField = document.getElementById('inputStudentAddress');
+            const phoneField = document.getElementById('inputStudentPhone');
+            const trackSelect = document.getElementById('selectStudentTrack');
+            const subjectSelect = document.getElementById('selectStudentSubject');
+            const submitBtn = document.getElementById('submitFormBtn');
+
+            saveInputDraft();
+
+            if (!code) {
+                feedbackEl.innerHTML = '<span class="status-idle">ℹ️ اكتب الكود المعتمد لظهور اسم الطالب تلقائياً.</span>';
+                nameField.value = '';
+                addressField.value = '';
+                phoneField.value = '';
+                [addressField, phoneField, trackSelect, subjectSelect, submitBtn].forEach(el => el.disabled = true);
+                return;
+            }
+
+            const matched = studentsRegistry.find(s => s.code === code && !s.isDeleted);
+
+            if (matched) {
+                feedbackEl.innerHTML = `<span class="status-verified">✅ تم التحقق: كود معتمد بالصف الثاني الثانوي (مسلسل: ${matched.id})</span>`;
+                nameField.value = matched.name;
+                [addressField, phoneField, trackSelect, submitBtn].forEach(el => el.disabled = false);
+
+                addressField.value = matched.address || '';
+                phoneField.value = matched.phone || '';
+
+                if (matched.track) {
+                    trackSelect.value = matched.track;
+                    populateSubjectsDropdown(matched.track, 'selectStudentSubject');
+                    if (matched.subject) subjectSelect.value = matched.subject;
+                } else {
+                    trackSelect.value = '';
+                    subjectSelect.innerHTML = '<option value="">-- اضغط لاختيار المادة --</option>';
+                    subjectSelect.disabled = true;
+                }
+                triggerSoundEffect('click');
+            } else {
+                feedbackEl.innerHTML = code.length >= 8 
+                    ? '<span class="status-unverified">⛔ كود غير مدرج بكشوف فصول الخدمات المعتمدة!</span>' 
+                    : '<span class="status-idle">⏳ جاري كتابة الكود المكون من 9 أرقام...</span>';
+                nameField.value = '';
+                [addressField, phoneField, trackSelect, subjectSelect, submitBtn].forEach(el => el.disabled = true);
+            }
+        }
+
+        function handleTrackChange(trackName) {
+            triggerSoundEffect('click');
+            populateSubjectsDropdown(trackName, 'selectStudentSubject');
+        }
+
+        function populateSubjectsDropdown(trackName, selectElementId) {
+            const selectEl = document.getElementById(selectElementId);
+            const cfg = TRACKS_SUBJECTS_MAP[trackName];
+
+            if (!cfg) {
+                selectEl.innerHTML = '<option value="">-- حدد المسار أولاً --</option>';
+                selectEl.disabled = true;
+                return;
+            }
+
+            selectEl.innerHTML = `<option value="">-- اختر المادة المقررة لمسار ${trackName} --</option>`;
+            cfg.subjects.forEach(sub => {
+                const opt = document.createElement('option');
+                opt.value = sub;
+                opt.textContent = sub;
+                selectEl.appendChild(opt);
+            });
+            selectEl.disabled = false;
+        }
+
+        function submitStudentForm(e) {
+            e.preventDefault();
+            const code = document.getElementById('inputStudentCode').value.trim();
+            const address = document.getElementById('inputStudentAddress').value.trim();
+            const phone = document.getElementById('inputStudentPhone').value.trim();
+            const track = document.getElementById('selectStudentTrack').value;
+            const subject = document.getElementById('selectStudentSubject').value;
+
+            const idx = studentsRegistry.findIndex(s => s.code === code && !s.isDeleted);
+            if (idx === -1) {
+                triggerSoundEffect('error');
+                alert('⛔ عذراً: الكود غير مدرج بالكشف المعتمد!');
+                return;
+            }
+
+            if (!track || !subject) {
+                triggerSoundEffect('error');
+                alert('⚠️ يرجى تحديد المسار والمادة المقررة!');
+                return;
+            }
+
+            studentsRegistry[idx].address = address;
+            studentsRegistry[idx].phone = phone;
+            studentsRegistry[idx].track = track;
+            studentsRegistry[idx].subject = subject;
+            studentsRegistry[idx].isRegistered = true;
+            studentsRegistry[idx].registrationDate = new Date().toLocaleString('ar-EG');
+            studentsRegistry[idx].updatedAt = Date.now();
+
+            logAuditAction('تسجيل رغبة طالب', `${studentsRegistry[idx].name} -> مسار ${track} (${subject})`, 'بوابة الطلاب');
+            persistData(true);
+            triggerSoundEffect('success');
+            sessionStorage.removeItem(DRAFT_STORAGE_KEY);
+
+            recentSuccessStudent = studentsRegistry[idx];
+            displayThankYouModal(recentSuccessStudent);
+            resetFormState();
+        }
+
+        function resetFormState() {
+            document.getElementById('studentRegistrationForm').reset();
+            sessionStorage.removeItem(DRAFT_STORAGE_KEY);
+            handleCodeVerification('');
+        }
+
+        function displayThankYouModal(student) {
+            document.getElementById('modalStudentDetails').innerHTML = `
+                <div class="receipt-item"><div class="lbl">اسم الطالب:</div><div class="val">${student.name}</div></div>
+                <div class="receipt-item"><div class="lbl">كود الطالب:</div><div class="val" style="font-family: monospace; color: var(--accent-cyan);">${student.code}</div></div>
+                <div class="receipt-item"><div class="lbl">المسار المعتمد:</div><div class="val" style="color: var(--primary-color);">${student.track}</div></div>
+                <div class="receipt-item"><div class="lbl">المادة المقررة:</div><div class="val" style="color: #34d399;">${student.subject}</div></div>
+                <div class="receipt-item"><div class="lbl">تاريخ التسجيل:</div><div class="val" style="font-size: 0.82rem;">${student.registrationDate}</div></div>
+                <div class="receipt-item"><div class="lbl">رقم المسلسل:</div><div class="val" style="font-family: monospace;"># ${student.id}</div></div>
+            `;
+            document.getElementById('thankYouModal').classList.add('active');
+        }
+
+        function closeThankYouModal() {
+            triggerSoundEffect('click');
+            document.getElementById('thankYouModal').classList.remove('active');
+        }
+
+        function shareStudentChoiceWhatsApp() {
+            if (!recentSuccessStudent) return;
+            const txt = encodeURIComponent(
+                `*إشعار تسجيل رغبات رسمي - مدرسة محمد هاشم النقيب الثانوية المشتركة*\n` +
+                `*فصول الخدمات - الصف الثاني الثانوي 2026 / 2027 م*\n\n` +
+                `👤 *الطالب:* ${recentSuccessStudent.name}\n` +
+                `🆔 *الكود:* ${recentSuccessStudent.code}\n` +
+                `🎯 *المسار:* مسار ${recentSuccessStudent.track}\n` +
+                `📚 *المادة المقررة:* ${recentSuccessStudent.subject}\n` +
+                `📅 *تاريخ الاعتماد:* ${recentSuccessStudent.registrationDate}\n\n` +
+                `وكيل المدرسة: أ/ عبد الحميد عثمان`
+            );
+            window.open(`https://api.whatsapp.com/send?text=${txt}`, '_blank');
+        }
+
+        function renderRosterTable() {
+            const tbody = document.getElementById('studentsRosterBody');
+            tbody.innerHTML = '';
+
+            const activeStudents = studentsRegistry.filter(s => !s.isDeleted);
+            document.getElementById('filterAllCount').textContent = activeStudents.length;
+
+            const filtered = activeStudents.filter(st => {
+                if (activeFilter === 'registered' && !st.isRegistered) return false;
+                if (activeFilter === 'pending' && st.isRegistered) return false;
+                if (['الطب', 'الهندسة', 'أعمال', 'أداب وفنون'].includes(activeFilter) && st.track !== activeFilter) return false;
+
+                if (activeSearchTerm) {
+                    const q = activeSearchTerm.toLowerCase();
+                    return st.name.toLowerCase().includes(q) || st.code.includes(q) || (st.track || '').toLowerCase().includes(q);
+                }
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 25px; color: var(--text-muted);">🔍 لا توجد نتائج مطابقة</td></tr>`;
+                return;
+            }
+
+            filtered.forEach(st => {
+                const tr = document.createElement('tr');
+                let trackBadge = '<span class="badge-track track-none">لم يحدد</span>';
+                if (st.isRegistered && st.track) {
+                    const cfg = TRACKS_SUBJECTS_MAP[st.track] || { badge: 'track-med', icon: '✨' };
+                    trackBadge = `<span class="badge-track ${cfg.badge}">${cfg.icon} ${st.track}</span>`;
+                }
+
+                const subjectBadge = (st.isRegistered && st.subject)
+                    ? `<span class="badge-subject">${st.subject}</span>`
+                    : `<span style="color: var(--text-muted); font-size: 0.85rem;">-</span>`;
+
+                const statusBadge = st.isRegistered
+                    ? '<span class="badge-status status-ok">✅ تم التسجيل</span>'
+                    : '<span class="badge-status status-wait">⏳ بانتظار الاختيار</span>';
+
+                tr.innerHTML = `
+                    <td class="id-col">${st.id}</td>
+                    <td class="code-col">${st.code}</td>
+                    <td class="name-col">${st.name}</td>
+                    <td>${trackBadge}</td>
+                    <td>${subjectBadge}</td>
+                    <td>${statusBadge}</td>
+                    <td>
+                        <button class="btn-table-fill" onclick="quickFillStudent('${st.code}')">
+                            ${st.isRegistered ? 'تعديل' : 'تسجيل'}
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function quickFillStudent(code) {
+            triggerSoundEffect('click');
+            const codeInput = document.getElementById('inputStudentCode');
+            codeInput.value = code;
+            handleCodeVerification(code);
+            window.scrollTo({ top: 380, behavior: 'smooth' });
+        }
+
+        function filterRosterTable(query) {
+            activeSearchTerm = query.trim();
+            renderRosterTable();
+        }
+
+        function applyRosterFilter(type, el) {
+            triggerSoundEffect('click');
+            activeFilter = type;
+            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+            if (el) el.classList.add('active');
+            renderRosterTable();
+        }
+
+        function updateAllMetrics() {
+            const activeStudents = studentsRegistry.filter(s => !s.isDeleted);
+            const total = activeStudents.length;
+            const reg = activeStudents.filter(s => s.isRegistered).length;
+            const pend = total - reg;
+            const pct = total > 0 ? Math.round((reg / total) * 100) : 0;
+
+            document.getElementById('statTotalStudents').textContent = total;
+            document.getElementById('dashTotalStudentsCount').textContent = total;
+            document.getElementById('statRegisteredCount').textContent = reg;
+            document.getElementById('statPendingCount').textContent = pend;
+            document.getElementById('dashCountRegistered').textContent = reg;
+            document.getElementById('dashPercentRegistered').textContent = `${pct}% من الإجمالي`;
+            document.getElementById('dashCountPending').textContent = pend;
+            document.getElementById('panelCapacityTag').textContent = `🔒 فصول الخدمات (${total} طالباً)`;
+
+            document.getElementById('completionProgressBar').style.width = `${pct}%`;
+            document.getElementById('completionProgressText').textContent = `${pct}% مكتمل (${reg}/${total})`;
+
+            const tally = { "الطب": 0, "الهندسة": 0, "أعمال": 0, "أداب وفنون": 0 };
+            let medPhys = 0, medMath = 0, engProg = 0, engChem = 0, busAcc = 0, busMgt = 0, artPsych = 0, artFrench = 0;
+
+            activeStudents.forEach(s => {
+                if (s.isRegistered && s.track && tally[s.track] !== undefined) {
+                    tally[s.track]++;
+                    if (s.track === 'الطب') { if (s.subject === 'فيزياء') medPhys++; if (s.subject === 'رياضه') medMath++; }
+                    else if (s.track === 'الهندسة') { if (s.subject === 'برمجة') engProg++; if (s.subject === 'كيمياء') engChem++; }
+                    else if (s.track === 'أعمال') { if (s.subject === 'محاسبة') busAcc++; if (s.subject === 'أعمال') busMgt++; }
+                    else if (s.track === 'أداب وفنون') { if (s.subject === 'علم نفس') artPsych++; if (s.subject === 'فرنساوي') artFrench++; }
+                }
+            });
+
+            let top = "-";
+            let max = -1;
+            for (const [k, v] of Object.entries(tally)) {
+                if (v > max && v > 0) { max = v; top = `${k} (${v})`; }
+            }
+            document.getElementById('statTopTrack').textContent = top;
+
+            document.getElementById('dashTotalMed').textContent = tally['الطب'];
+            document.getElementById('dashSubMedPhys').textContent = medPhys;
+            document.getElementById('dashSubMedMath').textContent = medMath;
+            document.getElementById('dashTotalEng').textContent = tally['الهندسة'];
+            document.getElementById('dashSubEngProg').textContent = engProg;
+            document.getElementById('dashSubEngChem').textContent = engChem;
+            document.getElementById('dashTotalBus').textContent = tally['أعمال'];
+            document.getElementById('dashSubBusAcc').textContent = busAcc;
+            document.getElementById('dashSubBusMgt').textContent = busMgt;
+            document.getElementById('dashTotalArt').textContent = tally['أداب وفنون'];
+            document.getElementById('dashSubArtPsych').textContent = artPsych;
+            document.getElementById('dashSubArtFrench').textContent = artFrench;
+
+            const privateTbody = document.getElementById('dashPrivateDataTableBody');
+            privateTbody.innerHTML = '';
+
+            activeStudents.forEach(s => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="text-align: center; font-weight: bold; color: var(--accent-cyan);">${s.id}</td>
+                    <td style="font-family: monospace; color: #38bdf8;">${s.code}</td>
+                    <td style="font-weight: 800; color: #fff;">${s.name}</td>
+                    <td>${s.isRegistered ? `${s.track} - ${s.subject}` : '<span style="color:var(--warning);">قيد الانتظار</span>'}</td>
+                    <td style="color: #cbd5e1;">${s.address || '-'}</td>
+                    <td style="font-family: monospace; color: var(--accent-cyan);">${s.phone || '-'}</td>
+                    <td style="font-size: 0.78rem; color: #94a3b8;">${s.registrationDate || '-'}</td>
+                    <td style="text-align: center;">
+                        <button class="btn-edit-inline" onclick="openAdminEditStudentModal('${s.code}')">تعديل ✏️</button>
+                        <button class="btn-delete-inline" onclick="deleteStudentAdmin('${s.code}')">حذف 🗑️</button>
+                    </td>
+                `;
+                privateTbody.appendChild(tr);
+            });
+
+            renderAuditLogsUI();
+        }
+
+        function renderAllViews() {
+            renderRosterTable();
+            updateAllMetrics();
+        }
+
+        function openAdminGateModal() {
+            triggerSoundEffect('click');
+            document.getElementById('adminPassInputField').value = '';
+            document.getElementById('adminAuthFeedback').style.display = 'none';
+            document.getElementById('adminPasswordModal').classList.add('active');
+            setTimeout(() => document.getElementById('adminPassInputField').focus(), 150);
+        }
+
+        function closeAdminPasswordModal() {
+            triggerSoundEffect('click');
+            document.getElementById('adminPasswordModal').classList.remove('active');
+        }
+
+        function executeAdminLogin() {
+            if (document.getElementById('adminPassInputField').value.trim() === ADMIN_SECRET) {
+                triggerSoundEffect('success');
+                closeAdminPasswordModal();
+                updateAllMetrics();
+                document.getElementById('adminDashboardModal').classList.add('active');
+                logAuditAction('دخول لوحة التحكم', 'تسجيل دخول ناجح للإدارة', 'Admin');
+            } else {
+                triggerSoundEffect('error');
+                document.getElementById('adminAuthFeedback').style.display = 'block';
+            }
+        }
+
+        function closeAdminDashboardModal() {
+            triggerSoundEffect('click');
+            document.getElementById('adminDashboardModal').classList.remove('active');
+        }
+        function logoutAdminDashboard() { closeAdminDashboardModal(); }
+
+        function deleteStudentAdmin(code) {
+            triggerSoundEffect('click');
+            const student = studentsRegistry.find(s => s.code === code && !s.isDeleted);
+            if (!student) return;
+
+            const conf = confirm(`⚠️ هل أنت متأكد تماماً من حذف الطالب:\n\n« ${student.name} » (كود: ${student.code}) ؟\n\nسيتم حذفه من كافة السجلات والشاشات المتزامنة فوراً.`);
+            if (!conf) return;
+
+            student.isDeleted = true;
+            student.updatedAt = Date.now();
+
+            logAuditAction('حذف طالب', `تم حذف الطالب (${student.name}) كود (${student.code})`, 'Admin');
+            persistData(true);
+            triggerSoundEffect('delete');
+            showToast(`تم حذف الطالب (${student.name}) بنجاح وتمت المزامنة`, '🗑️');
+        }
+
+        function openAdminEditStudentModal(code) {
+            triggerSoundEffect('click');
+            const student = studentsRegistry.find(s => s.code === code && !s.isDeleted);
+            if (!student) return;
+
+            document.getElementById('editStudentOriginalCode').value = student.code;
+            document.getElementById('editStudentCodeField').value = student.code;
+            document.getElementById('editStudentNameField').value = student.name;
+            document.getElementById('editStudentAddressField').value = student.address || '';
+            document.getElementById('editStudentPhoneField').value = student.phone || '';
+            document.getElementById('editStudentTrackSelect').value = student.track || '';
+
+            if (student.track) {
+                populateSubjectsDropdown(student.track, 'editStudentSubjectSelect');
+                document.getElementById('editStudentSubjectSelect').value = student.subject || '';
+            } else {
+                document.getElementById('editStudentSubjectSelect').innerHTML = '<option value="">-- بدون مادة --</option>';
+            }
+
+            document.getElementById('adminEditStudentModal').classList.add('active');
+        }
+
+        function closeAdminEditModal() {
+            triggerSoundEffect('click');
+            document.getElementById('adminEditStudentModal').classList.remove('active');
+        }
+
+        function handleEditTrackChange(trackName) {
+            populateSubjectsDropdown(trackName, 'editStudentSubjectSelect');
+        }
+
+        function saveAdminStudentEdit(e) {
+            e.preventDefault();
+            const originalCode = document.getElementById('editStudentOriginalCode').value;
+            const newCode = document.getElementById('editStudentCodeField').value.trim();
+            const newName = document.getElementById('editStudentNameField').value.trim();
+            const newAddress = document.getElementById('editStudentAddressField').value.trim();
+            const newPhone = document.getElementById('editStudentPhoneField').value.trim();
+            const newTrack = document.getElementById('editStudentTrackSelect').value;
+            const newSubject = document.getElementById('editStudentSubjectSelect').value;
+
+            const idx = studentsRegistry.findIndex(s => s.code === originalCode && !s.isDeleted);
+            if (idx === -1) return;
+
+            studentsRegistry[idx].code = newCode;
+            studentsRegistry[idx].name = newName;
+            studentsRegistry[idx].address = newAddress;
+            studentsRegistry[idx].phone = newPhone;
+            studentsRegistry[idx].track = newTrack;
+            studentsRegistry[idx].subject = newSubject;
+            studentsRegistry[idx].isRegistered = !!(newTrack && newSubject);
+            studentsRegistry[idx].updatedAt = Date.now();
+            if (studentsRegistry[idx].isRegistered && !studentsRegistry[idx].registrationDate) {
+                studentsRegistry[idx].registrationDate = new Date().toLocaleString('ar-EG');
+            }
+
+            logAuditAction('تعديل إداري', `تعديل بيانات الطالب (${newName})`, 'Admin');
+            persistData(true);
+            triggerSoundEffect('success');
+            closeAdminEditModal();
+            showToast('تم حفظ التعديلات والمزامنة الفورية! 💾', '✅');
+        }
+
+        function openNewStudentModal() {
+            triggerSoundEffect('click');
+            document.getElementById('adminAddStudentForm').reset();
+            document.getElementById('addStudentSubjectSelect').innerHTML = '<option value="">-- حدد المسار أولاً --</option>';
+            document.getElementById('addStudentSubjectSelect').disabled = true;
+            document.getElementById('adminAddStudentModal').classList.add('active');
+        }
+
+        function closeAdminAddModal() {
+            triggerSoundEffect('click');
+            document.getElementById('adminAddStudentModal').classList.remove('active');
+        }
+
+        function handleAddTrackChange(trackName) {
+            populateSubjectsDropdown(trackName, 'addStudentSubjectSelect');
+        }
+
+        function saveAdminNewStudent(e) {
+            e.preventDefault();
+            const code = document.getElementById('addStudentCodeField').value.trim();
+            const name = document.getElementById('addStudentNameField').value.trim();
+            const address = document.getElementById('addStudentAddressField').value.trim();
+            const phone = document.getElementById('addStudentPhoneField').value.trim();
+            const track = document.getElementById('addStudentTrackSelect').value;
+            const subject = document.getElementById('addStudentSubjectSelect').value;
+
+            if (studentsRegistry.some(s => s.code === code && !s.isDeleted)) {
+                alert('⛔ هذا الكود مسجل بالفعل لطالب حالي!');
+                return;
+            }
+
+            const isReg = !!(track && subject);
+            const newStudent = {
+                id: studentsRegistry.filter(s => !s.isDeleted).length + 1,
+                code: code,
+                name: name,
+                address: address,
+                phone: phone,
+                track: track,
+                subject: subject,
+                isRegistered: isReg,
+                registrationDate: isReg ? new Date().toLocaleString('ar-EG') : "",
+                updatedAt: Date.now(),
+                isDeleted: false
+            };
+
+            studentsRegistry.push(newStudent);
+            logAuditAction('إضافة طالب جديد', `إدراج (${name}) بكود (${code})`, 'Admin');
+            persistData(true);
+            triggerSoundEffect('success');
+            closeAdminAddModal();
+            showToast('تمت إضافة الطالب وحفظه بنجاح!', '✅');
+        }
+
+        function printOfficialRoster() {
+            triggerSoundEffect('click');
+            document.getElementById('printReportTitle').textContent = 'كشف رغبات وتوزيع مسارات الصف الثاني الثانوي - العام الدراسي 2026 / 2027 م';
+            window.print();
+        }
+
+        function printLateStudentsReport() {
+            triggerSoundEffect('click');
+            const late = studentsRegistry.filter(s => !s.isDeleted && !s.isRegistered);
+            if (late.length === 0) {
+                alert('الجميع سجلوا بنجاح! لا توجد كشوف متأخرين.');
+                return;
+            }
+            activeFilter = 'pending';
+            renderRosterTable();
+            document.getElementById('printReportTitle').textContent = `كشف الطلاب المتأخرين عن تسجيل الرغبات (${late.length} طالب)`;
+            window.print();
+            setTimeout(() => {
+                activeFilter = 'all';
+                renderRosterTable();
+            }, 1000);
+        }
+
+        function printStudentReceipt() {
+            window.print();
+        }
+
+        function exportDataExcel() {
+            triggerSoundEffect('click');
+            let csv = "\uFEFFم,كود الطالب,اسم الطالب,المسار المختار,المادة المقررة,العنوان,رقم الهاتف,حالة التسجيل,تاريخ التسجيل\n";
+
+            studentsRegistry.filter(s => !s.isDeleted).forEach(s => {
+                csv += [
+                    s.id,
+                    `"${s.code}"`,
+                    `"${s.name}"`,
+                    `"${s.track || 'غير محدد'}"`,
+                    `"${s.subject || 'غير محدد'}"`,
+                    `"${s.address || '-'}"`,
+                    `"${s.phone || '-'}"`,
+                    `"${s.isRegistered ? 'تم التسجيل' : 'في الانتظار'}"`,
+                    `"${s.registrationDate || '-'}"`
+                ].join(",") + "\n";
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = `كشف_رغبات_فصول_الخدمات_النقيب_${new Date().toLocaleDateString('ar-EG').replace(/\//g,'-')}.csv`;
+            a.click();
+            showToast('تم تصدير ملف الإكسيل بنجاح!', '📊');
+        }
+
+        function importCSVFile(evt) {
+            const file = evt.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const text = e.target.result;
+                    const lines = text.split(/\r\n|\n/).filter(line => line.trim() !== '');
+                    if (lines.length <= 1) return;
+
+                    let addedCount = 0;
+                    for (let i = 1; i < lines.length; i++) {
+                        const parts = lines[i].split(',').map(p => p.replace(/^"|"$/g, '').trim());
+                        if (parts.length >= 3) {
+                            const code = parts[1];
+                            const name = parts[2];
+                            if (code && name && !studentsRegistry.some(s => s.code === code && !s.isDeleted)) {
+                                studentsRegistry.push({
+                                    id: studentsRegistry.filter(s => !s.isDeleted).length + 1,
+                                    code: code,
+                                    name: name,
+                                    track: parts[3] || '',
+                                    subject: parts[4] || '',
+                                    address: parts[5] || '',
+                                    phone: parts[6] || '',
+                                    isRegistered: parts[7] === 'تم التسجيل',
+                                    registrationDate: parts[8] || '',
+                                    updatedAt: Date.now(),
+                                    isDeleted: false
+                                });
+                                addedCount++;
+                            }
+                        }
+                    }
+
+                    if (addedCount > 0) {
+                        persistData(true);
+                        triggerSoundEffect('success');
+                        showToast(`تم استيراد ${addedCount} طالب بنجاح من ملف CSV!`, '📥');
+                    } else {
+                        alert('لم يتم العثور على طلاب جدد بالملف (جميع الأكواد مضافة بالفعل).');
+                    }
+                } catch(err) {
+                    alert('خطأ أثناء قراءة ملف CSV. تأكد من سلامة تنسيق الأعمدة.');
+                }
+            };
+            reader.readAsText(file, 'UTF-8');
+        }
+
+        function backupJSONExport() {
+            triggerSoundEffect('click');
+            const str = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(studentsRegistry, null, 2));
+            const a = document.createElement('a');
+            a.href = str;
+            a.download = `backup_services_roster_${Date.now()}.json`;
+            a.click();
+            showToast('تم تحميل النسخة الاحتياطية JSON', '💾');
+        }
+
+        function restoreJSONBackup(evt) {
+            const file = evt.target.files[0];
+            if (!file) return;
+            const r = new FileReader();
+            r.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (Array.isArray(data) && data.length > 0) {
+                        studentsRegistry = data;
+                        persistData(true);
+                        triggerSoundEffect('success');
+                        showToast('تم استعادة قاعدة البيانات بنجاح تام!', '✅');
+                    } else {
+                        alert('الملف غير صالح أو فارغ!');
+                    }
+                } catch(err) {
+                    alert('تعذر استعادة النسخة الاحتياطية. الملف تالف.');
+                }
+            };
+            r.readAsText(file);
+        }
+
+        function resetAllDataFactory() {
+            triggerSoundEffect('error');
+            if (confirm('⚠️ تحذير شديد الخطورة: هل تريد تفريغ كافة الرغبات وإعادة ضبط المصنع للقائمة الافتراضية؟')) {
+                localStorage.removeItem(LOCAL_STORAGE_KEY);
+                sessionStorage.clear();
+                resetToDefaultData();
+                logAuditAction('إعادة ضبط المصنع', 'تم تفريغ كافة البيانات للوضع الافتراضي', 'Admin');
+                alert('✅ تمت استعادة ضبط المصنع للمنظومة.');
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initDataStore();
+            initRealtimeClock();
+            initCountdownTimer();
+        });
+    </script>
+</body>
+</html>
+
