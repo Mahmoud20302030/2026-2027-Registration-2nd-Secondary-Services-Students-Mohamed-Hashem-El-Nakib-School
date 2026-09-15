@@ -445,7 +445,6 @@
             font-weight: 700;
         }
 
-        /* الشاشة الرئيسية: مساحة مخصصة لإدخال الرغبات والدليل الإرشادي التفاعلي */
         .portal-workspace-grid {
             display: grid;
             grid-template-columns: 500px 1fr;
@@ -593,7 +592,6 @@
             background: rgba(255, 255, 255, 0.06);
         }
 
-        /* لوحة الدليل التعريفي والارشادي للمسارات */
         .portal-guide-panel {
             background: var(--bg-surface);
             backdrop-filter: blur(18px);
@@ -708,7 +706,6 @@
             line-height: 1.6;
         }
 
-        /* النوافذ ولوحة الإدارة */
         .modal-screen {
             position: fixed;
             top: 0;
@@ -871,14 +868,6 @@
             font-size: 0.84rem;
             margin-bottom: 5px;
             color: #cbd5e1;
-        }
-
-        .cloud-sync-config-box {
-            background: rgba(0, 102, 255, 0.08);
-            border: 1.5px solid rgba(0, 210, 255, 0.4);
-            border-radius: var(--radius-md);
-            padding: 18px;
-            margin-bottom: 24px;
         }
 
         .admin-roster-controls {
@@ -1112,7 +1101,6 @@
             to { transform: translateX(0); opacity: 1; }
         }
 
-        /* حاوية الطباعة الخاصة لضبط صفحتين إلزامياً */
         #dedicatedPrintSection {
             display: none;
         }
@@ -1120,7 +1108,7 @@
         @media print {
             @page {
                 size: A4 portrait;
-                margin: 8mm 10mm 8mm 10mm;
+                margin: 6mm 8mm 6mm 8mm;
             }
             html, body {
                 width: 100% !important;
@@ -1134,12 +1122,10 @@
                 print-color-adjust: exact !important;
             }
 
-            /* إخفاء واجهات الشاشة بالكامل أثناء الطباعة */
             body * {
                 visibility: hidden !important;
             }
 
-            /* إظهار حاوية الطباعة المصممة بدقة صفحتين */
             #dedicatedPrintSection, #dedicatedPrintSection * {
                 visibility: visible !important;
             }
@@ -1153,11 +1139,10 @@
                 background: #ffffff !important;
             }
 
-            /* حاوية كل صفحة من الصفحتين */
             .print-page-box {
                 width: 100% !important;
-                height: 279mm !important;
-                max-height: 279mm !important;
+                height: 284mm !important;
+                max-height: 284mm !important;
                 box-sizing: border-box !important;
                 display: flex !important;
                 flex-direction: column !important;
@@ -1166,44 +1151,44 @@
                 break-after: page !important;
                 page-break-inside: avoid !important;
                 break-inside: avoid !important;
-                padding: 2mm 0 !important;
+                padding: 1mm 0 !important;
             }
 
             .print-page-box:last-child {
-                page-break-after: auto !important;
-                break-after: auto !important;
+                page-break-after: avoid !important;
+                break-after: avoid !important;
             }
 
             .print-official-header {
                 display: block !important;
                 text-align: center !important;
                 border-bottom: 2px solid #000000 !important;
-                padding-bottom: 6px !important;
-                margin-bottom: 6px !important;
+                padding-bottom: 4px !important;
+                margin-bottom: 4px !important;
             }
 
             .print-official-header .gov-title {
-                font-size: 11pt !important;
+                font-size: 10.5pt !important;
                 font-weight: 800 !important;
-                line-height: 1.3 !important;
+                line-height: 1.25 !important;
             }
 
             .print-official-header .school-title {
-                font-size: 12.5pt !important;
+                font-size: 12pt !important;
                 font-weight: 900 !important;
                 color: #000 !important;
-                line-height: 1.3 !important;
+                line-height: 1.25 !important;
             }
 
             .print-official-header .report-title-badge {
                 display: inline-block !important;
                 background: #f1f5f9 !important;
                 border: 1.5px solid #000000 !important;
-                padding: 3px 18px !important;
+                padding: 2px 16px !important;
                 border-radius: 4px !important;
-                font-size: 10.5pt !important;
+                font-size: 10pt !important;
                 font-weight: 900 !important;
-                margin-top: 4px !important;
+                margin-top: 3px !important;
             }
 
             .print-page-subinfo {
@@ -1212,7 +1197,7 @@
                 align-items: center !important;
                 font-size: 8.5pt !important;
                 font-weight: 800 !important;
-                margin: 4px 0 !important;
+                margin: 3px 0 !important;
                 padding: 0 4px !important;
             }
 
@@ -1225,8 +1210,8 @@
 
             .print-table th, .print-table td {
                 border: 1px solid #000000 !important;
-                padding: 3.2px 4px !important;
-                font-size: 8.5pt !important;
+                padding: 2.8px 4px !important;
+                font-size: 8.2pt !important;
                 line-height: 1.15 !important;
                 text-align: center !important;
                 color: #000000 !important;
@@ -1241,20 +1226,19 @@
                 text-align: right !important;
                 font-weight: 800 !important;
                 padding-right: 6px !important;
-                font-size: 8.5pt !important;
+                font-size: 8.2pt !important;
             }
 
             .print-table td.code-td {
                 font-family: monospace !important;
                 font-weight: 800 !important;
-                font-size: 8.5pt !important;
+                font-size: 8.2pt !important;
             }
 
-            /* كتلة التوقيعات أسفل كل ورقة */
             .print-signatures-footer {
                 display: block !important;
                 margin-top: 4px !important;
-                padding-top: 5px !important;
+                padding-top: 4px !important;
                 border-top: 1.5px solid #000000 !important;
             }
 
@@ -1271,31 +1255,31 @@
             }
 
             .print-sig-col .sig-title {
-                font-size: 9pt !important;
+                font-size: 8.8pt !important;
                 font-weight: 900 !important;
             }
 
             .print-sig-col .sig-name {
-                font-size: 9.5pt !important;
+                font-size: 9.2pt !important;
                 font-weight: 900 !important;
-                margin-top: 3px !important;
+                margin-top: 2px !important;
             }
 
             .print-sig-col .sig-dots {
-                font-size: 9pt !important;
-                margin-top: 18px !important;
+                font-size: 8.5pt !important;
+                margin-top: 16px !important;
             }
 
             .print-page-bottom-stamp-line {
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: center !important;
-                font-size: 7.8pt !important;
+                font-size: 7.5pt !important;
                 font-weight: 700 !important;
                 color: #333333 !important;
-                margin-top: 5px !important;
+                margin-top: 4px !important;
                 border-top: 1px dashed #999999 !important;
-                padding-top: 3px !important;
+                padding-top: 2px !important;
             }
         }
 
@@ -1303,7 +1287,6 @@
             .portal-workspace-grid { grid-template-columns: 1fr; }
         }
 
-        /* الفوتر الاحترافي المحمي بالكامل مع ألوان زاهية أزرق وسماوي */
         .footer-wrapper {
             padding: 70px 20px; 
             background: radial-gradient(circle at center, rgba(3, 16, 46, 0.98) 0%, rgba(1, 6, 18, 0.99) 100%);
@@ -1377,7 +1360,6 @@
 
     <div id="toastContainer"></div>
 
-    <!-- قسم الطباعة الإلزامي المنفصل (ورقتان بالضبط مع توقيعات كاملة أسفل كل ورقة) -->
     <div id="dedicatedPrintSection"></div>
 
     <div class="main-wrapper">
@@ -1462,7 +1444,6 @@
             </section>
         </div>
 
-        <!-- الشاشة الرئيسية مخصصة حصرياً لإدخال بيانات الطلاب والتسجيل -->
         <main class="portal-workspace-grid">
 
             <aside class="input-panel">
@@ -1524,7 +1505,6 @@
                 </form>
             </aside>
 
-            <!-- دليل توعوي وتوجيهي تفاعلي للمسارات بالشاشة الرئيسية -->
             <section class="portal-guide-panel">
                 <div class="guide-header-box">
                     <h3>📘 <span>دليل المسارات الأكاديمية وضوابط الاختيار الرسمية</span></h3>
@@ -1646,7 +1626,6 @@
         </div>
     </div>
 
-    <!-- لوحة التحكم الإدارية: تحتضن جدول بيانات الطلاب والعمليات الإحصائية والإدارية -->
     <div class="modal-screen" id="adminDashboardModal">
         <div class="modal-box admin-dashboard-box">
             <button class="modal-close" onclick="closeAdminDashboardModal()">✕</button>
@@ -1666,21 +1645,6 @@
                     </button>
                     <button class="tool-btn btn-glass" style="padding: 7px 14px; font-size: 0.84rem;" onclick="logoutAdminDashboard()">
                         <span>🚪</span> إغلاق اللوحة
-                    </button>
-                </div>
-            </div>
-
-            <div class="cloud-sync-config-box">
-                <h4 style="color: var(--primary-color); margin-bottom: 8px; font-size: 1rem;">
-                    <span>🌐</span> إعدادات الربط السحابي التلقائي (Google Sheets Webhook)
-                </h4>
-                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <input type="url" id="cloudEndpointUrlInput" class="form-control" style="flex: 1; min-width: 280px; font-size: 0.85rem;" placeholder="ضع رابط Google Apps Script Web App URL هنا...">
-                    <button class="tool-btn btn-admin-access" style="padding: 10px 18px; font-size: 0.85rem;" onclick="saveCloudEndpointConfig()">
-                        <span>💾</span> حفظ وتفعيل
-                    </button>
-                    <button class="tool-btn btn-glass" style="padding: 10px 18px; font-size: 0.85rem;" onclick="triggerManualSync()">
-                        <span>⚡</span> مزامنة فورية
                     </button>
                 </div>
             </div>
@@ -1734,7 +1698,6 @@
                 </div>
             </div>
 
-            <!-- جدول الطلاب داخل لوحة التحكم مع كافة الفلاتر والبحث -->
             <div style="margin-bottom: 24px;">
                 <div class="admin-roster-controls">
                     <div class="search-wrapper">
@@ -1915,7 +1878,6 @@
         </div>
     </div>
 
-    <!-- الفوتر المعتمد المحمي بالكامل مع الألوان الزاهية للأزرق والسماوي النيون -->
     <div class="footer-wrapper">
         <div class="circle-container">
             <svg viewBox="0 0 500 500" class="rotating-svg">
@@ -1987,9 +1949,8 @@
             "أداب وفنون": { "badge": "track-art", "icon": "🎨", "subjects": ["علم نفس", "فرنساوي"] }
         };
 
-        const DEFAULT_CLOUD_ENDPOINT = "https://script.google.com/macros/s/AKfycbyvBEtNZYE57bcVdgGRXTYK2q2-5ey0SSK0RLIgc69ckUPQh0Y7Kd2gK1buVRXXhq3w/exec";
+        const EMBEDDED_CLOUD_ENDPOINT = "https://script.google.com/macros/s/AKfycbyvBEtNZYE57bcVdgGRXTYK2q2-5ey0SSK0RLIgc69ckUPQh0Y7Kd2gK1buVRXXhq3w/exec";
         const LOCAL_STORAGE_KEY = "NAQEEB_2026_TRACKS_SERVICE_ROSTER";
-        const CLOUD_CONFIG_KEY = "NAQEEB_CLOUD_ENDPOINT_URL";
         const AUDIT_LOG_KEY = "NAQEEB_AUDIT_LOGS_TRAIL";
         const DRAFT_STORAGE_KEY = "NAQEEB_STUDENT_FORM_DRAFT";
         const SNAPSHOT_ROTATION_KEY = "NAQEEB_SNAPSHOTS_ROTATION";
@@ -2135,16 +2096,8 @@
             setInterval(updateCountdown, 1000);
         }
 
-        function getCloudEndpoint() {
-            return localStorage.getItem(CLOUD_CONFIG_KEY) || DEFAULT_CLOUD_ENDPOINT;
-        }
-
         function initDataStore() {
             try { auditLogs = JSON.parse(localStorage.getItem(AUDIT_LOG_KEY) || '[]'); } catch(e) { auditLogs = []; }
-
-            const currentEndpoint = getCloudEndpoint();
-            const epInput = document.getElementById('cloudEndpointUrlInput');
-            if (epInput) epInput.value = currentEndpoint;
 
             const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
             if (raw) {
@@ -2260,12 +2213,6 @@
         }
 
         async function pushToCloud() {
-            const endpoint = getCloudEndpoint();
-            if (!endpoint) {
-                updateSyncStatusUI('local');
-                return;
-            }
-
             if (!navigator.onLine) {
                 updateSyncStatusUI('offline');
                 return;
@@ -2275,7 +2222,7 @@
             updateSyncStatusUI('syncing');
 
             try {
-                await fetch(endpoint, {
+                await fetch(EMBEDDED_CLOUD_ENDPOINT, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
@@ -2295,11 +2242,10 @@
         }
 
         async function pullFromCloud() {
-            const endpoint = getCloudEndpoint();
-            if (!endpoint || !navigator.onLine) return;
+            if (!navigator.onLine) return;
 
             try {
-                const res = await fetch(`${endpoint}?action=GET_ALL_STUDENTS&t=${Date.now()}`);
+                const res = await fetch(`${EMBEDDED_CLOUD_ENDPOINT}?action=GET_ALL_STUDENTS&t=${Date.now()}`);
                 if (!res.ok) return;
                 const result = await res.json();
                 if (result && Array.isArray(result.data)) {
@@ -2314,21 +2260,6 @@
             showToast('بدء المزامنة الفورية الشاملة...', '⚡');
             pullFromCloud();
             pushToCloud();
-        }
-
-        function saveCloudEndpointConfig() {
-            const val = document.getElementById('cloudEndpointUrlInput').value.trim();
-            if (val) {
-                localStorage.setItem(CLOUD_CONFIG_KEY, val);
-                showToast('تم حفظ رابط السحابة وتفعيل المزامنة!', '✅');
-                triggerSoundEffect('success');
-                pushToCloud();
-            } else {
-                localStorage.removeItem(CLOUD_CONFIG_KEY);
-                document.getElementById('cloudEndpointUrlInput').value = DEFAULT_CLOUD_ENDPOINT;
-                showToast('تم استعادة الرابط السحابي الافتراضي.', 'ℹ️');
-                pushToCloud();
-            }
         }
 
         function updateSyncStatusUI(status) {
@@ -2878,7 +2809,6 @@
             showToast('تمت إضافة الطالب وحفظه بنجاح!', '✅');
         }
 
-        /* توليد كود الطباعة المنظم: صفحتان فقط إلزامياً مع توقيعات أسفل كل ورقة */
         function generateOfficialTwoPagePrint(studentsList, customReportTitle = 'كشف رغبات وتوزيع مسارات الصف الثاني الثانوي - العام الدراسي 2026 / 2027 م') {
             const printSec = document.getElementById('dedicatedPrintSection');
             printSec.innerHTML = '';
@@ -2891,13 +2821,13 @@
             function buildPageMarkup(pageStudents, pageNumber, totalPages, fromNum, toNum) {
                 const rowsMarkup = pageStudents.map(s => `
                     <tr>
-                        <td style="font-weight: 900; width: 32px;">${s.id}</td>
-                        <td class="code-td" style="width: 85px;">${s.code}</td>
+                        <td style="font-weight: 900; width: 30px;">${s.id}</td>
+                        <td class="code-td" style="width: 80px;">${s.code}</td>
                         <td class="name-td">${s.name}</td>
                         <td style="font-weight: 800; width: 85px;">${s.track || 'لم يحدد'}</td>
                         <td style="font-weight: 800; width: 75px;">${s.subject || '-'}</td>
-                        <td style="font-size: 8pt; width: 75px;">${s.isRegistered ? 'مسجل ✅' : 'قيد الانتظار ⏳'}</td>
-                        <td style="width: 100px;"></td>
+                        <td style="font-size: 7.8pt; width: 75px;">${s.isRegistered ? 'مسجل ✅' : 'قيد الانتظار ⏳'}</td>
+                        <td style="width: 95px;"></td>
                     </tr>
                 `).join('');
 
@@ -2911,7 +2841,7 @@
                                 <div class="report-title-badge">${customReportTitle}</div>
                             </div>
                             <div class="print-page-subinfo">
-                                <span>📋 توزيع كشف الطلاب: من مسلسل (${fromNum}) إلى (${toNum})</span>
+                                <span>📋 كشف الطلاب المقيدين: من مسلسل (${fromNum}) إلى (${toNum})</span>
                                 <span>العام الدراسي: 2026 / 2027 م</span>
                                 <span>صفحة رقم: [ ${pageNumber} من ${totalPages} ]</span>
                             </div>
@@ -2920,13 +2850,13 @@
                         <table class="print-table">
                             <thead>
                                 <tr>
-                                    <th style="width: 32px;">م</th>
-                                    <th style="width: 85px;">كود الطالب</th>
+                                    <th style="width: 30px;">م</th>
+                                    <th style="width: 80px;">كود الطالب</th>
                                     <th>اسم الطالب الرباعي / الخماسي</th>
                                     <th style="width: 85px;">المسار المحدد</th>
                                     <th style="width: 75px;">المادة المقررة</th>
                                     <th style="width: 75px;">حالة التسجيل</th>
-                                    <th style="width: 100px;">توقيع الطالب</th>
+                                    <th style="width: 95px;">توقيع الطالب</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -2943,7 +2873,7 @@
                                 <div class="print-sig-col">
                                     <div class="sig-title">وكيل المدرسة لشئون الطلاب</div>
                                     <div class="sig-name">أ/ عبد الحميد عثمان</div>
-                                    <div class="sig-dots" style="margin-top: 6px;">...................................</div>
+                                    <div class="sig-dots" style="margin-top: 5px;">...................................</div>
                                 </div>
                                 <div class="print-sig-col">
                                     <div class="sig-title">يعتمد،، مدير عام المدرسة</div>
@@ -2952,7 +2882,7 @@
                             </div>
                             <div class="print-page-bottom-stamp-line">
                                 <span>ختم شعار الجمهورية / خاتم المدرسة</span>
-                                <span>تاريخ الطباعة المعتمد: ${new Date().toLocaleDateString('ar-EG')} - ${new Date().toLocaleTimeString('ar-EG')}</span>
+                                <span>تاريخ الاعتماد الرسمي: ${new Date().toLocaleDateString('ar-EG')} - ${new Date().toLocaleTimeString('ar-EG')}</span>
                                 <span>المنظومة الإلكترونية لتنسيق المسارات | صفحة (${pageNumber} من ${totalPages})</span>
                             </div>
                         </div>
