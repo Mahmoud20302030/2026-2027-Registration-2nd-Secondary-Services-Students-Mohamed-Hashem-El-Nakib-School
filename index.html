@@ -12,16 +12,16 @@
     <style>
         :root {
             --primary-color: #00d2ff;
-            --primary-glow: rgba(0, 210, 255, 0.65);
+            --primary-glow: rgba(0, 210, 255, 0.75);
             --secondary-color: #0066ff;
-            --secondary-glow: rgba(0, 102, 255, 0.5);
+            --secondary-glow: rgba(0, 102, 255, 0.6);
             --accent-cyan: #38bdf8;
             --accent-blue: #2563eb;
             --laser-glow: #00f0ff;
             --bg-deep: #010612;
-            --bg-surface: rgba(5, 14, 34, 0.92);
-            --bg-card: rgba(8, 22, 54, 0.85);
-            --border-glow: rgba(0, 210, 255, 0.32);
+            --bg-surface: rgba(5, 14, 34, 0.94);
+            --bg-card: rgba(8, 22, 54, 0.88);
+            --border-glow: rgba(0, 210, 255, 0.38);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --success: #10b981;
@@ -48,10 +48,10 @@
         body {
             background-color: var(--bg-deep);
             background-image: 
-                radial-gradient(circle at 15% 20%, rgba(0, 102, 255, 0.18) 0%, transparent 45%),
-                radial-gradient(circle at 85% 75%, rgba(0, 210, 255, 0.15) 0%, transparent 50%),
-                linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 210, 255, 0.03) 1px, transparent 1px);
+                radial-gradient(circle at 15% 20%, rgba(0, 102, 255, 0.22) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(0, 210, 255, 0.2) 0%, transparent 50%),
+                linear-gradient(rgba(0, 210, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 210, 255, 0.04) 1px, transparent 1px);
             background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
             color: var(--text-main);
             font-family: var(--font-main);
@@ -70,22 +70,22 @@
             pointer-events: none;
             z-index: 0;
             filter: blur(140px);
-            opacity: 0.3;
+            opacity: 0.38;
             animation: floatGlow 12s infinite alternate ease-in-out;
         }
         .glow-1 { top: -120px; right: -120px; background: #00d2ff; }
         .glow-2 { bottom: 80px; left: -140px; background: #0055ff; }
 
         @keyframes floatGlow {
-            0% { transform: translate(0, 0) scale(1); opacity: 0.25; }
-            100% { transform: translate(40px, 35px) scale(1.18); opacity: 0.45; }
+            0% { transform: translate(0, 0) scale(1); opacity: 0.32; }
+            100% { transform: translate(40px, 35px) scale(1.18); opacity: 0.52; }
         }
 
         .main-wrapper {
             position: relative;
             z-index: 1;
             width: 100%;
-            max-width: 1750px;
+            max-width: 1680px;
             margin: 0 auto;
             padding: 20px 24px;
             flex: 1;
@@ -101,7 +101,7 @@
             border: 1px solid var(--border-glow);
             border-radius: var(--radius-lg);
             padding: 22px 28px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 210, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 210, 255, 0.2);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -137,7 +137,7 @@
         .sovereign-badge {
             width: 78px;
             height: 78px;
-            background: linear-gradient(135deg, rgba(0, 210, 255, 0.25), rgba(0, 102, 255, 0.15));
+            background: linear-gradient(135deg, rgba(0, 210, 255, 0.25), rgba(0, 102, 255, 0.2));
             border: 2px solid var(--primary-color);
             border-radius: 50%;
             display: flex;
@@ -445,95 +445,10 @@
             font-weight: 700;
         }
 
-        .live-kpis-grid {
+        /* الشاشة الرئيسية: مساحة مخصصة لإدخال الرغبات والدليل الإرشادي التفاعلي */
+        .portal-workspace-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-        }
-
-        .kpi-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-glow);
-            border-radius: var(--radius-md);
-            padding: 18px 22px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: var(--transition);
-        }
-        .kpi-box:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary-color);
-            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.25);
-        }
-
-        .kpi-content .kpi-title {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            font-weight: 700;
-        }
-
-        .kpi-content .kpi-num {
-            font-size: 1.95rem;
-            font-weight: 900;
-            color: #ffffff;
-            line-height: 1.2;
-            margin-top: 4px;
-            font-family: var(--font-title);
-        }
-
-        .kpi-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            background: rgba(0, 210, 255, 0.12);
-            color: var(--primary-color);
-            border: 1px solid rgba(0, 210, 255, 0.35);
-        }
-
-        .completion-bar-wrapper {
-            grid-column: 1 / -1;
-            background: rgba(5, 14, 34, 0.7);
-            border: 1px solid rgba(0, 210, 255, 0.25);
-            border-radius: var(--radius-md);
-            padding: 14px 22px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .completion-progress {
-            flex: 1;
-            height: 14px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .completion-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #0055ff, #00d2ff);
-            border-radius: 10px;
-            width: 0%;
-            transition: width 0.8s ease-in-out;
-            box-shadow: 0 0 18px var(--primary-glow);
-        }
-
-        .completion-text {
-            font-size: 0.95rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            min-width: 160px;
-            text-align: left;
-        }
-
-        .workspace-split {
-            display: grid;
-            grid-template-columns: 460px 1fr;
+            grid-template-columns: 500px 1fr;
             gap: 24px;
             align-items: start;
         }
@@ -541,12 +456,10 @@
         .input-panel {
             background: var(--bg-surface);
             backdrop-filter: blur(18px);
-            border: 1px solid var(--border-glow);
+            border: 1.5px solid var(--border-glow);
             border-radius: var(--radius-lg);
-            padding: 26px;
-            box-shadow: 0 16px 45px rgba(0,0,0,0.65);
-            position: sticky;
-            top: 20px;
+            padding: 28px;
+            box-shadow: 0 16px 45px rgba(0,0,0,0.65), 0 0 25px rgba(0, 210, 255, 0.12);
         }
 
         .panel-headline {
@@ -571,7 +484,7 @@
         .secure-lock-tag {
             font-size: 0.78rem;
             font-weight: 800;
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 20px;
             background: rgba(0, 210, 255, 0.15);
             color: var(--primary-color);
@@ -680,171 +593,122 @@
             background: rgba(255, 255, 255, 0.06);
         }
 
-        .roster-panel {
+        /* لوحة الدليل التعريفي والارشادي للمسارات */
+        .portal-guide-panel {
             background: var(--bg-surface);
             backdrop-filter: blur(18px);
             border: 1px solid var(--border-glow);
             border-radius: var(--radius-lg);
-            padding: 24px;
+            padding: 26px;
             box-shadow: 0 16px 45px rgba(0,0,0,0.65);
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 20px;
         }
 
-        .roster-actions-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 14px;
+        .guide-header-box {
+            border-bottom: 1px solid rgba(0, 210, 255, 0.22);
+            padding-bottom: 14px;
         }
-
-        .search-wrapper {
-            position: relative;
-            flex: 1;
-            min-width: 270px;
-        }
-        .search-wrapper input {
-            width: 100%;
-            padding: 11px 44px 11px 16px;
-            background: rgba(2, 7, 22, 0.88);
-            border: 1.5px solid rgba(0, 210, 255, 0.32);
-            border-radius: var(--radius-md);
-            color: #ffffff;
-            font-family: var(--font-main);
-            font-size: 0.95rem;
-            outline: none;
-            transition: var(--transition);
-        }
-        .search-wrapper input:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.35);
-        }
-        .search-icon-symbol {
-            position: absolute;
-            right: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--accent-cyan);
-            font-size: 18px;
-            pointer-events: none;
-        }
-
-        .filter-tags-cluster {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .filter-pill {
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 800;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 210, 255, 0.25);
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: var(--transition);
-            user-select: none;
-        }
-        .filter-pill:hover { border-color: var(--primary-color); color: #fff; }
-        .filter-pill.active {
-            background: linear-gradient(135deg, #0055ff, #00d2ff);
-            color: #fff;
-            border-color: transparent;
-            box-shadow: 0 0 14px var(--primary-glow);
-        }
-
-        .table-viewport {
-            overflow-x: auto;
-            border: 1px solid rgba(0, 210, 255, 0.22);
-            border-radius: var(--radius-md);
-            background: rgba(2, 6, 18, 0.75);
-        }
-
-        .sovereign-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: right;
-            font-size: 0.94rem;
-        }
-        .sovereign-table th {
-            background: linear-gradient(180deg, #0a1b3f, #030a1b);
-            color: var(--accent-cyan);
-            padding: 14px 16px;
+        .guide-header-box h3 {
+            font-size: 1.28rem;
             font-weight: 900;
-            border-bottom: 2px solid var(--primary-color);
-            white-space: nowrap;
-        }
-        .sovereign-table td {
-            padding: 12px 16px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            color: #e2e8f0;
-            vertical-align: middle;
-        }
-        .sovereign-table tbody tr:hover td { background: rgba(0, 210, 255, 0.08); }
-
-        .id-col { width: 50px; text-align: center; font-weight: 900; color: var(--accent-cyan); }
-        .code-col { font-family: monospace; font-weight: 900; color: #38bdf8; white-space: nowrap; }
-        .name-col { font-weight: 800; color: #ffffff; min-width: 240px; }
-
-        .badge-track {
-            display: inline-flex;
+            color: #ffffff;
+            display: flex;
             align-items: center;
-            gap: 6px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 800;
-            white-space: nowrap;
+            gap: 10px;
         }
-        .track-med { background: rgba(16, 185, 129, 0.18); border: 1px solid #10b981; color: #34d399; }
-        .track-eng { background: rgba(59, 130, 246, 0.18); border: 1px solid #3b82f6; color: #60a5fa; }
-        .track-bus { background: rgba(245, 158, 11, 0.18); border: 1px solid #f59e0b; color: #fbbf24; }
-        .track-art { background: rgba(168, 85, 247, 0.18); border: 1px solid #a855f7; color: #c084fc; }
-        .track-none { background: rgba(239, 68, 68, 0.12); border: 1px dashed rgba(239, 68, 68, 0.4); color: #fca5a5; }
-
-        .badge-subject {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 0.82rem;
-            font-weight: 800;
-            color: #e2e8f0;
-            border: 1px solid rgba(255, 255, 255, 0.14);
+        .guide-header-box p {
+            color: var(--accent-cyan);
+            font-size: 0.88rem;
+            margin-top: 4px;
+            font-weight: 600;
         }
 
-        .badge-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 0.76rem;
-            font-weight: 800;
+        .tracks-guide-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
         }
-        .status-ok { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
-        .status-wait { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
 
-        .btn-table-fill {
-            background: rgba(0, 210, 255, 0.12);
-            border: 1px solid rgba(0, 210, 255, 0.35);
-            color: var(--primary-color);
-            padding: 5px 10px;
-            border-radius: var(--radius-sm);
-            font-size: 0.78rem;
-            font-weight: 800;
-            cursor: pointer;
+        .guide-track-card {
+            background: rgba(2, 7, 24, 0.75);
+            border: 1px solid rgba(0, 210, 255, 0.25);
+            border-radius: var(--radius-md);
+            padding: 16px 18px;
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
-        .btn-table-fill:hover {
+        .guide-track-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.25);
+        }
+        .guide-track-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; width: 4px; height: 100%;
+        }
+        .card-med::before { background: #10b981; }
+        .card-eng::before { background: #3b82f6; }
+        .card-bus::before { background: #f59e0b; }
+        .card-art::before { background: #a855f7; }
+
+        .guide-track-card h4 {
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .guide-track-card ul {
+            list-style: none;
+            font-size: 0.86rem;
+            color: #cbd5e1;
+        }
+        .guide-track-card ul li {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .guide-track-card ul li span.dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
             background: var(--primary-color);
-            color: #010612;
         }
 
+        .privacy-safe-notice {
+            background: rgba(0, 102, 255, 0.08);
+            border: 1.5px dashed rgba(0, 210, 255, 0.4);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .privacy-safe-notice .icon {
+            font-size: 2.2rem;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 10px var(--primary-glow));
+        }
+        .privacy-safe-notice .txt h5 {
+            font-size: 0.96rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 3px;
+        }
+        .privacy-safe-notice .txt p {
+            font-size: 0.84rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        /* النوافذ ولوحة الإدارة */
         .modal-screen {
             position: fixed;
             top: 0;
@@ -952,7 +816,7 @@
         .receipt-item .lbl { font-size: 0.75rem; color: var(--text-muted); }
         .receipt-item .val { font-size: 0.95rem; font-weight: 800; color: #ffffff; margin-top: 2px; }
 
-        .admin-dashboard-box { max-width: 1280px; }
+        .admin-dashboard-box { max-width: 1440px; width: 96vw; }
 
         .admin-kpis-row {
             display: grid;
@@ -1017,23 +881,161 @@
             margin-bottom: 24px;
         }
 
-        .private-table-container {
-            max-height: 340px;
-            overflow-y: auto;
-            border: 1px solid rgba(0, 210, 255, 0.2);
-            border-radius: var(--radius-sm);
+        .admin-roster-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 14px;
         }
+
+        .search-wrapper {
+            position: relative;
+            flex: 1;
+            min-width: 270px;
+        }
+        .search-wrapper input {
+            width: 100%;
+            padding: 11px 44px 11px 16px;
+            background: rgba(2, 7, 22, 0.88);
+            border: 1.5px solid rgba(0, 210, 255, 0.32);
+            border-radius: var(--radius-md);
+            color: #ffffff;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+        .search-wrapper input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.35);
+        }
+        .search-icon-symbol {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-cyan);
+            font-size: 18px;
+            pointer-events: none;
+        }
+
+        .filter-tags-cluster {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-pill {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 210, 255, 0.25);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            user-select: none;
+        }
+        .filter-pill:hover { border-color: var(--primary-color); color: #fff; }
+        .filter-pill.active {
+            background: linear-gradient(135deg, #0055ff, #00d2ff);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 0 14px var(--primary-glow);
+        }
+
+        .table-viewport {
+            max-height: 440px;
+            overflow-y: auto;
+            overflow-x: auto;
+            border: 1px solid rgba(0, 210, 255, 0.25);
+            border-radius: var(--radius-md);
+            background: rgba(2, 6, 18, 0.85);
+            margin-bottom: 20px;
+        }
+
+        .sovereign-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+        .sovereign-table th {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: linear-gradient(180deg, #0a1b3f, #030a1b);
+            color: var(--accent-cyan);
+            padding: 13px 15px;
+            font-weight: 900;
+            border-bottom: 2px solid var(--primary-color);
+            white-space: nowrap;
+        }
+        .sovereign-table td {
+            padding: 11px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            color: #e2e8f0;
+            vertical-align: middle;
+        }
+        .sovereign-table tbody tr:hover td { background: rgba(0, 210, 255, 0.08); }
+
+        .id-col { width: 50px; text-align: center; font-weight: 900; color: var(--accent-cyan); }
+        .code-col { font-family: monospace; font-weight: 900; color: #38bdf8; white-space: nowrap; }
+        .name-col { font-weight: 800; color: #ffffff; min-width: 220px; }
+
+        .badge-track {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+        .track-med { background: rgba(16, 185, 129, 0.18); border: 1px solid #10b981; color: #34d399; }
+        .track-eng { background: rgba(59, 130, 246, 0.18); border: 1px solid #3b82f6; color: #60a5fa; }
+        .track-bus { background: rgba(245, 158, 11, 0.18); border: 1px solid #f59e0b; color: #fbbf24; }
+        .track-art { background: rgba(168, 85, 247, 0.18); border: 1px solid #a855f7; color: #c084fc; }
+        .track-none { background: rgba(239, 68, 68, 0.12); border: 1px dashed rgba(239, 68, 68, 0.4); color: #fca5a5; }
+
+        .badge-subject {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .badge-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.76rem;
+            font-weight: 800;
+        }
+        .status-ok { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .status-wait { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
 
         .btn-edit-inline {
             background: rgba(0, 210, 255, 0.15);
             border: 1px solid var(--primary-color);
             color: #fff;
-            padding: 4px 8px;
+            padding: 5px 10px;
             border-radius: 6px;
             font-size: 0.76rem;
             font-weight: 700;
             cursor: pointer;
             margin-left: 4px;
+            transition: var(--transition);
         }
         .btn-edit-inline:hover { background: var(--primary-color); color: #010612; }
 
@@ -1041,11 +1043,12 @@
             background: rgba(239, 68, 68, 0.15);
             border: 1px solid var(--danger);
             color: #fca5a5;
-            padding: 4px 8px;
+            padding: 5px 10px;
             border-radius: 6px;
             font-size: 0.76rem;
             font-weight: 700;
             cursor: pointer;
+            transition: var(--transition);
         }
         .btn-delete-inline:hover { background: var(--danger); color: #fff; }
 
@@ -1109,50 +1112,203 @@
             to { transform: translateX(0); opacity: 1; }
         }
 
+        /* حاوية الطباعة الخاصة لضبط صفحتين إلزامياً */
+        #dedicatedPrintSection {
+            display: none;
+        }
+
         @media print {
-            body {
+            @page {
+                size: A4 portrait;
+                margin: 8mm 10mm 8mm 10mm;
+            }
+            html, body {
+                width: 100% !important;
+                height: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
                 background: #ffffff !important;
                 color: #000000 !important;
                 font-family: 'Cairo', Arial, sans-serif !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
-            .ambient-glow, .laser-border-box, .input-panel, .royal-header, 
-            .footer-wrapper, .modal-screen, .roster-actions-bar, .btn-table-fill,
-            .live-kpis-grid, .modal-close, .header-tools, #toastContainer {
-                display: none !important;
+
+            /* إخفاء واجهات الشاشة بالكامل أثناء الطباعة */
+            body * {
+                visibility: hidden !important;
             }
-            .main-wrapper { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
-            .workspace-split { display: block !important; }
-            .roster-panel { border: none !important; box-shadow: none !important; background: transparent !important; padding: 0 !important; }
-            .table-viewport { border: 1px solid #000 !important; background: transparent !important; }
-            .sovereign-table { font-size: 9.5pt !important; color: #000 !important; }
-            .sovereign-table th { background: #f1f5f9 !important; color: #000 !important; border: 1px solid #000 !important; }
-            .sovereign-table td { color: #000 !important; border: 1px solid #ccc !important; }
-            .badge-track, .badge-subject, .badge-status { border: 1px solid #555 !important; background: transparent !important; color: #000 !important; }
+
+            /* إظهار حاوية الطباعة المصممة بدقة صفحتين */
+            #dedicatedPrintSection, #dedicatedPrintSection * {
+                visibility: visible !important;
+            }
+
+            #dedicatedPrintSection {
+                position: absolute !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 100% !important;
+                display: block !important;
+                background: #ffffff !important;
+            }
+
+            /* حاوية كل صفحة من الصفحتين */
+            .print-page-box {
+                width: 100% !important;
+                height: 279mm !important;
+                max-height: 279mm !important;
+                box-sizing: border-box !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                page-break-after: always !important;
+                break-after: page !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                padding: 2mm 0 !important;
+            }
+
+            .print-page-box:last-child {
+                page-break-after: auto !important;
+                break-after: auto !important;
+            }
+
             .print-official-header {
                 display: block !important;
-                text-align: center;
-                margin-bottom: 20px;
-                border-bottom: 2px solid #000;
-                padding-bottom: 12px;
+                text-align: center !important;
+                border-bottom: 2px solid #000000 !important;
+                padding-bottom: 6px !important;
+                margin-bottom: 6px !important;
             }
-            .print-signatures {
+
+            .print-official-header .gov-title {
+                font-size: 11pt !important;
+                font-weight: 800 !important;
+                line-height: 1.3 !important;
+            }
+
+            .print-official-header .school-title {
+                font-size: 12.5pt !important;
+                font-weight: 900 !important;
+                color: #000 !important;
+                line-height: 1.3 !important;
+            }
+
+            .print-official-header .report-title-badge {
+                display: inline-block !important;
+                background: #f1f5f9 !important;
+                border: 1.5px solid #000000 !important;
+                padding: 3px 18px !important;
+                border-radius: 4px !important;
+                font-size: 10.5pt !important;
+                font-weight: 900 !important;
+                margin-top: 4px !important;
+            }
+
+            .print-page-subinfo {
                 display: flex !important;
-                justify-content: space-around;
-                margin-top: 40px;
-                page-break-inside: avoid;
+                justify-content: space-between !important;
+                align-items: center !important;
+                font-size: 8.5pt !important;
+                font-weight: 800 !important;
+                margin: 4px 0 !important;
+                padding: 0 4px !important;
+            }
+
+            .print-table {
+                width: 100% !important;
+                border-collapse: collapse !important;
+                margin-top: 2px !important;
+                flex: 1 !important;
+            }
+
+            .print-table th, .print-table td {
+                border: 1px solid #000000 !important;
+                padding: 3.2px 4px !important;
+                font-size: 8.5pt !important;
+                line-height: 1.15 !important;
+                text-align: center !important;
+                color: #000000 !important;
+            }
+
+            .print-table th {
+                background: #e2e8f0 !important;
+                font-weight: 900 !important;
+            }
+
+            .print-table td.name-td {
+                text-align: right !important;
+                font-weight: 800 !important;
+                padding-right: 6px !important;
+                font-size: 8.5pt !important;
+            }
+
+            .print-table td.code-td {
+                font-family: monospace !important;
+                font-weight: 800 !important;
+                font-size: 8.5pt !important;
+            }
+
+            /* كتلة التوقيعات أسفل كل ورقة */
+            .print-signatures-footer {
+                display: block !important;
+                margin-top: 4px !important;
+                padding-top: 5px !important;
+                border-top: 1.5px solid #000000 !important;
+            }
+
+            .print-signatures-grid {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: flex-end !important;
+                text-align: center !important;
+                padding: 0 10px !important;
+            }
+
+            .print-sig-col {
+                width: 30% !important;
+            }
+
+            .print-sig-col .sig-title {
+                font-size: 9pt !important;
+                font-weight: 900 !important;
+            }
+
+            .print-sig-col .sig-name {
+                font-size: 9.5pt !important;
+                font-weight: 900 !important;
+                margin-top: 3px !important;
+            }
+
+            .print-sig-col .sig-dots {
+                font-size: 9pt !important;
+                margin-top: 18px !important;
+            }
+
+            .print-page-bottom-stamp-line {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                font-size: 7.8pt !important;
+                font-weight: 700 !important;
+                color: #333333 !important;
+                margin-top: 5px !important;
+                border-top: 1px dashed #999999 !important;
+                padding-top: 3px !important;
             }
         }
-        .print-official-header, .print-signatures { display: none; }
 
         @media (max-width: 1100px) {
-            .workspace-split { grid-template-columns: 1fr; }
-            .input-panel { position: static; }
+            .portal-workspace-grid { grid-template-columns: 1fr; }
         }
 
+        /* الفوتر الاحترافي المحمي بالكامل مع ألوان زاهية أزرق وسماوي */
         .footer-wrapper {
             padding: 70px 20px; 
-            background: rgba(2, 5, 10, 0.98); 
+            background: radial-gradient(circle at center, rgba(3, 16, 46, 0.98) 0%, rgba(1, 6, 18, 0.99) 100%);
             border-top: 3px solid var(--primary-color); 
+            box-shadow: 0 -10px 45px rgba(0, 210, 255, 0.35);
             display: flex; 
             justify-content: center; 
             align-items: center; 
@@ -1160,6 +1316,7 @@
             position: relative; 
             height: 480px; 
             flex-shrink: 0; 
+            overflow: hidden;
         }
 
         .circle-container { 
@@ -1176,11 +1333,24 @@
             top: 0; left: 0; width: 100%; height: 100%; 
             animation: rotateText 22s linear infinite; 
             z-index: 2; 
+            filter: drop-shadow(0 0 14px rgba(0, 210, 255, 0.65));
         }
         @keyframes rotateText { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        .text-path-style { font-size: 19px; fill: #ffffff; font-family: 'Arial Black', Impact, sans-serif; letter-spacing: 5px; }
-        .name-highlight { font-size: 26px; font-weight: 900; fill: var(--primary-color); letter-spacing: 4px; }
+        .text-path-style { 
+            font-size: 19px; 
+            fill: #ffffff; 
+            font-family: 'Arial Black', Impact, sans-serif; 
+            letter-spacing: 5px; 
+            text-shadow: 0 0 12px rgba(0, 210, 255, 0.85);
+        }
+        .name-highlight { 
+            font-size: 26px; 
+            font-weight: 900; 
+            fill: var(--primary-color); 
+            letter-spacing: 4px; 
+            filter: drop-shadow(0 0 12px var(--primary-glow));
+        }
 
         .center-prayer {
             position: relative; 
@@ -1207,12 +1377,8 @@
 
     <div id="toastContainer"></div>
 
-    <div class="print-official-header" id="printOfficialHeader">
-        <h2>جمهورية مصر العربية - وزارة التربية والتعليم والتعليم الفني</h2>
-        <h3>مديرية التربية والتعليم بالدقهلية - إدارة ميت غمر التعليمية</h3>
-        <h4>مدرسة محمد هاشم النقيب الثانوية المشتركة (فصول الخدمات)</h4>
-        <h3 style="margin-top: 10px;" id="printReportTitle">كشف رغبات وتوزيع مسارات الصف الثاني الثانوي - العام الدراسي 2026 / 2027 م</h3>
-    </div>
+    <!-- قسم الطباعة الإلزامي المنفصل (ورقتان بالضبط مع توقيعات كاملة أسفل كل ورقة) -->
+    <div id="dedicatedPrintSection"></div>
 
     <div class="main-wrapper">
 
@@ -1296,49 +1462,8 @@
             </section>
         </div>
 
-        <section class="live-kpis-grid">
-            <div class="kpi-box">
-                <div class="kpi-content">
-                    <div class="kpi-title">إجمالي طلاب فصول الخدمات</div>
-                    <div class="kpi-num" id="statTotalStudents">44</div>
-                </div>
-                <div class="kpi-icon">👥</div>
-            </div>
-
-            <div class="kpi-box">
-                <div class="kpi-content">
-                    <div class="kpi-title">الرغبات المسجلة بنجاح</div>
-                    <div class="kpi-num" style="color: var(--success);" id="statRegisteredCount">0</div>
-                </div>
-                <div class="kpi-icon" style="color: var(--success);">✅</div>
-            </div>
-
-            <div class="kpi-box">
-                <div class="kpi-content">
-                    <div class="kpi-title">متبقي لم يحددوا الرغبة</div>
-                    <div class="kpi-num" style="color: var(--warning);" id="statPendingCount">44</div>
-                </div>
-                <div class="kpi-icon" style="color: var(--warning);">⏳</div>
-            </div>
-
-            <div class="kpi-box">
-                <div class="kpi-content">
-                    <div class="kpi-title">المسار الأكثر طلباً</div>
-                    <div class="kpi-num" style="font-size: 1.35rem; color: var(--accent-cyan);" id="statTopTrack">-</div>
-                </div>
-                <div class="kpi-icon">🔥</div>
-            </div>
-
-            <div class="completion-bar-wrapper">
-                <div style="font-size: 0.95rem; font-weight: 800; color: #cbd5e1; white-space: nowrap;">نسبة الإنجاز العام للتسجيل:</div>
-                <div class="completion-progress">
-                    <div class="completion-fill" id="completionProgressBar"></div>
-                </div>
-                <div class="completion-text" id="completionProgressText">0% مكتمل</div>
-            </div>
-        </section>
-
-        <main class="workspace-split">
+        <!-- الشاشة الرئيسية مخصصة حصرياً لإدخال بيانات الطلاب والتسجيل -->
+        <main class="portal-workspace-grid">
 
             <aside class="input-panel">
                 <div class="panel-headline">
@@ -1399,55 +1524,64 @@
                 </form>
             </aside>
 
-            <section class="roster-panel">
-                <div class="roster-actions-bar">
-                    <div class="search-wrapper">
-                        <span class="search-icon-symbol">🔍</span>
-                        <input type="text" id="rosterSearchBox" placeholder="بحث باسم أو كود الطالب..." oninput="filterRosterTable(this.value)">
+            <!-- دليل توعوي وتوجيهي تفاعلي للمسارات بالشاشة الرئيسية -->
+            <section class="portal-guide-panel">
+                <div class="guide-header-box">
+                    <h3>📘 <span>دليل المسارات الأكاديمية وضوابط الاختيار الرسمية</span></h3>
+                    <p>العام الدراسي 2026 / 2027 م - مرحلة الثانوية العامة (فصول الخدمات بمدرسة محمد هاشم النقيب)</p>
+                </div>
+
+                <div class="tracks-guide-cards-grid">
+                    <div class="guide-track-card card-med">
+                        <h4>🩺 <span>مسار الطب والعلوم الصحية</span></h4>
+                        <ul>
+                            <li><span class="dot"></span> <strong>المواد التخصصية:</strong> فيزياء - رياضيات</li>
+                            <li><span class="dot"></span> <strong>الكليات المستهدفة:</strong> الطب البشري، طب الأسنان، الصيدلة، العلاج الطبيعي، العلوم الطبية.</li>
+                        </ul>
                     </div>
 
-                    <div class="filter-tags-cluster">
-                        <div class="filter-pill active" onclick="applyRosterFilter('all', this)">الكل (<span id="filterAllCount">0</span>)</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('registered', this)">المسجلين</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('pending', this)">غير المسجلين</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('الطب', this)">الطب</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('الهندسة', this)">الهندسة</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('أعمال', this)">الأعمال</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('أداب وفنون', this)">الآداب</div>
+                    <div class="guide-track-card card-eng">
+                        <h4>📐 <span>مسار الهندسة والتكنولوجيا</span></h4>
+                        <ul>
+                            <li><span class="dot"></span> <strong>المواد التخصصية:</strong> برمجة - كيمياء</li>
+                            <li><span class="dot"></span> <strong>الكليات المستهدفة:</strong> الهندسة، الحاسبات والذكاء الاصطناعي، التكنولوجيا التطبيقية.</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-track-card card-bus">
+                        <h4>💼 <span>مسار إدارة الأعمال والاقتصاد</span></h4>
+                        <ul>
+                            <li><span class="dot"></span> <strong>المواد التخصصية:</strong> محاسبة - أعمال</li>
+                            <li><span class="dot"></span> <strong>الكليات المستهدفة:</strong> كليات التجارة وإدارة الأعمال، الاقتصاد والعلوم السياسية، نظم المعلومات.</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-track-card card-art">
+                        <h4>🎨 <span>مسار الآداب والفنون والإنسانيات</span></h4>
+                        <ul>
+                            <li><span class="dot"></span> <strong>المواد التخصصية:</strong> علم نفس - لغة فرنسية</li>
+                            <li><span class="dot"></span> <strong>الكليات المستهدفة:</strong> الألسن، اللغات والترجمة، الإعلام، الآداب، التربية، الفنون الجميلة.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="table-viewport">
-                    <table class="sovereign-table" id="studentsMainRoster">
-                        <thead>
-                            <tr>
-                                <th class="id-col">م</th>
-                                <th>كود الطالب</th>
-                                <th>اسم الطالب</th>
-                                <th>المسار</th>
-                                <th>المادة المقررة</th>
-                                <th>حالة التسجيل</th>
-                                <th>إجراء</th>
-                            </tr>
-                        </thead>
-                        <tbody id="studentsRosterBody">
-                        </tbody>
-                    </table>
+                <div class="privacy-safe-notice">
+                    <div class="icon">🛡️</div>
+                    <div class="txt">
+                        <h5>إجراءات الخصوصية وسرية رغبات الطلاب</h5>
+                        <p>
+                            التزاماً بالتعليمات الإدارية، تم تشفير وحجب كشوفات الطلاب المسجلة من الشاشة الرئيسية، وتأمينها داخل <strong>لوحة التحكم الإدارية</strong> المخصصة للمسئولين فقط عبر كلمة المرور المصرح بها.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="print-signatures">
-                    <div style="text-align: center;">
-                        <strong>مسئول وحدة المعلومات بالمدرسة</strong>
-                        <p style="margin-top: 35px;">............................</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <strong>وكيل المدرسة لشئون الطلاب</strong>
-                        <p style="font-weight: 900; margin-top: 5px;">أ/ عبد الحميد عثمان</p>
-                        <p style="margin-top: 15px;">............................</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <strong>يعتمد،، مدير المدرسة</strong>
-                        <p style="margin-top: 35px;">............................</p>
+                <div class="official-speech-card" style="margin-bottom: 0;">
+                    <p>
+                        « أبنائي الطلاب وأولياء الأمور، تسجيل الرغبة يتم لمرة واحدة معتمدة بكود الطالب الموحد، ويُرجى تحري الدقة الكاملة عند اختيار المسار والمادة التخصصية المقررة قبل الضغط على زر الاعتماد الرسمي. »
+                    </p>
+                    <div class="official-speech-signature">
+                        أ/ عبد الحميد عثمان
+                        <small style="display:block; color:var(--text-muted);">وكيل المدرسة لشئون الطلاب</small>
                     </div>
                 </div>
             </section>
@@ -1512,6 +1646,7 @@
         </div>
     </div>
 
+    <!-- لوحة التحكم الإدارية: تحتضن جدول بيانات الطلاب والعمليات الإحصائية والإدارية -->
     <div class="modal-screen" id="adminDashboardModal">
         <div class="modal-box admin-dashboard-box">
             <button class="modal-close" onclick="closeAdminDashboardModal()">✕</button>
@@ -1522,12 +1657,17 @@
                         <span>📊</span> لوحة القيادة الإحصائية والإدارة المتقدمة
                     </h2>
                     <div style="color: var(--accent-cyan); font-size: 0.86rem; font-weight: 700;">
-                        إدارة ميت غمر التعليمية | فصول الخدمات 2026 / 2027 م
+                        إدارة ميت غمر التعليمية | مدرسة محمد هاشم النقيب الثانوية المشتركة (فصول الخدمات 2026 / 2027 م)
                     </div>
                 </div>
-                <button class="tool-btn btn-glass" style="padding: 6px 12px; font-size: 0.82rem;" onclick="logoutAdminDashboard()">
-                    <span>🚪</span> خروج
-                </button>
+                <div style="display: flex; gap: 8px;">
+                    <button class="tool-btn btn-admin-access" style="padding: 7px 14px; font-size: 0.84rem;" onclick="openNewStudentModal()">
+                        <span>➕</span> إضافة طالب جديد
+                    </button>
+                    <button class="tool-btn btn-glass" style="padding: 7px 14px; font-size: 0.84rem;" onclick="logoutAdminDashboard()">
+                        <span>🚪</span> إغلاق اللوحة
+                    </button>
+                </div>
             </div>
 
             <div class="cloud-sync-config-box">
@@ -1594,30 +1734,42 @@
                 </div>
             </div>
 
+            <!-- جدول الطلاب داخل لوحة التحكم مع كافة الفلاتر والبحث -->
             <div style="margin-bottom: 24px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-                    <h4 style="font-size: 1.05rem; color: var(--accent-cyan);">
-                        <span>🔒</span> جدول الإدارة الخاص (تعديل - حذف - إضافة طلاب)
-                    </h4>
-                    <button class="tool-btn btn-admin-access" style="padding: 6px 14px; font-size: 0.82rem;" onclick="openNewStudentModal()">
-                        <span>➕</span> إضافة طالب جديد
-                    </button>
+                <div class="admin-roster-controls">
+                    <div class="search-wrapper">
+                        <span class="search-icon-symbol">🔍</span>
+                        <input type="text" id="rosterSearchBox" placeholder="بحث باسم، كود، أو هاتف الطالب..." oninput="filterRosterTable(this.value)">
+                    </div>
+
+                    <div class="filter-tags-cluster">
+                        <div class="filter-pill active" onclick="applyRosterFilter('all', this)">الكل (<span id="filterAllCount">0</span>)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('registered', this)">المسجلين (<span id="filterRegCount">0</span>)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('pending', this)">غير المسجلين (<span id="filterPendCount">0</span>)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('الطب', this)">الطب</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('الهندسة', this)">الهندسة</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('أعمال', this)">الأعمال</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('أداب وفنون', this)">الآداب</div>
+                    </div>
                 </div>
-                <div class="private-table-container">
-                    <table class="sovereign-table" style="font-size: 0.86rem;">
+
+                <div class="table-viewport">
+                    <table class="sovereign-table" id="studentsMainRoster">
                         <thead>
                             <tr>
-                                <th style="width: 35px;">م</th>
+                                <th class="id-col">م</th>
                                 <th>كود الطالب</th>
                                 <th>اسم الطالب</th>
-                                <th>المسار والمادة</th>
-                                <th>العنوان</th>
-                                <th>الهاتف</th>
-                                <th>التاريخ</th>
-                                <th style="text-align: center; width: 140px;">إدارة وتحكم</th>
+                                <th>المسار المحدد</th>
+                                <th>المادة المقررة</th>
+                                <th>العنوان ومحل الإقامة</th>
+                                <th>رقم الهاتف</th>
+                                <th>حالة التسجيل</th>
+                                <th>تاريخ الاعتماد</th>
+                                <th style="text-align: center; min-width: 140px;">تحكم وإجراء</th>
                             </tr>
                         </thead>
-                        <tbody id="dashPrivateDataTableBody">
+                        <tbody id="studentsRosterBody">
                         </tbody>
                     </table>
                 </div>
@@ -1632,11 +1784,17 @@
             </div>
 
             <div class="admin-command-bar">
+                <button class="tool-btn btn-admin-access" onclick="printOfficialRoster()">
+                    <span>🖨️</span> طباعة الكشف العام (ورقتان رسميتان فقط 📜)
+                </button>
+                <button class="tool-btn btn-glass" onclick="printLateStudentsReport()">
+                    <span>⚠️</span> طباعة كشف المتأخرين
+                </button>
                 <button class="tool-btn btn-admin-access" onclick="exportDataExcel()">
                     <span>📊</span> تصدير Excel / CSV
                 </button>
                 <label class="tool-btn btn-glass" style="margin: 0; cursor: pointer;">
-                    <span>📥</span> استيراد ملف CSV / Excel
+                    <span>📥</span> استيراد CSV / Excel
                     <input type="file" id="csvUploadInput" accept=".csv" style="display: none;" onchange="importCSVFile(event)">
                 </label>
                 <button class="tool-btn btn-glass" onclick="backupJSONExport()">
@@ -1646,12 +1804,6 @@
                     <span>📥</span> استيراد نسخة JSON
                     <input type="file" id="jsonUploadInput" accept=".json" style="display: none;" onchange="restoreJSONBackup(event)">
                 </label>
-                <button class="tool-btn btn-glass" onclick="printOfficialRoster()">
-                    <span>🖨️</span> طباعة الكشف العام
-                </button>
-                <button class="tool-btn btn-glass" onclick="printLateStudentsReport()">
-                    <span>⚠️</span> طباعة كشف المتأخرين
-                </button>
                 <button class="tool-btn btn-glass" style="color: #fca5a5; border-color: rgba(239, 68, 68, 0.4);" onclick="resetAllDataFactory()">
                     <span>🔄</span> إعادة ضبط المنظومة
                 </button>
@@ -1763,6 +1915,7 @@
         </div>
     </div>
 
+    <!-- الفوتر المعتمد المحمي بالكامل مع الألوان الزاهية للأزرق والسماوي النيون -->
     <div class="footer-wrapper">
         <div class="circle-container">
             <svg viewBox="0 0 500 500" class="rotating-svg">
@@ -2043,7 +2196,8 @@
                 });
             }
 
-            document.getElementById('dashLastSyncTimeLabel').textContent = `آخر حفظ: ${new Date().toLocaleTimeString('ar-EG')}`;
+            const label = document.getElementById('dashLastSyncTimeLabel');
+            if (label) label.textContent = `آخر حفظ: ${new Date().toLocaleTimeString('ar-EG')}`;
 
             if (triggerCloud) {
                 updateSyncStatusUI('syncing');
@@ -2182,6 +2336,7 @@
             const text = document.getElementById('liveSyncStatusText');
             const health = document.getElementById('dashSyncHealthText');
 
+            if (!dot || !text) return;
             dot.className = 'sync-dot';
             if (status === 'online') {
                 dot.style.background = '#10b981';
@@ -2415,10 +2570,21 @@
 
         function renderRosterTable() {
             const tbody = document.getElementById('studentsRosterBody');
+            if (!tbody) return;
             tbody.innerHTML = '';
 
             const activeStudents = studentsRegistry.filter(s => !s.isDeleted);
-            document.getElementById('filterAllCount').textContent = activeStudents.length;
+            
+            const totalCount = activeStudents.length;
+            const regCount = activeStudents.filter(s => s.isRegistered).length;
+            const pendCount = totalCount - regCount;
+
+            const allCountEl = document.getElementById('filterAllCount');
+            const regCountEl = document.getElementById('filterRegCount');
+            const pendCountEl = document.getElementById('filterPendCount');
+            if (allCountEl) allCountEl.textContent = totalCount;
+            if (regCountEl) regCountEl.textContent = regCount;
+            if (pendCountEl) pendCountEl.textContent = pendCount;
 
             const filtered = activeStudents.filter(st => {
                 if (activeFilter === 'registered' && !st.isRegistered) return false;
@@ -2427,13 +2593,17 @@
 
                 if (activeSearchTerm) {
                     const q = activeSearchTerm.toLowerCase();
-                    return st.name.toLowerCase().includes(q) || st.code.includes(q) || (st.track || '').toLowerCase().includes(q);
+                    return st.name.toLowerCase().includes(q) || 
+                           st.code.includes(q) || 
+                           (st.phone || '').includes(q) || 
+                           (st.track || '').toLowerCase().includes(q) ||
+                           (st.address || '').toLowerCase().includes(q);
                 }
                 return true;
             });
 
             if (filtered.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 25px; color: var(--text-muted);">🔍 لا توجد نتائج مطابقة</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; padding: 25px; color: var(--text-muted);">🔍 لا توجد نتائج مطابقة للبحث أو الفلتر المحدد</td></tr>`;
                 return;
             }
 
@@ -2459,23 +2629,17 @@
                     <td class="name-col">${st.name}</td>
                     <td>${trackBadge}</td>
                     <td>${subjectBadge}</td>
+                    <td style="font-size: 0.82rem; color: #cbd5e1;">${st.address || '-'}</td>
+                    <td style="font-family: monospace; font-size: 0.82rem; color: var(--accent-cyan);">${st.phone || '-'}</td>
                     <td>${statusBadge}</td>
-                    <td>
-                        <button class="btn-table-fill" onclick="quickFillStudent('${st.code}')">
-                            ${st.isRegistered ? 'تعديل' : 'تسجيل'}
-                        </button>
+                    <td style="font-size: 0.76rem; color: #94a3b8;">${st.registrationDate || '-'}</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <button class="btn-edit-inline" onclick="openAdminEditStudentModal('${st.code}')">تعديل ✏️</button>
+                        <button class="btn-delete-inline" onclick="deleteStudentAdmin('${st.code}')">حذف 🗑️</button>
                     </td>
                 `;
                 tbody.appendChild(tr);
             });
-        }
-
-        function quickFillStudent(code) {
-            triggerSoundEffect('click');
-            const codeInput = document.getElementById('inputStudentCode');
-            codeInput.value = code;
-            handleCodeVerification(code);
-            window.scrollTo({ top: 380, behavior: 'smooth' });
         }
 
         function filterRosterTable(query) {
@@ -2498,17 +2662,17 @@
             const pend = total - reg;
             const pct = total > 0 ? Math.round((reg / total) * 100) : 0;
 
-            document.getElementById('statTotalStudents').textContent = total;
-            document.getElementById('dashTotalStudentsCount').textContent = total;
-            document.getElementById('statRegisteredCount').textContent = reg;
-            document.getElementById('statPendingCount').textContent = pend;
-            document.getElementById('dashCountRegistered').textContent = reg;
-            document.getElementById('dashPercentRegistered').textContent = `${pct}% من الإجمالي`;
-            document.getElementById('dashCountPending').textContent = pend;
-            document.getElementById('panelCapacityTag').textContent = `🔒 فصول الخدمات (${total} طالباً)`;
+            const dashTotal = document.getElementById('dashTotalStudentsCount');
+            const dashReg = document.getElementById('dashCountRegistered');
+            const dashPct = document.getElementById('dashPercentRegistered');
+            const dashPend = document.getElementById('dashCountPending');
+            const panelCap = document.getElementById('panelCapacityTag');
 
-            document.getElementById('completionProgressBar').style.width = `${pct}%`;
-            document.getElementById('completionProgressText').textContent = `${pct}% مكتمل (${reg}/${total})`;
+            if (dashTotal) dashTotal.textContent = total;
+            if (dashReg) dashReg.textContent = reg;
+            if (dashPct) dashPct.textContent = `${pct}% من الإجمالي`;
+            if (dashPend) dashPend.textContent = pend;
+            if (panelCap) panelCap.textContent = `🔒 فصول الخدمات (${total} طالباً)`;
 
             const tally = { "الطب": 0, "الهندسة": 0, "أعمال": 0, "أداب وفنون": 0 };
             let medPhys = 0, medMath = 0, engProg = 0, engChem = 0, busAcc = 0, busMgt = 0, artPsych = 0, artFrench = 0;
@@ -2523,46 +2687,21 @@
                 }
             });
 
-            let top = "-";
-            let max = -1;
-            for (const [k, v] of Object.entries(tally)) {
-                if (v > max && v > 0) { max = v; top = `${k} (${v})`; }
+            const tMed = document.getElementById('dashTotalMed');
+            if (tMed) {
+                tMed.textContent = tally['الطب'];
+                document.getElementById('dashSubMedPhys').textContent = medPhys;
+                document.getElementById('dashSubMedMath').textContent = medMath;
+                document.getElementById('dashTotalEng').textContent = tally['الهندسة'];
+                document.getElementById('dashSubEngProg').textContent = engProg;
+                document.getElementById('dashSubEngChem').textContent = engChem;
+                document.getElementById('dashTotalBus').textContent = tally['أعمال'];
+                document.getElementById('dashSubBusAcc').textContent = busAcc;
+                document.getElementById('dashSubBusMgt').textContent = busMgt;
+                document.getElementById('dashTotalArt').textContent = tally['أداب وفنون'];
+                document.getElementById('dashSubArtPsych').textContent = artPsych;
+                document.getElementById('dashSubArtFrench').textContent = artFrench;
             }
-            document.getElementById('statTopTrack').textContent = top;
-
-            document.getElementById('dashTotalMed').textContent = tally['الطب'];
-            document.getElementById('dashSubMedPhys').textContent = medPhys;
-            document.getElementById('dashSubMedMath').textContent = medMath;
-            document.getElementById('dashTotalEng').textContent = tally['الهندسة'];
-            document.getElementById('dashSubEngProg').textContent = engProg;
-            document.getElementById('dashSubEngChem').textContent = engChem;
-            document.getElementById('dashTotalBus').textContent = tally['أعمال'];
-            document.getElementById('dashSubBusAcc').textContent = busAcc;
-            document.getElementById('dashSubBusMgt').textContent = busMgt;
-            document.getElementById('dashTotalArt').textContent = tally['أداب وفنون'];
-            document.getElementById('dashSubArtPsych').textContent = artPsych;
-            document.getElementById('dashSubArtFrench').textContent = artFrench;
-
-            const privateTbody = document.getElementById('dashPrivateDataTableBody');
-            privateTbody.innerHTML = '';
-
-            activeStudents.forEach(s => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td style="text-align: center; font-weight: bold; color: var(--accent-cyan);">${s.id}</td>
-                    <td style="font-family: monospace; color: #38bdf8;">${s.code}</td>
-                    <td style="font-weight: 800; color: #fff;">${s.name}</td>
-                    <td>${s.isRegistered ? `${s.track} - ${s.subject}` : '<span style="color:var(--warning);">قيد الانتظار</span>'}</td>
-                    <td style="color: #cbd5e1;">${s.address || '-'}</td>
-                    <td style="font-family: monospace; color: var(--accent-cyan);">${s.phone || '-'}</td>
-                    <td style="font-size: 0.78rem; color: #94a3b8;">${s.registrationDate || '-'}</td>
-                    <td style="text-align: center;">
-                        <button class="btn-edit-inline" onclick="openAdminEditStudentModal('${s.code}')">تعديل ✏️</button>
-                        <button class="btn-delete-inline" onclick="deleteStudentAdmin('${s.code}')">حذف 🗑️</button>
-                    </td>
-                `;
-                privateTbody.appendChild(tr);
-            });
 
             renderAuditLogsUI();
         }
@@ -2590,6 +2729,7 @@
                 triggerSoundEffect('success');
                 closeAdminPasswordModal();
                 updateAllMetrics();
+                renderRosterTable();
                 document.getElementById('adminDashboardModal').classList.add('active');
                 logAuditAction('دخول لوحة التحكم', 'تسجيل دخول ناجح للإدارة', 'Admin');
             } else {
@@ -2738,27 +2878,114 @@
             showToast('تمت إضافة الطالب وحفظه بنجاح!', '✅');
         }
 
+        /* توليد كود الطباعة المنظم: صفحتان فقط إلزامياً مع توقيعات أسفل كل ورقة */
+        function generateOfficialTwoPagePrint(studentsList, customReportTitle = 'كشف رغبات وتوزيع مسارات الصف الثاني الثانوي - العام الدراسي 2026 / 2027 م') {
+            const printSec = document.getElementById('dedicatedPrintSection');
+            printSec.innerHTML = '';
+
+            const list = [...studentsList];
+            const halfIndex = Math.ceil(list.length / 2);
+            const page1List = list.slice(0, halfIndex);
+            const page2List = list.slice(halfIndex);
+
+            function buildPageMarkup(pageStudents, pageNumber, totalPages, fromNum, toNum) {
+                const rowsMarkup = pageStudents.map(s => `
+                    <tr>
+                        <td style="font-weight: 900; width: 32px;">${s.id}</td>
+                        <td class="code-td" style="width: 85px;">${s.code}</td>
+                        <td class="name-td">${s.name}</td>
+                        <td style="font-weight: 800; width: 85px;">${s.track || 'لم يحدد'}</td>
+                        <td style="font-weight: 800; width: 75px;">${s.subject || '-'}</td>
+                        <td style="font-size: 8pt; width: 75px;">${s.isRegistered ? 'مسجل ✅' : 'قيد الانتظار ⏳'}</td>
+                        <td style="width: 100px;"></td>
+                    </tr>
+                `).join('');
+
+                return `
+                    <div class="print-page-box">
+                        <div>
+                            <div class="print-official-header">
+                                <div class="gov-title">جمهورية مصر العربية - وزارة التربية والتعليم والتعليم الفني</div>
+                                <div class="gov-title">مديرية التربية والتعليم بالدقهلية - إدارة ميت غمر التعليمية</div>
+                                <div class="school-title">مدرسة محمد هاشم النقيب الثانوية المشتركة (فصول الخدمات)</div>
+                                <div class="report-title-badge">${customReportTitle}</div>
+                            </div>
+                            <div class="print-page-subinfo">
+                                <span>📋 توزيع كشف الطلاب: من مسلسل (${fromNum}) إلى (${toNum})</span>
+                                <span>العام الدراسي: 2026 / 2027 م</span>
+                                <span>صفحة رقم: [ ${pageNumber} من ${totalPages} ]</span>
+                            </div>
+                        </div>
+
+                        <table class="print-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 32px;">م</th>
+                                    <th style="width: 85px;">كود الطالب</th>
+                                    <th>اسم الطالب الرباعي / الخماسي</th>
+                                    <th style="width: 85px;">المسار المحدد</th>
+                                    <th style="width: 75px;">المادة المقررة</th>
+                                    <th style="width: 75px;">حالة التسجيل</th>
+                                    <th style="width: 100px;">توقيع الطالب</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${rowsMarkup}
+                            </tbody>
+                        </table>
+
+                        <div class="print-signatures-footer">
+                            <div class="print-signatures-grid">
+                                <div class="print-sig-col">
+                                    <div class="sig-title">مسئول الإحصاء والمعلومات</div>
+                                    <div class="sig-dots">...................................</div>
+                                </div>
+                                <div class="print-sig-col">
+                                    <div class="sig-title">وكيل المدرسة لشئون الطلاب</div>
+                                    <div class="sig-name">أ/ عبد الحميد عثمان</div>
+                                    <div class="sig-dots" style="margin-top: 6px;">...................................</div>
+                                </div>
+                                <div class="print-sig-col">
+                                    <div class="sig-title">يعتمد،، مدير عام المدرسة</div>
+                                    <div class="sig-dots">...................................</div>
+                                </div>
+                            </div>
+                            <div class="print-page-bottom-stamp-line">
+                                <span>ختم شعار الجمهورية / خاتم المدرسة</span>
+                                <span>تاريخ الطباعة المعتمد: ${new Date().toLocaleDateString('ar-EG')} - ${new Date().toLocaleTimeString('ar-EG')}</span>
+                                <span>المنظومة الإلكترونية لتنسيق المسارات | صفحة (${pageNumber} من ${totalPages})</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const page1HTML = buildPageMarkup(page1List, 1, 2, 1, page1List.length);
+            const page2HTML = buildPageMarkup(page2List, 2, 2, page1List.length + 1, list.length);
+
+            printSec.innerHTML = page1HTML + page2HTML;
+        }
+
         function printOfficialRoster() {
             triggerSoundEffect('click');
-            document.getElementById('printReportTitle').textContent = 'كشف رغبات وتوزيع مسارات الصف الثاني الثانوي - العام الدراسي 2026 / 2027 م';
-            window.print();
+            const activeStudents = studentsRegistry.filter(s => !s.isDeleted);
+            generateOfficialTwoPagePrint(activeStudents, 'كشف رغبات وتوزيع مسارات الصف الثاني الثانوي - العام الدراسي 2026 / 2027 م');
+            setTimeout(() => {
+                window.print();
+            }, 200);
         }
 
         function printLateStudentsReport() {
             triggerSoundEffect('click');
             const late = studentsRegistry.filter(s => !s.isDeleted && !s.isRegistered);
             if (late.length === 0) {
-                alert('الجميع سجلوا بنجاح! لا توجد كشوف متأخرين.');
+                alert('الجميع سجلوا بنجاح! لا توجد كشوف متأخرين حالياً.');
                 return;
             }
-            activeFilter = 'pending';
-            renderRosterTable();
-            document.getElementById('printReportTitle').textContent = `كشف الطلاب المتأخرين عن تسجيل الرغبات (${late.length} طالب)`;
-            window.print();
+            generateOfficialTwoPagePrint(late, `كشف الطلاب المتأخرين عن تسجيل الرغبات (${late.length} طالب)`);
             setTimeout(() => {
-                activeFilter = 'all';
-                renderRosterTable();
-            }, 1000);
+                window.print();
+            }, 200);
         }
 
         function printStudentReceipt() {
