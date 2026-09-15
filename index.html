@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -1273,22 +1273,22 @@
                     <div class="countdown-heading">⏱️ غلق باب التنسيق خلال:</div>
                     <div class="countdown-grid">
                         <div class="countdown-block">
-                            <div class="block-val" id="timerDays">02</div>
+                            <div class="block-val" id="timerDays">03</div>
                             <div class="block-lbl">يوم</div>
                         </div>
                         <span>:</span>
                         <div class="countdown-block">
-                            <div class="block-val" id="timerHours">18</div>
+                            <div class="block-val" id="timerHours">00</div>
                             <div class="block-lbl">ساعة</div>
                         </div>
                         <span>:</span>
                         <div class="countdown-block">
-                            <div class="block-val" id="timerMinutes">45</div>
+                            <div class="block-val" id="timerMinutes">00</div>
                             <div class="block-lbl">دقيقة</div>
                         </div>
                         <span>:</span>
                         <div class="countdown-block">
-                            <div class="block-val" id="timerSeconds">30</div>
+                            <div class="block-val" id="timerSeconds">00</div>
                             <div class="block-lbl">ثانية</div>
                         </div>
                     </div>
@@ -1961,17 +1961,25 @@
 
         function initCountdownTimer() {
             const end = new Date();
-            end.setDate(end.getDate() + 2);
-            end.setHours(end.getHours() + 18);
+            end.setDate(end.getDate() + 3);
 
-            setInterval(() => {
+            function updateCountdown() {
                 const diff = end - new Date();
-                if (diff <= 0) return;
+                if (diff <= 0) {
+                    document.getElementById('timerDays').textContent = "00";
+                    document.getElementById('timerHours').textContent = "00";
+                    document.getElementById('timerMinutes').textContent = "00";
+                    document.getElementById('timerSeconds').textContent = "00";
+                    return;
+                }
                 document.getElementById('timerDays').textContent = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
                 document.getElementById('timerHours').textContent = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
                 document.getElementById('timerMinutes').textContent = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
                 document.getElementById('timerSeconds').textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
-            }, 1000);
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         }
 
         function getCloudEndpoint() {
@@ -2883,4 +2891,3 @@
     </script>
 </body>
 </html>
-
