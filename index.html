@@ -50,6 +50,10 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        i {
+            font-style: normal;
+        }
+
         ::-webkit-scrollbar {
             width: 9px;
             height: 9px;
@@ -190,7 +194,7 @@
             gap: 12px;
         }
 
-        .header-titles h1 span {
+        .header-titles h1 b {
             color: var(--primary-color);
             background: linear-gradient(135deg, #00f0ff, #38bdf8);
             -webkit-background-clip: text;
@@ -207,18 +211,19 @@
             text-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
         }
 
-        .sub-creds span {
+        .sub-creds b {
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            font-weight: 800;
         }
 
-        .sub-creds span::after {
+        .sub-creds b::after {
             content: '•';
             margin-right: 12px;
             color: rgba(0, 240, 255, 0.45);
         }
-        .sub-creds span:last-child::after { content: ''; }
+        .sub-creds b:last-child::after { content: ''; }
 
         .header-tools {
             display: flex;
@@ -250,6 +255,7 @@
         }
 
         .sync-dot {
+            display: inline-block;
             width: 11px;
             height: 11px;
             border-radius: 50%;
@@ -450,6 +456,7 @@
 
         .countdown-grid {
             display: flex;
+            align-items: center;
             gap: 8px;
             font-family: monospace;
             font-size: 1.4rem;
@@ -481,7 +488,6 @@
             font-weight: 800;
         }
 
-        /* التنويه الإحصائي التفاعلي المباشر في الشاشة الرئيسية */
         .live-main-analytics-strip {
             background: linear-gradient(145deg, rgba(5, 19, 53, 0.96), rgba(2, 10, 30, 0.98));
             border: 1.8px solid var(--border-glow);
@@ -510,6 +516,7 @@
         }
 
         .pulse-beacon-dot {
+            display: inline-block;
             width: 13px;
             height: 13px;
             border-radius: 50%;
@@ -534,7 +541,7 @@
             gap: 8px;
         }
 
-        .strip-title-badge h2 span {
+        .strip-title-badge h2 b {
             color: var(--primary-color);
             background: linear-gradient(135deg, #00f0ff, #38bdf8);
             -webkit-background-clip: text;
@@ -650,7 +657,7 @@
             gap: 6px;
         }
 
-        .stat-metric-info .m-count span.unit {
+        .stat-metric-info .m-count small.unit {
             font-size: 0.78rem;
             color: var(--accent-cyan);
             font-weight: 700;
@@ -710,7 +717,7 @@
             gap: 10px;
             text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
         }
-        .panel-headline h2 span { 
+        .panel-headline h2 b { 
             color: var(--primary-color); 
             background: linear-gradient(135deg, #00f0ff, #38bdf8);
             -webkit-background-clip: text;
@@ -741,7 +748,7 @@
             margin-bottom: 8px;
             letter-spacing: 0.3px;
         }
-        .field-group label span.req { color: #f87171; margin-right: 4px; font-weight: 900; }
+        .field-group label strong.req { color: #f87171; margin-right: 4px; font-weight: 900; }
 
         .form-control {
             width: 100%;
@@ -956,7 +963,8 @@
             align-items: center;
             gap: 8px;
         }
-        .guide-track-card ul li span.dot {
+        .guide-track-card ul li i.dot {
+            display: inline-block;
             width: 6.5px;
             height: 6.5px;
             border-radius: 50%;
@@ -1572,6 +1580,82 @@
                 border-top: 1px dashed #999999 !important;
                 padding-top: 2px !important;
             }
+
+            /* تصميم إيصال الطالب الفردي للطباعة */
+            .student-receipt-print-card {
+                width: 100% !important;
+                max-width: 190mm !important;
+                margin: 10mm auto !important;
+                border: 2px solid #000000 !important;
+                border-radius: 6px !important;
+                padding: 8mm !important;
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+
+            .receipt-print-header {
+                text-align: center !important;
+                border-bottom: 2px solid #000000 !important;
+                padding-bottom: 8px !important;
+                margin-bottom: 12px !important;
+            }
+
+            .receipt-print-header h2 {
+                font-size: 13pt !important;
+                font-weight: 900 !important;
+            }
+
+            .receipt-print-header p {
+                font-size: 10pt !important;
+                font-weight: 700 !important;
+            }
+
+            .receipt-badge-title {
+                display: inline-block !important;
+                margin-top: 6px !important;
+                padding: 4px 16px !important;
+                border: 1.5px solid #000 !important;
+                background: #f1f5f9 !important;
+                font-size: 11pt !important;
+                font-weight: 900 !important;
+            }
+
+            .receipt-print-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+                margin: 14px 0 !important;
+                border: 1px solid #000 !important;
+                padding: 10px !important;
+            }
+
+            .receipt-field-row {
+                font-size: 9.5pt !important;
+                display: flex !important;
+                justify-content: space-between !important;
+                padding: 4px 6px !important;
+                border-bottom: 1px dotted #aaa !important;
+            }
+            .receipt-field-row b { font-weight: 900 !important; }
+
+            .receipt-pledge {
+                font-size: 8.8pt !important;
+                line-height: 1.6 !important;
+                border: 1px dashed #555 !important;
+                padding: 8px !important;
+                margin-top: 10px !important;
+                background: #fafafa !important;
+            }
+
+            .receipt-sig-grid {
+                display: flex !important;
+                justify-content: space-between !important;
+                margin-top: 18px !important;
+                text-align: center !important;
+            }
+            .receipt-sig-box { width: 30% !important; }
+            .receipt-sig-box .ttl { font-size: 9pt !important; font-weight: 900 !important; }
+            .receipt-sig-box .dts { margin-top: 22px !important; font-size: 8.5pt !important; }
         }
 
         @media (max-width: 1200px) {
@@ -1584,7 +1668,6 @@
             .portal-workspace-grid { grid-template-columns: 1fr; }
         }
 
-        /* كود الفوتر بالكامل دون تغيير مع ألوان زاهية أزرق وسماوي */
         .footer-wrapper {
             padding: 70px 20px; 
             background: radial-gradient(circle at center, rgba(3, 16, 46, 0.98) 0%, rgba(1, 6, 18, 0.99) 100%);
@@ -1625,13 +1708,6 @@
             letter-spacing: 5px; 
             text-shadow: 0 0 12px rgba(0, 210, 255, 0.85);
         }
-        .name-highlight { 
-            font-size: 26px; 
-            font-weight: 900; 
-            fill: var(--primary-color); 
-            letter-spacing: 4px; 
-            filter: drop-shadow(0 0 12px var(--primary-glow));
-        }
 
         .center-prayer {
             position: relative; 
@@ -1666,36 +1742,36 @@
             <div class="header-brand" title="انقر مرتين للوصول السريع للإدارة" ondblclick="openAdminGateModal()">
                 <div class="sovereign-badge" title="جمهورية مصر العربية">🦅</div>
                 <div class="header-titles">
-                    <h1>منظومة اختيار المسارات <span>الأكاديمية المتقدمة</span></h1>
+                    <h1>منظومة اختيار المسارات <b>الأكاديمية المتقدمة</b></h1>
                     <div class="sub-creds">
-                        <span>إدارة ميت غمر التعليمية</span>
-                        <span>مدرسة محمد هاشم النقيب الثانوية المشتركة</span>
-                        <span>فصول الخدمات - الصف الثاني الثانوي</span>
-                        <span>العام الدراسي 2026 / 2027 م</span>
+                        <b>إدارة ميت غمر التعليمية</b>
+                        <b>مدرسة محمد هاشم النقيب الثانوية المشتركة</b>
+                        <b>فصول الخدمات - الصف الثاني الثانوي</b>
+                        <b>العام الدراسي 2026 / 2027 م</b>
                     </div>
                 </div>
             </div>
 
             <div class="header-tools">
                 <div class="sync-badge-status" id="liveSyncStatusBadge" onclick="triggerManualSync()" title="اضغط لمزامنة يدوية فورية">
-                    <span class="sync-dot" id="liveSyncDot"></span>
-                    <span id="liveSyncStatusText">مزامنة سحابية نشطة</span>
+                    <i class="sync-dot" id="liveSyncDot"></i>
+                    <b id="liveSyncStatusText">مزامنة سحابية نشطة</b>
                 </div>
 
                 <div class="clock-pill">
-                    <span>🕒</span> <span id="realtimeClockDisplay">--:--:--</span>
+                    <i>🕒</i> <b id="realtimeClockDisplay">--:--:--</b>
                 </div>
 
                 <button class="tool-btn btn-glass" id="audioToggleBtn" onclick="toggleAppAudio()">
-                    <span id="audioIcon">🔊</span> الصوت: مفعل
+                    <i id="audioIcon">🔊</i> الصوت: مفعل
                 </button>
 
                 <button class="tool-btn btn-glass" onclick="toggleSmartboardFullScreen()">
-                    <span>⛶</span> ملء الشاشة
+                    <i>⛶</i> ملء الشاشة
                 </button>
 
                 <button class="tool-btn btn-admin-access" onclick="openAdminGateModal()" title="اختصار: F2">
-                    <span>🔐</span> لوحة التحكم الإدارية
+                    <i>🔐</i> لوحة التحكم الإدارية
                 </button>
             </div>
         </header>
@@ -1707,10 +1783,10 @@
                     <div class="banner-text">
                         <h3>
                             تنويه رسمي عاجل وهام ومشدد لجميع طلاب وطالبات فصول الخدمات
-                            <span class="urgent-tag">إلزامـي وفـوري</span>
+                            <strong class="urgent-tag">إلزامـي وفـوري</strong>
                         </h3>
                         <p>
-                            تهيب إدارة <strong>مدرسة محمد هاشم النقيب الثانوية المشتركة (إدارة ميت غمر التعليمية)</strong> بكافة طلاب وطالبات <strong>فصول الخدمات - الصف الثاني الثانوي للعام الدراسي 2026 / 2027 م</strong> بضرورة وسرعة إدخال كود الطالب الموحد وتأكيد البيانات وتحديد <strong>المسار التخصصي (الطب - الهندسة - الأعمال - أداب وفنون)</strong> والمادة المقررة فوراً قبل انقضاء المهلة الرسمية المحددة[span_0](start_span)[span_0](end_span).
+                            تهيب إدارة <strong>مدرسة محمد هاشم النقيب الثانوية المشتركة (إدارة ميت غمر التعليمية)</strong> بكافة طلاب وطالبات <strong>فصول الخدمات - الصف الثاني الثانوي للعام الدراسي 2026 / 2027 م</strong> بضرورة وسرعة إدخال كود الطالب الموحد وتأكيد البيانات وتحديد <strong>المسار التخصصي (الطب - الهندسة - الأعمال - أداب وفنون)</strong> والمادة المقررة فوراً قبل انقضاء المهلة الرسمية المحددة.
                         </p>
                     </div>
                 </div>
@@ -1722,17 +1798,17 @@
                             <div class="block-val" id="timerDays">03</div>
                             <div class="block-lbl">يوم</div>
                         </div>
-                        <span>:</span>
+                        <b>:</b>
                         <div class="countdown-block">
                             <div class="block-val" id="timerHours">00</div>
                             <div class="block-lbl">ساعة</div>
                         </div>
-                        <span>:</span>
+                        <b>:</b>
                         <div class="countdown-block">
                             <div class="block-val" id="timerMinutes">00</div>
                             <div class="block-lbl">دقيقة</div>
                         </div>
-                        <span>:</span>
+                        <b>:</b>
                         <div class="countdown-block">
                             <div class="block-val" id="timerSeconds">00</div>
                             <div class="block-lbl">ثانية</div>
@@ -1742,16 +1818,15 @@
             </section>
         </div>
 
-        <!-- التنويه الإحصائي التلقائي اللحظي في الشاشة الرئيسية -->
         <section class="live-main-analytics-strip">
             <div class="strip-top-row">
                 <div class="strip-title-badge">
-                    <span class="pulse-beacon-dot"></span>
-                    <h2>📊 مؤشرات التسجيل اللحظية <span>وتوزيع رغبات المسارات الأكاديمية</span></h2>
+                    <i class="pulse-beacon-dot"></i>
+                    <h2>📊 مؤشرات التسجيل اللحظية <b>وتوزيع رغبات المسارات الأكاديمية</b></h2>
                 </div>
                 <div class="strip-progress-overview">
-                    <span class="p-txt">مستوى اكتمال التسجيل العام:</span>
-                    <span class="p-val" id="mainProgressPercentage">0%</span>
+                    <strong class="p-txt">مستوى اكتمال التسجيل العام:</strong>
+                    <b class="p-val" id="mainProgressPercentage">0%</b>
                 </div>
             </div>
 
@@ -1764,8 +1839,8 @@
                     <div class="stat-icon-emblem">🎓</div>
                     <div class="stat-metric-info">
                         <div class="m-count">
-                            <span id="mainBannerRegisteredCount">0</span>
-                            <span class="unit">/ <span id="mainBannerTotalQuota">44</span> طالب</span>
+                            <b id="mainBannerRegisteredCount">0</b>
+                            <small class="unit">/ <b id="mainBannerTotalQuota">44</b> طالب</small>
                         </div>
                         <div class="m-title">إجمالي المسجلين بالنظام</div>
                     </div>
@@ -1775,8 +1850,8 @@
                     <div class="stat-icon-emblem">🩺</div>
                     <div class="stat-metric-info">
                         <div class="m-count">
-                            <span id="mainBannerMedCount" style="color: #34d399;">0</span>
-                            <span class="unit">طالب</span>
+                            <b id="mainBannerMedCount" style="color: #34d399;">0</b>
+                            <small class="unit">طالب</small>
                         </div>
                         <div class="m-title">مسار الطب والعلوم</div>
                     </div>
@@ -1786,8 +1861,8 @@
                     <div class="stat-icon-emblem">📐</div>
                     <div class="stat-metric-info">
                         <div class="m-count">
-                            <span id="mainBannerEngCount" style="color: #38bdf8;">0</span>
-                            <span class="unit">طالب</span>
+                            <b id="mainBannerEngCount" style="color: #38bdf8;">0</b>
+                            <small class="unit">طالب</small>
                         </div>
                         <div class="m-title">مسار الهندسة والتكنولوجيا</div>
                     </div>
@@ -1797,8 +1872,8 @@
                     <div class="stat-icon-emblem">💼</div>
                     <div class="stat-metric-info">
                         <div class="m-count">
-                            <span id="mainBannerBusCount" style="color: #fbbf24;">0</span>
-                            <span class="unit">طالب</span>
+                            <b id="mainBannerBusCount" style="color: #fbbf24;">0</b>
+                            <small class="unit">طالب</small>
                         </div>
                         <div class="m-title">مسار إدارة الأعمال</div>
                     </div>
@@ -1808,8 +1883,8 @@
                     <div class="stat-icon-emblem">🎨</div>
                     <div class="stat-metric-info">
                         <div class="m-count">
-                            <span id="mainBannerArtCount" style="color: #d8b4fe;">0</span>
-                            <span class="unit">طالب</span>
+                            <b id="mainBannerArtCount" style="color: #d8b4fe;">0</b>
+                            <small class="unit">طالب</small>
                         </div>
                         <div class="m-title">مسار الآداب والفنون</div>
                     </div>
@@ -1821,17 +1896,17 @@
 
             <aside class="input-panel">
                 <div class="panel-headline">
-                    <h2>✍️ <span>استمارة تسجيل الرغبات</span></h2>
-                    <span class="secure-lock-tag" id="panelCapacityTag">🔒 فصول الخدمات</span>
+                    <h2>✍️ <b>استمارة تسجيل الرغبات</b></h2>
+                    <div class="secure-lock-tag" id="panelCapacityTag">🔒 فصول الخدمات</div>
                 </div>
 
                 <form id="studentRegistrationForm" onsubmit="submitStudentForm(event)">
                     
                     <div class="field-group">
-                        <label for="inputStudentCode"><span class="req">*</span> كود الطالب الأكاديمي (9 أرقام):</label>
+                        <label for="inputStudentCode"><strong class="req">*</strong> كود الطالب الأكاديمي (9 أرقام):</label>
                         <input type="text" id="inputStudentCode" class="form-control" placeholder="اكتب كود الطالب للتحقق الفوري..." oninput="handleCodeVerification(this.value)" autocomplete="off" required>
                         <div class="code-verification-status" id="codeVerifyFeedback">
-                            <span class="status-idle">ℹ️ اكتب الكود المعتمد لظهور اسم الطالب تلقائياً.</span>
+                            <div class="status-idle">ℹ️ اكتب الكود المعتمد لظهور اسم الطالب تلقائياً.</div>
                         </div>
                     </div>
 
@@ -1841,17 +1916,17 @@
                     </div>
 
                     <div class="field-group">
-                        <label for="inputStudentAddress"><span class="req">*</span> العنوان ومحل الإقامة بالتفصيل:</label>
+                        <label for="inputStudentAddress"><strong class="req">*</strong> العنوان ومحل الإقامة بالتفصيل:</label>
                         <input type="text" id="inputStudentAddress" class="form-control" placeholder="مثال: ميت غمر - شارع المعاهدة" oninput="saveInputDraft()" disabled required>
                     </div>
 
                     <div class="field-group">
-                        <label for="inputStudentPhone"><span class="req">*</span> رقم هاتف الطالب / ولي الأمر:</label>
+                        <label for="inputStudentPhone"><strong class="req">*</strong> رقم هاتف الطالب / ولي الأمر:</label>
                         <input type="tel" id="inputStudentPhone" class="form-control" placeholder="010xxxxxxxx أو 011xxxxxxxx" pattern="^01[0125][0-9]{8}$" title="رقم مصري صحيح من 11 رقم" oninput="saveInputDraft()" disabled required>
                     </div>
 
                     <div class="field-group">
-                        <label for="selectStudentTrack"><span class="req">*</span> حدد المسار الأكاديمي المستهدف:</label>
+                        <label for="selectStudentTrack"><strong class="req">*</strong> حدد المسار الأكاديمي المستهدف:</label>
                         <select id="selectStudentTrack" class="form-control" onchange="handleTrackChange(this.value); saveInputDraft();" disabled required>
                             <option value="">-- اضغط لتحديد المسار --</option>
                             <option value="الطب">🩺 مسار الطب</option>
@@ -1862,14 +1937,14 @@
                     </div>
 
                     <div class="field-group">
-                        <label for="selectStudentSubject"><span class="req">*</span> المادة التخصصية المقررة:</label>
+                        <label for="selectStudentSubject"><strong class="req">*</strong> المادة التخصصية المقررة:</label>
                         <select id="selectStudentSubject" class="form-control" onchange="saveInputDraft()" disabled required>
                             <option value="">-- اختر المسار أولاً --</option>
                         </select>
                     </div>
 
                     <button type="submit" class="btn-submit-choice" id="submitFormBtn" disabled>
-                        <span>تأكيد واعتماد الرغبة رسمياً ✨</span>
+                        تأكيد واعتماد الرغبة رسمياً ✨
                     </button>
 
                     <button type="button" class="btn-clear-fields" onclick="resetFormState()">
@@ -1880,40 +1955,40 @@
 
             <section class="portal-guide-panel">
                 <div class="guide-header-box">
-                    <h3>📘 <span>دليل المسارات الأكاديمية وضوابط الاختيار الرسمية</span></h3>
-                    <p>العام الدراسي 2026 / 2027 م - مرحلة الثانوية العامة (فصول الخدمات بمدرسة محمد هاشم النقيب)[span_1](start_span)[span_1](end_span)</p>
+                    <h3>📘 <b>دليل المسارات الأكاديمية وضوابط الاختيار الرسمية</b></h3>
+                    <p>العام الدراسي 2026 / 2027 م - مرحلة الثانوية العامة (فصول الخدمات بمدرسة محمد هاشم النقيب)</p>
                 </div>
 
                 <div class="tracks-guide-cards-grid">
                     <div class="guide-track-card card-med">
-                        <h4>🩺 <span>مسار الطب والعلوم الصحية</span></h4>
+                        <h4>🩺 مسار الطب والعلوم الصحية</h4>
                         <ul>
-                            <li><span class="dot"></span> <strong>المواد التخصصية:</strong> فيزياء - رياضيات[span_2](start_span)[span_2](end_span)</li>
-                            <li><span class="dot"></span> <strong>الكليات المستهدفة:</strong> الطب البشري، طب الأسنان، الصيدلة، العلاج الطبيعي، العلوم الطبية.[span_3](start_span)[span_3](end_span)</li>
+                            <li><i class="dot"></i> <strong>المواد التخصصية:</strong> فيزياء - رياضيات</li>
+                            <li><i class="dot"></i> <strong>الكليات المستهدفة:</strong> الطب البشري، طب الأسنان، الصيدلة، العلاج الطبيعي، العلوم الطبية.</li>
                         </ul>
                     </div>
 
                     <div class="guide-track-card card-eng">
-                        <h4>📐 <span>مسار الهندسة والتكنولوجيا</span></h4>
+                        <h4>📐 مسار الهندسة والتكنولوجيا</h4>
                         <ul>
-                            <li><span class="dot"></span> <strong>المواد التخصصية:</strong> برمجة - كيمياء[span_4](start_span)[span_4](end_span)</li>
-                            <li><span class="dot"></span> <strong>الكليات المستهدفة:</strong> الهندسة، الحاسبات والذكاء الاصطناعي، التكنولوجيا التطبيقية.[span_5](start_span)[span_5](end_span)</li>
+                            <li><i class="dot"></i> <strong>المواد التخصصية:</strong> برمجة - كيمياء</li>
+                            <li><i class="dot"></i> <strong>الكليات المستهدفة:</strong> الهندسة، الحاسبات والذكاء الاصطناعي، التكنولوجيا التطبيقية.</li>
                         </ul>
                     </div>
 
                     <div class="guide-track-card card-bus">
-                        <h4>💼 <span>مسار إدارة الأعمال والاقتصاد</span></h4>
+                        <h4>💼 مسار إدارة الأعمال والاقتصاد</h4>
                         <ul>
-                            <li><span class="dot"></span> <strong>المواد التخصصية:</strong> محاسبة - أعمال[span_6](start_span)[span_6](end_span)</li>
-                            <li><span class="dot"></span> <strong>الكليات المستهدفة:</strong> كليات التجارة وإدارة الأعمال، الاقتصاد والعلوم السياسية، نظم المعلومات.[span_7](start_span)[span_7](end_span)</li>
+                            <li><i class="dot"></i> <strong>المواد التخصصية:</strong> محاسبة - أعمال</li>
+                            <li><i class="dot"></i> <strong>الكليات المستهدفة:</strong> كليات التجارة وإدارة الأعمال، الاقتصاد والعلوم السياسية، نظم المعلومات.</li>
                         </ul>
                     </div>
 
                     <div class="guide-track-card card-art">
-                        <h4>🎨 <span>مسار الآداب والفنون والإنسانيات</span></h4>
+                        <h4>🎨 مسار الآداب والفنون والإنسانيات</h4>
                         <ul>
-                            <li><span class="dot"></span> <strong>المواد التخصصية:</strong> علم نفس - لغة فرنسية[span_8](start_span)[span_8](end_span)</li>
-                            <li><span class="dot"></span> <strong>الكليات المستهدفة:</strong> الألسن، اللغات والترجمة، الإعلام، الآداب، التربية، الفنون الجميلة.[span_9](start_span)[span_9](end_span)</li>
+                            <li><i class="dot"></i> <strong>المواد التخصصية:</strong> علم نفس - لغة فرنسية</li>
+                            <li><i class="dot"></i> <strong>الكليات المستهدفة:</strong> الألسن، اللغات والترجمة، الإعلام، الآداب، التربية، الفنون الجميلة.</li>
                         </ul>
                     </div>
                 </div>
@@ -1923,17 +1998,17 @@
                     <div class="txt">
                         <h5>إجراءات الخصوصية وسرية رغبات الطلاب</h5>
                         <p>
-                            التزاماً بالتعليمات الإدارية، تم تشفير وحجب كشوفات الطلاب المسجلة من الشاشة الرئيسية، وتأمينها داخل <strong>لوحة التحكم الإدارية</strong> المخصصة للمسئولين فقط عبر كلمة المرور المصرح بها[span_10](start_span)[span_10](end_span).
+                            التزاماً بالتعليمات الإدارية، تم تشفير وحجب كشوفات الطلاب المسجلة من الشاشة الرئيسية، وتأمينها داخل <strong>لوحة التحكم الإدارية</strong> المخصصة للمسئولين فقط عبر كلمة المرور المصرح بها.
                         </p>
                     </div>
                 </div>
 
                 <div class="official-speech-card">
                     <p>
-                        « أبنائي الطلاب وأولياء الأمور، تسجيل الرغبة يتم لمرة واحدة معتمدة بكود الطالب الموحد، ويُرجى تحري الدقة الكاملة عند اختيار المسار والمادة التخصصية المقررة قبل الضغط على زر الاعتماد الرسمي. »[span_11](start_span)[span_11](end_span)
+                        « أبنائي الطلاب وأولياء الأمور، تسجيل الرغبة يتم لمرة واحدة معتمدة بكود الطالب الموحد، ويُرجى تحري الدقة الكاملة عند اختيار المسار والمادة التخصصية المقررة قبل الضغط على زر الاعتماد الرسمي. »
                     </p>
                     <div class="official-speech-signature">
-                        أ/ عبد الحميد عثمان[span_12](start_span)[span_12](end_span)
+                        أ/ عبد الحميد عثمان
                         <small style="display:block; color:var(--text-muted);">وكيل المدرسة لشئون الطلاب</small>
                     </div>
                 </div>
@@ -1952,10 +2027,10 @@
 
             <div class="official-speech-card">
                 <p>
-                    « أبنائي وبناتي طلاب وطالبات فصول الخدمات، يطيب لإدارة المدرسة أن تبارك لكم إتمام تحديد مساركم التخصصي للعام الدراسي 2026 / 2027 م متمنين لكم دوام الرفعة والتميز والتفوق العلمي. »[span_13](start_span)[span_13](end_span)
+                    « أبنائي وبناتي طلاب وطالبات فصول الخدمات، يطيب لإدارة المدرسة أن تبارك لكم إتمام تحديد مساركم التخصصي للعام الدراسي 2026 / 2027 م متمنين لكم دوام الرفعة والتميز والتفوق العلمي. »
                 </p>
                 <div class="official-speech-signature">
-                    عبد الحميد عثمان[span_14](start_span)[span_14](end_span)
+                    عبد الحميد عثمان
                     <small style="display:block; color:var(--text-muted);">وكيل المدرسة لشئون الطلاب</small>
                 </div>
             </div>
@@ -1965,13 +2040,13 @@
 
             <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
                 <button class="tool-btn btn-admin-access" onclick="printStudentReceipt()">
-                    <span>🖨️</span> طباعة إيصال الرغبة
+                    <i>🖨️</i> طباعة إيصال الرغبة
                 </button>
                 <button class="tool-btn btn-glass" onclick="shareStudentChoiceWhatsApp()">
-                    <span>📱</span> إرسال عبر واتساب
+                    <i>📱</i> إرسال عبر واتساب
                 </button>
                 <button class="tool-btn btn-glass" onclick="closeThankYouModal()">
-                    <span>✔️</span> إغلاق
+                    <i>✔️</i> إغلاق
                 </button>
             </div>
         </div>
@@ -1994,7 +2069,7 @@
             </div>
 
             <button class="btn-submit-choice" onclick="executeAdminLogin()" style="margin-top: 0;">
-                <span>تحقق ودخول 🔓</span>
+                تحقق ودخول 🔓
             </button>
         </div>
     </div>
@@ -2006,18 +2081,18 @@
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid rgba(0, 240, 255, 0.3); padding-bottom: 14px; margin-bottom: 20px;">
                 <div>
                     <h2 style="font-size: 1.4rem; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px;">
-                        <span>📊</span> لوحة القيادة الإحصائية والإدارة المتقدمة
+                        <i>📊</i> لوحة القيادة الإحصائية والإدارة المتقدمة
                     </h2>
                     <div style="color: var(--accent-cyan); font-size: 0.88rem; font-weight: 700;">
-                        إدارة ميت غمر التعليمية | مدرسة محمد هاشم النقيب الثانوية المشتركة (فصول الخدمات 2026 / 2027 م)[span_15](start_span)[span_15](end_span)
+                        إدارة ميت غمر التعليمية | مدرسة محمد هاشم النقيب الثانوية المشتركة (فصول الخدمات 2026 / 2027 م)
                     </div>
                 </div>
                 <div style="display: flex; gap: 8px;">
                     <button class="tool-btn btn-admin-access" style="padding: 8px 16px; font-size: 0.86rem;" onclick="openNewStudentModal()">
-                        <span>➕</span> إضافة طالب جديد
+                        <i>➕</i> إضافة طالب جديد
                     </button>
                     <button class="tool-btn btn-glass" style="padding: 8px 16px; font-size: 0.86rem;" onclick="logoutAdminDashboard()">
-                        <span>🚪</span> إغلاق اللوحة
+                        <i>🚪</i> إغلاق اللوحة
                     </button>
                 </div>
             </div>
@@ -2047,41 +2122,41 @@
 
             <div class="tracks-breakdown-grid">
                 <div class="track-stat-pill" style="border-right: 4px solid #10b981;">
-                    <h4><span>🩺 مسار الطب</span> <strong id="dashTotalMed" style="color: #10b981;">0</strong></h4>
-                    <div class="track-detail-line"><span>فيزياء:</span> <strong id="dashSubMedPhys">0</strong></div>
-                    <div class="track-detail-line"><span>رياضة:</span> <strong id="dashSubMedMath">0</strong></div>
+                    <h4><b>🩺 مسار الطب</b> <strong id="dashTotalMed" style="color: #10b981;">0</strong></h4>
+                    <div class="track-detail-line"><b>فيزياء:</b> <strong id="dashSubMedPhys">0</strong></div>
+                    <div class="track-detail-line"><b>رياضة:</b> <strong id="dashSubMedMath">0</strong></div>
                 </div>
 
                 <div class="track-stat-pill" style="border-right: 4px solid #38bdf8;">
-                    <h4><span>📐 مسار الهندسة</span> <strong id="dashTotalEng" style="color: #38bdf8;">0</strong></h4>
-                    <div class="track-detail-line"><span>برمجة:</span> <strong id="dashSubEngProg">0</strong></div>
-                    <div class="track-detail-line"><span>كيمياء:</span> <strong id="dashSubEngChem">0</strong></div>
+                    <h4><b>📐 مسار الهندسة</b> <strong id="dashTotalEng" style="color: #38bdf8;">0</strong></h4>
+                    <div class="track-detail-line"><b>برمجة:</b> <strong id="dashSubEngProg">0</strong></div>
+                    <div class="track-detail-line"><b>كيمياء:</b> <strong id="dashSubEngChem">0</strong></div>
                 </div>
 
                 <div class="track-stat-pill" style="border-right: 4px solid #f59e0b;">
-                    <h4><span>💼 مسار الأعمال</span> <strong id="dashTotalBus" style="color: #f59e0b;">0</strong></h4>
-                    <div class="track-detail-line"><span>محاسبة:</span> <strong id="dashSubBusAcc">0</strong></div>
-                    <div class="track-detail-line"><span>إدارة أعمال:</span> <strong id="dashSubBusMgt">0</strong></div>
+                    <h4><b>💼 مسار الأعمال</b> <strong id="dashTotalBus" style="color: #f59e0b;">0</strong></h4>
+                    <div class="track-detail-line"><b>محاسبة:</b> <strong id="dashSubBusAcc">0</strong></div>
+                    <div class="track-detail-line"><b>إدارة أعمال:</b> <strong id="dashSubBusMgt">0</strong></div>
                 </div>
 
                 <div class="track-stat-pill" style="border-right: 4px solid #c084fc;">
-                    <h4><span>🎨 أداب وفنون</span> <strong id="dashTotalArt" style="color: #c084fc;">0</strong></h4>
-                    <div class="track-detail-line"><span>علم نفس:</span> <strong id="dashSubArtPsych">0</strong></div>
-                    <div class="track-detail-line"><span>لغة فرنسية:</span> <strong id="dashSubArtFrench">0</strong></div>
+                    <h4><b>🎨 أداب وفنون</b> <strong id="dashTotalArt" style="color: #c084fc;">0</strong></h4>
+                    <div class="track-detail-line"><b>علم نفس:</b> <strong id="dashSubArtPsych">0</strong></div>
+                    <div class="track-detail-line"><b>لغة فرنسية:</b> <strong id="dashSubArtFrench">0</strong></div>
                 </div>
             </div>
 
             <div style="margin-bottom: 24px;">
                 <div class="admin-roster-controls">
                     <div class="search-wrapper">
-                        <span class="search-icon-symbol">🔍</span>
+                        <i class="search-icon-symbol">🔍</i>
                         <input type="text" id="rosterSearchBox" placeholder="بحث باسم، كود، أو هاتف الطالب..." oninput="filterRosterTable(this.value)">
                     </div>
 
                     <div class="filter-tags-cluster">
-                        <div class="filter-pill active" onclick="applyRosterFilter('all', this)">الكل (<span id="filterAllCount">0</span>)</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('registered', this)">المسجلين (<span id="filterRegCount">0</span>)</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('pending', this)">غير المسجلين (<span id="filterPendCount">0</span>)</div>
+                        <div class="filter-pill active" onclick="applyRosterFilter('all', this)">الكل (<b id="filterAllCount">0</b>)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('registered', this)">المسجلين (<b id="filterRegCount">0</b>)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('pending', this)">غير المسجلين (<b id="filterPendCount">0</b>)</div>
                         <div class="filter-pill" onclick="applyRosterFilter('الطب', this)">الطب</div>
                         <div class="filter-pill" onclick="applyRosterFilter('الهندسة', this)">الهندسة</div>
                         <div class="filter-pill" onclick="applyRosterFilter('أعمال', this)">الأعمال</div>
@@ -2113,32 +2188,31 @@
 
             <div class="audit-log-section">
                 <h4 style="color: var(--primary-color); margin-bottom: 8px; font-size: 0.92rem; font-weight: 900;">
-                    <span>🛡️</span> سجل العمليات والمراقبة (Audit Trail):
+                    <i>🛡️</i> سجل العمليات والمراقبة (Audit Trail):
                 </h4>
                 <div class="audit-log-container" id="adminAuditLogList">
                 </div>
             </div>
 
-            <!-- تم حذف زر إعادة ضبط المنظومة للمحافظة التامة على البيانات المدخلة -->
             <div class="admin-command-bar">
                 <button class="tool-btn btn-admin-access" onclick="printOfficialRoster()">
-                    <span>🖨️</span> طباعة الكشف العام (ورقتان رسميتان فقط 📜)
+                    <i>🖨️</i> طباعة الكشف العام (ورقتان رسميتان فقط 📜)
                 </button>
                 <button class="tool-btn btn-glass" onclick="printLateStudentsReport()">
-                    <span>⚠️</span> طباعة كشف المتأخرين
+                    <i>⚠️</i> طباعة كشف المتأخرين
                 </button>
                 <button class="tool-btn btn-admin-access" onclick="exportDataExcel()">
-                    <span>📊</span> تصدير Excel / CSV
+                    <i>📊</i> تصدير Excel / CSV
                 </button>
                 <label class="tool-btn btn-glass" style="margin: 0; cursor: pointer;">
-                    <span>📥</span> استيراد CSV / Excel
+                    <i>📥</i> استيراد CSV / Excel
                     <input type="file" id="csvUploadInput" accept=".csv" style="display: none;" onchange="importCSVFile(event)">
                 </label>
                 <button class="tool-btn btn-glass" onclick="backupJSONExport()">
-                    <span>💾</span> تصدير نسخة JSON
+                    <i>💾</i> تصدير نسخة JSON
                 </button>
                 <label class="tool-btn btn-glass" style="margin: 0; cursor: pointer;">
-                    <span>📥</span> استيراد نسخة JSON
+                    <i>📥</i> استيراد نسخة JSON
                     <input type="file" id="jsonUploadInput" accept=".json" style="display: none;" onchange="restoreJSONBackup(event)">
                 </label>
             </div>
@@ -2188,7 +2262,7 @@
 
                 <div style="display: flex; gap: 10px; margin-top: 14px;">
                     <button type="submit" class="btn-submit-choice" style="margin-top: 0;">
-                        <span>حفظ ومزامنة 💾</span>
+                        حفظ ومزامنة 💾
                     </button>
                     <button type="button" class="btn-clear-fields" style="margin-top: 0;" onclick="closeAdminEditModal()">
                         إلغاء
@@ -2205,11 +2279,11 @@
             
             <form id="adminAddStudentForm" onsubmit="saveAdminNewStudent(event)">
                 <div class="field-group">
-                    <label for="addStudentCodeField"><span class="req">*</span> كود الطالب (9 أرقام):</label>
+                    <label for="addStudentCodeField"><strong class="req">*</strong> كود الطالب (9 أرقام):</label>
                     <input type="text" id="addStudentCodeField" class="form-control" placeholder="كود الطالب الجديد..." required>
                 </div>
                 <div class="field-group">
-                    <label for="addStudentNameField"><span class="req">*</span> الاسم الرباعي / الخماسي:</label>
+                    <label for="addStudentNameField"><strong class="req">*</strong> الاسم الرباعي / الخماسي:</label>
                     <input type="text" id="addStudentNameField" class="form-control" placeholder="اسم الطالب..." required>
                 </div>
                 <div class="field-group">
@@ -2239,7 +2313,7 @@
 
                 <div style="display: flex; gap: 10px; margin-top: 14px;">
                     <button type="submit" class="btn-submit-choice" style="margin-top: 0;">
-                        <span>إضافة وحفظ 💾</span>
+                        إضافة وحفظ 💾
                     </button>
                     <button type="button" class="btn-clear-fields" style="margin-top: 0;" onclick="closeAdminAddModal()">
                         إلغاء
@@ -2249,19 +2323,18 @@
         </div>
     </div>
 
-    <!-- كود الفوتر بالكامل دون أي تغيير أو نقص مع الحفاظ عليه بألوان زاهية أزرق وسماوي -->
     <div class="footer-wrapper">
         <div class="circle-container">
             <svg viewBox="0 0 500 500" class="rotating-svg">
                 <defs><path id="textCirclePath" d="M 250, 440 A 190,190 0 1,1 250,60 A 190,190 0 1,1 250,440" /></defs>
                 <circle cx="250" cy="250" r="215" fill="none" stroke="rgba(0, 210, 255, 0.3)" stroke-width="4" />
                 <circle cx="250" cy="250" r="165" fill="none" stroke="rgba(0, 210, 255, 0.3)" stroke-width="4" />
-                <text><textPath href="#textCirclePath" startOffset="50%" text-anchor="middle" class="text-path-style">
-                    ALL RIGHTS RESERVED ®© DESIGNED & DEVELOPED BY <tspan class="name-highlight">MAHMOUD MOHAMED</tspan>
+                <text class="text-path-style"><textPath href="#textCirclePath" startOffset="50%" text-anchor="middle">
+                    ALL RIGHTS RESERVED ®© DESIGNED &amp; DEVELOPED BY MAHMOUD MOHAMED
                 </textPath></text>
             </svg>
             <div class="center-prayer">
-                <span>ولا تنسونا من خالص دعائكم بظهر الغيب</span>
+                ولا تنسونا من خالص دعائكم بظهر الغيب
             </div>
         </div>
     </div>
@@ -2339,6 +2412,15 @@
         let autoSyncDebounceTimer = null;
         let isSyncingActive = false;
 
+        // دالة مساعدة لتحويل الأرقام العربية والمشرقية إلى أرقام إنجليزية لضمان صحة الأكواد والبحث
+        function normalizeDigits(str) {
+            if (!str) return '';
+            return str.toString()
+                .replace(/[٠-٩]/g, d => "٠١٢٣٤٥٦٧٨٩".indexOf(d))
+                .replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d))
+                .trim();
+        }
+
         function animateNumberCount(elementId, targetValue, duration = 650) {
             const element = document.getElementById(elementId);
             if (!element) return;
@@ -2366,7 +2448,7 @@
             if (!container) return;
             const toast = document.createElement('div');
             toast.className = 'toast-msg';
-            toast.innerHTML = `<span>${icon}</span> <span>${message}</span>`;
+            toast.innerHTML = `<i>${icon}</i> <b>${message}</b>`;
             container.appendChild(toast);
             setTimeout(() => {
                 toast.style.transition = 'all 0.35s ease';
@@ -2397,8 +2479,8 @@
             }
             container.innerHTML = auditLogs.map(l => `
                 <div class="audit-log-item">
-                    <span>🕒 [${l.date} ${l.time}] <strong>${l.action}</strong>: ${l.details}</span>
-                    <span style="color: var(--primary-color);">(${l.actor})</span>
+                    <div>🕒 [${l.date} ${l.time}] <strong>${l.action}</strong>: ${l.details}</div>
+                    <b style="color: var(--primary-color);">(${l.actor})</b>
                 </div>
             `).join('');
         }
@@ -2447,7 +2529,7 @@
         function toggleAppAudio() {
             audioFXActive = !audioFXActive;
             const btn = document.getElementById('audioToggleBtn');
-            btn.innerHTML = `<span id="audioIcon">${audioFXActive ? '🔊' : '🔇'}</span> الصوت: ${audioFXActive ? 'مفعل' : 'مكتوم'}`;
+            btn.innerHTML = `<i id="audioIcon">${audioFXActive ? '🔊' : '🔇'}</i> الصوت: ${audioFXActive ? 'مفعل' : 'مكتوم'}`;
             if (audioFXActive) triggerSoundEffect('click');
         }
 
@@ -2509,7 +2591,6 @@
             takeSnapshotBackup();
             setInterval(takeSnapshotBackup, 5 * 60 * 1000);
 
-            // تشغيل فوري تلقائي للإحصائيات والمزامنة السحابية فور فتح البرنامج
             renderAllViews();
             pullFromCloud();
             setInterval(pullFromCloud, 20000);
@@ -2701,20 +2782,25 @@
                 }
             });
 
-            // ما لا تراه: اختصار ذكي وسريع لفتح لوحة التحكم عبر لوحة المفاتيح
             window.addEventListener('keydown', (e) => {
                 if (e.key === 'F2') {
                     e.preventDefault();
                     openAdminGateModal();
+                } else if (e.key === 'Escape') {
+                    // إغلاق أي نافذة منبثقة نشطة
+                    closeAdminPasswordModal();
+                    closeAdminEditModal();
+                    closeAdminAddModal();
+                    closeThankYouModal();
                 }
             });
         }
 
         function saveInputDraft() {
             sessionStorage.setItem(DRAFT_STORAGE_KEY, JSON.stringify({
-                code: document.getElementById('inputStudentCode').value.trim(),
+                code: normalizeDigits(document.getElementById('inputStudentCode').value),
                 address: document.getElementById('inputStudentAddress').value,
-                phone: document.getElementById('inputStudentPhone').value,
+                phone: normalizeDigits(document.getElementById('inputStudentPhone').value),
                 track: document.getElementById('selectStudentTrack').value,
                 subject: document.getElementById('selectStudentSubject').value
             }));
@@ -2752,7 +2838,7 @@
         }
 
         function handleCodeVerification(enteredCode) {
-            const code = enteredCode.trim();
+            const code = normalizeDigits(enteredCode);
             const feedbackEl = document.getElementById('codeVerifyFeedback');
             const codeInput = document.getElementById('inputStudentCode');
             const nameField = document.getElementById('inputStudentName');
@@ -2765,7 +2851,7 @@
             saveInputDraft();
 
             if (!code) {
-                feedbackEl.innerHTML = '<span class="status-idle">ℹ️ اكتب الكود المعتمد لظهور اسم الطالب تلقائياً.</span>';
+                feedbackEl.innerHTML = '<div class="status-idle">ℹ️ اكتب الكود المعتمد لظهور اسم الطالب تلقائياً.</div>';
                 nameField.value = '';
                 addressField.value = '';
                 phoneField.value = '';
@@ -2777,7 +2863,7 @@
             const matched = studentsRegistry.find(s => s.code === code && !s.isDeleted);
 
             if (matched) {
-                feedbackEl.innerHTML = `<span class="status-verified">✅ تم التحقق: كود معتمد بالصف الثاني الثانوي (مسلسل: ${matched.id})</span>`;
+                feedbackEl.innerHTML = `<div class="status-verified">✅ تم التحقق: كود معتمد بالصف الثاني الثانوي (مسلسل: ${matched.id})</div>`;
                 nameField.value = matched.name;
                 codeInput.classList.add('field-highlight-pulse');
                 [addressField, phoneField, trackSelect, submitBtn].forEach(el => el.disabled = false);
@@ -2798,8 +2884,8 @@
             } else {
                 codeInput.classList.remove('field-highlight-pulse');
                 feedbackEl.innerHTML = code.length >= 8 
-                    ? '<span class="status-unverified">⛔ كود غير مدرج بكشوف فصول الخدمات المعتمدة!</span>' 
-                    : '<span class="status-idle">⏳ جاري كتابة الكود المكون من 9 أرقام...</span>';
+                    ? '<div class="status-unverified">⛔ كود غير مدرج بكشوف فصول الخدمات المعتمدة!</div>' 
+                    : '<div class="status-idle">⏳ جاري كتابة الكود المكون من 9 أرقام...</div>';
                 nameField.value = '';
                 [addressField, phoneField, trackSelect, subjectSelect, submitBtn].forEach(el => el.disabled = true);
             }
@@ -2832,9 +2918,9 @@
 
         function submitStudentForm(e) {
             e.preventDefault();
-            const code = document.getElementById('inputStudentCode').value.trim();
+            const code = normalizeDigits(document.getElementById('inputStudentCode').value);
             const address = document.getElementById('inputStudentAddress').value.trim();
-            const phone = document.getElementById('inputStudentPhone').value.trim();
+            const phone = normalizeDigits(document.getElementById('inputStudentPhone').value);
             const track = document.getElementById('selectStudentTrack').value;
             const subject = document.getElementById('selectStudentSubject').value;
 
@@ -2932,9 +3018,10 @@
 
                 if (activeSearchTerm) {
                     const q = activeSearchTerm.toLowerCase();
+                    const cleanQ = normalizeDigits(q);
                     return st.name.toLowerCase().includes(q) || 
-                           st.code.includes(q) || 
-                           (st.phone || '').includes(q) || 
+                           st.code.includes(cleanQ) || 
+                           (st.phone || '').includes(cleanQ) || 
                            (st.track || '').toLowerCase().includes(q) ||
                            (st.address || '').toLowerCase().includes(q);
                 }
@@ -2948,19 +3035,19 @@
 
             filtered.forEach(st => {
                 const tr = document.createElement('tr');
-                let trackBadge = '<span class="badge-track track-none">لم يحدد</span>';
+                let trackBadge = '<b class="badge-track track-none">لم يحدد</b>';
                 if (st.isRegistered && st.track) {
                     const cfg = TRACKS_SUBJECTS_MAP[st.track] || { badge: 'track-med', icon: '✨' };
-                    trackBadge = `<span class="badge-track ${cfg.badge}">${cfg.icon} ${st.track}</span>`;
+                    trackBadge = `<b class="badge-track ${cfg.badge}">${cfg.icon} ${st.track}</b>`;
                 }
 
                 const subjectBadge = (st.isRegistered && st.subject)
-                    ? `<span class="badge-subject">${st.subject}</span>`
-                    : `<span style="color: var(--text-muted); font-size: 0.85rem;">-</span>`;
+                    ? `<b class="badge-subject">${st.subject}</b>`
+                    : `<b style="color: var(--text-muted); font-size: 0.85rem;">-</b>`;
 
                 const statusBadge = st.isRegistered
-                    ? '<span class="badge-status status-ok">✅ تم التسجيل</span>'
-                    : '<span class="badge-status status-wait">⏳ بانتظار الاختيار</span>';
+                    ? '<b class="badge-status status-ok">✅ تم التسجيل</b>'
+                    : '<b class="badge-status status-wait">⏳ بانتظار الاختيار</b>';
 
                 tr.innerHTML = `
                     <td class="id-col">${st.id}</td>
@@ -3001,7 +3088,6 @@
             const pend = total - reg;
             const pct = total > 0 ? Math.round((reg / total) * 100) : 0;
 
-            // تحديث مؤشرات لوحة التحكم الإدارية
             const dashTotal = document.getElementById('dashTotalStudentsCount');
             const dashReg = document.getElementById('dashCountRegistered');
             const dashPct = document.getElementById('dashPercentRegistered');
@@ -3014,7 +3100,6 @@
             if (dashPend) dashPend.textContent = pend;
             if (panelCap) panelCap.textContent = `🔒 فصول الخدمات (${total} طالباً)`;
 
-            // ما لا تراه: عداد رقمي تصاعدي ناعم وانسيابي في الشاشة الرئيسية
             animateNumberCount('mainBannerRegisteredCount', reg);
             animateNumberCount('mainBannerTotalQuota', total);
 
@@ -3030,20 +3115,31 @@
             activeStudents.forEach(s => {
                 if (s.isRegistered && s.track && tally[s.track] !== undefined) {
                     tally[s.track]++;
-                    if (s.track === 'الطب') { if (s.subject === 'فيزياء') medPhys++; if (s.subject === 'رياضه') medMath++; }
-                    else if (s.track === 'الهندسة') { if (s.subject === 'برمجة') engProg++; if (s.subject === 'كيمياء') engChem++; }
-                    else if (s.track === 'أعمال') { if (s.subject === 'محاسبة') busAcc++; if (s.subject === 'أعمال') busMgt++; }
-                    else if (s.track === 'أداب وفنون') { if (s.subject === 'علم نفس') artPsych++; if (s.subject === 'فرنساوي') artFrench++; }
+                    const sub = (s.subject || '').trim();
+                    if (s.track === 'الطب') { 
+                        if (sub === 'فيزياء') medPhys++; 
+                        if (sub === 'رياضه' || sub === 'رياضيات') medMath++; 
+                    }
+                    else if (s.track === 'الهندسة') { 
+                        if (sub === 'برمجة') engProg++; 
+                        if (sub === 'كيمياء') engChem++; 
+                    }
+                    else if (s.track === 'أعمال') { 
+                        if (sub === 'محاسبة') busAcc++; 
+                        if (sub === 'أعمال' || sub === 'إدارة أعمال') busMgt++; 
+                    }
+                    else if (s.track === 'أداب وفنون') { 
+                        if (sub === 'علم نفس') artPsych++; 
+                        if (sub === 'فرنساوي' || sub === 'لغة فرنسية') artFrench++; 
+                    }
                 }
             });
 
-            // تحديث بطاقات إحصائيات المسارات التلقائية في الشاشة الرئيسية بالعدادات الحية
             animateNumberCount('mainBannerMedCount', tally['الطب']);
             animateNumberCount('mainBannerEngCount', tally['الهندسة']);
             animateNumberCount('mainBannerBusCount', tally['أعمال']);
             animateNumberCount('mainBannerArtCount', tally['أداب وفنون']);
 
-            // تحديث بطاقات المسارات في لوحة الإدارة
             const tMed = document.getElementById('dashTotalMed');
             if (tMed) {
                 tMed.textContent = tally['الطب'];
@@ -3152,10 +3248,10 @@
         function saveAdminStudentEdit(e) {
             e.preventDefault();
             const originalCode = document.getElementById('editStudentOriginalCode').value;
-            const newCode = document.getElementById('editStudentCodeField').value.trim();
+            const newCode = normalizeDigits(document.getElementById('editStudentCodeField').value);
             const newName = document.getElementById('editStudentNameField').value.trim();
             const newAddress = document.getElementById('editStudentAddressField').value.trim();
-            const newPhone = document.getElementById('editStudentPhoneField').value.trim();
+            const newPhone = normalizeDigits(document.getElementById('editStudentPhoneField').value);
             const newTrack = document.getElementById('editStudentTrackSelect').value;
             const newSubject = document.getElementById('editStudentSubjectSelect').value;
 
@@ -3200,10 +3296,10 @@
 
         function saveAdminNewStudent(e) {
             e.preventDefault();
-            const code = document.getElementById('addStudentCodeField').value.trim();
+            const code = normalizeDigits(document.getElementById('addStudentCodeField').value);
             const name = document.getElementById('addStudentNameField').value.trim();
             const address = document.getElementById('addStudentAddressField').value.trim();
-            const phone = document.getElementById('addStudentPhoneField').value.trim();
+            const phone = normalizeDigits(document.getElementById('addStudentPhoneField').value);
             const track = document.getElementById('addStudentTrackSelect').value;
             const subject = document.getElementById('addStudentSubjectSelect').value;
 
@@ -3267,9 +3363,9 @@
                                 <div class="report-title-badge">${customReportTitle}</div>
                             </div>
                             <div class="print-page-subinfo">
-                                <span>📋 كشف الطلاب المقيدين: من مسلسل (${fromNum}) إلى (${toNum})</span>
-                                <span>العام الدراسي: 2026 / 2027 م</span>
-                                <span>صفحة رقم: [ ${pageNumber} من ${totalPages} ]</span>
+                                <div>📋 كشف الطلاب المقيدين: من مسلسل (${fromNum}) إلى (${toNum})</div>
+                                <div>العام الدراسي: 2026 / 2027 م</div>
+                                <div>صفحة رقم: [ ${pageNumber} من ${totalPages} ]</div>
                             </div>
                         </div>
 
@@ -3307,9 +3403,9 @@
                                 </div>
                             </div>
                             <div class="print-page-bottom-stamp-line">
-                                <span>ختم شعار الجمهورية / خاتم المدرسة</span>
-                                <span>تاريخ الاعتماد الرسمي: ${new Date().toLocaleDateString('ar-EG')} - ${new Date().toLocaleTimeString('ar-EG')}</span>
-                                <span>المنظومة الإلكترونية لتنسيق المسارات | صفحة (${pageNumber} من ${totalPages})</span>
+                                <div>ختم شعار الجمهورية / خاتم المدرسة</div>
+                                <div>تاريخ الاعتماد الرسمي: ${new Date().toLocaleDateString('ar-EG')} - ${new Date().toLocaleTimeString('ar-EG')}</div>
+                                <div>المنظومة الإلكترونية لتنسيق المسارات | صفحة (${pageNumber} من ${totalPages})</div>
                             </div>
                         </div>
                     </div>
@@ -3344,8 +3440,59 @@
             }, 200);
         }
 
+        // توليد وطباعة إيصال الرغبة الفردي للطالب بصيغة رسمية راقية
         function printStudentReceipt() {
-            window.print();
+            if (!recentSuccessStudent) {
+                alert('لا توجد بيانات طالب حالي للطباعة');
+                return;
+            }
+            triggerSoundEffect('click');
+            const printSec = document.getElementById('dedicatedPrintSection');
+            printSec.innerHTML = `
+                <div class="student-receipt-print-card">
+                    <div class="receipt-print-header">
+                        <h2>جمهورية مصر العربية - وزارة التربية والتعليم والتعليم الفني</h2>
+                        <p>مديرية التربية والتعليم بالدقهلية - إدارة ميت غمر التعليمية</p>
+                        <h2 style="margin-top: 4px;">مدرسة محمد هاشم النقيب الثانوية المشتركة (فصول الخدمات)</h2>
+                        <div class="receipt-badge-title">إيصال وإفادة تسجيل رغبات المسار الأكاديمي 2026 / 2027 م</div>
+                    </div>
+
+                    <div class="receipt-print-grid">
+                        <div class="receipt-field-row"><span>اسم الطالب الرباعي:</span> <b>${recentSuccessStudent.name}</b></div>
+                        <div class="receipt-field-row"><span>رقم المسلسل بالكشف:</span> <b># ${recentSuccessStudent.id}</b></div>
+                        <div class="receipt-field-row"><span>كود الطالب الموحد:</span> <b style="font-family: monospace;">${recentSuccessStudent.code}</b></div>
+                        <div class="receipt-field-row"><span>المسار التخصصي المختار:</span> <b style="color: #000;">مسار ${recentSuccessStudent.track}</b></div>
+                        <div class="receipt-field-row"><span>المادة التخصصية المقررة:</span> <b>${recentSuccessStudent.subject}</b></div>
+                        <div class="receipt-field-row"><span>رقم هاتف التواصل:</span> <b style="font-family: monospace;">${recentSuccessStudent.phone || '-'}</b></div>
+                        <div class="receipt-field-row"><span>العنوان ومحل الإقامة:</span> <b>${recentSuccessStudent.address || '-'}</b></div>
+                        <div class="receipt-field-row"><span>تاريخ ووقت التسجيل:</span> <b>${recentSuccessStudent.registrationDate}</b></div>
+                    </div>
+
+                    <div class="receipt-pledge">
+                        <strong>إقرار وتعهد:</strong> أقر أنا الطالب الموضح بياناتي أعلاه بصحة ودقة اختياري للمسار الأكاديمي والمادة التخصصية المحددة للعام الدراسي 2026 / 2027 م بمدرسة محمد هاشم النقيب الثانوية المشتركة، ولا يحق لي المطالبة بالتحويل بعد انقضاء المواعيد المحددة.
+                    </div>
+
+                    <div class="receipt-sig-grid">
+                        <div class="receipt-sig-box">
+                            <div class="ttl">توقيع الطالب / ولي الأمر</div>
+                            <div class="dts">......................................</div>
+                        </div>
+                        <div class="receipt-sig-box">
+                            <div class="ttl">وكيل المدرسة لشئون الطلاب</div>
+                            <div style="font-weight: 900; margin-top: 3px;">أ/ عبد الحميد عثمان</div>
+                            <div class="dts" style="margin-top: 5px;">......................................</div>
+                        </div>
+                        <div class="receipt-sig-box">
+                            <div class="ttl">يعتمد،، مدير عام المدرسة</div>
+                            <div class="dts">......................................</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            setTimeout(() => {
+                window.print();
+            }, 200);
         }
 
         function exportDataExcel() {
@@ -3362,7 +3509,7 @@
                     `"${s.address || '-'}"`,
                     `"${s.phone || '-'}"`,
                     `"${s.isRegistered ? 'تم التسجيل' : 'في الانتظار'}"`,
-                    `"${s.registrationDate || '-'}"`
+                    `"${(s.registrationDate || '-').replace(/"/g, '""')}"`
                 ].join(",") + "\n";
             });
 
@@ -3386,9 +3533,9 @@
 
                     let addedCount = 0;
                     for (let i = 1; i < lines.length; i++) {
-                        const parts = lines[i].split(',').map(p => p.replace(/^"|"$/g, '').trim());
+                        const parts = lines[i].split(/[,;]/).map(p => p.replace(/^"|"$/g, '').trim());
                         if (parts.length >= 3) {
-                            const code = parts[1];
+                            const code = normalizeDigits(parts[1]);
                             const name = parts[2];
                             if (code && name && !studentsRegistry.some(s => s.code === code && !s.isDeleted)) {
                                 studentsRegistry.push({
@@ -3398,7 +3545,7 @@
                                     track: parts[3] || '',
                                     subject: parts[4] || '',
                                     address: parts[5] || '',
-                                    phone: parts[6] || '',
+                                    phone: normalizeDigits(parts[6] || ''),
                                     isRegistered: parts[7] === 'تم التسجيل',
                                     registrationDate: parts[8] || '',
                                     updatedAt: Date.now(),
