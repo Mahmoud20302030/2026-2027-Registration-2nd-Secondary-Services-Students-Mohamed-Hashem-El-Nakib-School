@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>المنظومة الإلكترونية لتسجيل وتنسيق مسارات الثانوية العامة | مدرسة محمد هاشم النقيب الثانوية المشتركة</title>
+    <title>المنظومة الإلكترونية لتسجيل وتنسيق مسارات الثانوية العامة | مدرسة محمد هاشم النقيب الثانوية المشتركة بكفر سرنجا</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@
             --warning: #f59e0b;
             --warning-glow: rgba(245, 158, 11, 0.45);
             --danger: #ef4444;
-            --danger-glow: rgba(239, 68, 68, 0.45);
+            --danger-glow: rgba(239, 68, 68, 0.55);
             --radius-lg: 22px;
             --radius-md: 14px;
             --radius-sm: 9px;
@@ -1028,7 +1028,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(1, 6, 20, 0.90);
+            background: rgba(1, 6, 20, 0.92);
             backdrop-filter: blur(16px);
             z-index: 9999;
             display: none;
@@ -1235,7 +1235,7 @@
         }
 
         .table-viewport {
-            max-height: 440px;
+            max-height: 460px;
             overflow-y: auto;
             overflow-x: auto;
             border: 1.5px solid rgba(0, 240, 255, 0.35);
@@ -1270,9 +1270,9 @@
         }
         .sovereign-table tbody tr:hover td { background: rgba(0, 240, 255, 0.1); }
 
-        .id-col { width: 50px; text-align: center; font-weight: 900; color: var(--primary-color); }
+        .id-col { width: 45px; text-align: center; font-weight: 900; color: var(--primary-color); }
         .code-col { font-family: monospace; font-weight: 900; color: #38bdf8; white-space: nowrap; font-size: 0.96rem; }
-        .name-col { font-weight: 800; color: #ffffff; min-width: 220px; }
+        .name-col { font-weight: 800; color: #ffffff; min-width: 230px; }
 
         .badge-track {
             display: inline-flex;
@@ -1299,6 +1299,35 @@
             font-weight: 800;
             color: #ffffff;
             border: 1px solid rgba(0, 240, 255, 0.35);
+        }
+
+        .badge-gender {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .gender-male { background: rgba(0, 102, 255, 0.25); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.5); }
+        .gender-female { background: rgba(236, 72, 153, 0.25); color: #f472b6; border: 1px solid rgba(244, 114, 182, 0.5); }
+
+        .badge-edits {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.74rem;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #94a3b8;
+        }
+        .badge-edits.has-edits {
+            background: rgba(245, 158, 11, 0.2);
+            border-color: #f59e0b;
+            color: #fbbf24;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
         }
 
         .badge-status {
@@ -1368,6 +1397,40 @@
             justify-content: center;
             padding-top: 18px;
             border-top: 1.5px solid rgba(0, 240, 255, 0.28);
+        }
+
+        /* نافذة الحذف الأمنية فائقة التطور */
+        .modal-delete-box {
+            background: linear-gradient(155deg, #2a080c, #0d0205 90%);
+            border: 2px solid #ef4444;
+            box-shadow: 0 20px 65px rgba(0, 0, 0, 0.95), 0 0 50px rgba(239, 68, 68, 0.6);
+            max-width: 490px;
+            text-align: center;
+        }
+
+        .delete-warning-emblem {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(239, 68, 68, 0.18);
+            border: 2px solid #ef4444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            margin: 0 auto 14px;
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.5);
+            animation: bounceWarn 2s infinite;
+        }
+
+        .student-delete-preview-card {
+            background: rgba(0, 0, 0, 0.45);
+            border: 1.5px dashed rgba(239, 68, 68, 0.45);
+            border-radius: var(--radius-md);
+            padding: 12px 16px;
+            margin: 14px 0 18px;
+            text-align: right;
+            font-size: 0.88rem;
         }
 
         #toastContainer {
@@ -1581,7 +1644,6 @@
                 padding-top: 2px !important;
             }
 
-            /* تصميم إيصال الطالب الفردي للطباعة */
             .student-receipt-print-card {
                 width: 100% !important;
                 max-width: 190mm !important;
@@ -1745,15 +1807,15 @@
                     <h1>منظومة اختيار المسارات <b>الأكاديمية المتقدمة</b></h1>
                     <div class="sub-creds">
                         <b>إدارة ميت غمر التعليمية</b>
-                        <b>مدرسة محمد هاشم النقيب الثانوية المشتركة</b>
-                        <b>فصول الخدمات - الصف الثاني الثانوي</b>
+                        <b>مدرسة محمد هاشم النقيب الثانوية المشتركة بكفر سرنجا</b>
+                        <b>الصف الثاني بكالوريا - فصول الخدمات</b>
                         <b>العام الدراسي 2026 / 2027 م</b>
                     </div>
                 </div>
             </div>
 
             <div class="header-tools">
-                <div class="sync-badge-status" id="liveSyncStatusBadge" onclick="triggerManualSync()" title="اضغط لمزامنة يدوية فورية">
+                <div class="sync-badge-status" id="liveSyncStatusBadge" onclick="triggerManualSync()" title="اضغط لمزامنة فورية شاملة">
                     <i class="sync-dot" id="liveSyncDot"></i>
                     <b id="liveSyncStatusText">مزامنة سحابية نشطة</b>
                 </div>
@@ -1786,7 +1848,7 @@
                             <strong class="urgent-tag">إلزامـي وفـوري</strong>
                         </h3>
                         <p>
-                            تهيب إدارة <strong>مدرسة محمد هاشم النقيب الثانوية المشتركة (إدارة ميت غمر التعليمية)</strong> بكافة طلاب وطالبات <strong>فصول الخدمات - الصف الثاني الثانوي للعام الدراسي 2026 / 2027 م</strong> بضرورة وسرعة إدخال كود الطالب الموحد وتأكيد البيانات وتحديد <strong>المسار التخصصي (الطب - الهندسة - الأعمال - أداب وفنون)</strong> والمادة المقررة فوراً قبل انقضاء المهلة الرسمية المحددة.
+                            تهيب إدارة <strong>مدرسة محمد هاشم النقيب الثانوية المشتركة بكفر سرنجا (إدارة ميت غمر التعليمية)</strong> بكافة طلاب وطالبات <strong>الصف الثاني بكالوريا (44 طالباً وطالبة)</strong> بضرورة وسرعة إدخال كود الطالب الموحد لتأكيد البيانات واعتماد <strong>المادة التخصصية المقررة لمسارهم المعتمد (الهندسة وعلوم الحاسب 12 - الطب وعلوم الحياة 29 - الأدب والفنون 2 - الأعمال 1)</strong> فوراً قبل انقضاء المهلة الرسمية المحددة.
                         </p>
                     </div>
                 </div>
@@ -1822,10 +1884,10 @@
             <div class="strip-top-row">
                 <div class="strip-title-badge">
                     <i class="pulse-beacon-dot"></i>
-                    <h2>📊 مؤشرات التسجيل اللحظية <b>وتوزيع رغبات المسارات الأكاديمية</b></h2>
+                    <h2>📊 مؤشرات التسجيل وتوزيع المسارات <b>وفقاً للكشوف الرسمية المعتمدة</b></h2>
                 </div>
                 <div class="strip-progress-overview">
-                    <strong class="p-txt">مستوى اكتمال التسجيل العام:</strong>
+                    <strong class="p-txt">مستوى اكتمال التأكيد والاعتماد:</strong>
                     <b class="p-val" id="mainProgressPercentage">0%</b>
                 </div>
             </div>
@@ -1842,7 +1904,7 @@
                             <b id="mainBannerRegisteredCount">0</b>
                             <small class="unit">/ <b id="mainBannerTotalQuota">44</b> طالب</small>
                         </div>
-                        <div class="m-title">إجمالي المسجلين بالنظام</div>
+                        <div class="m-title">المؤكد تسجيلهم (إجمالي 44)</div>
                     </div>
                 </div>
 
@@ -1850,10 +1912,10 @@
                     <div class="stat-icon-emblem">🩺</div>
                     <div class="stat-metric-info">
                         <div class="m-count">
-                            <b id="mainBannerMedCount" style="color: #34d399;">0</b>
+                            <b id="mainBannerMedCount" style="color: #34d399;">29</b>
                             <small class="unit">طالب</small>
                         </div>
-                        <div class="m-title">مسار الطب والعلوم</div>
+                        <div class="m-title">مسار الطب وعلوم الحياة</div>
                     </div>
                 </div>
 
@@ -1861,10 +1923,10 @@
                     <div class="stat-icon-emblem">📐</div>
                     <div class="stat-metric-info">
                         <div class="m-count">
-                            <b id="mainBannerEngCount" style="color: #38bdf8;">0</b>
+                            <b id="mainBannerEngCount" style="color: #38bdf8;">12</b>
                             <small class="unit">طالب</small>
                         </div>
-                        <div class="m-title">مسار الهندسة والتكنولوجيا</div>
+                        <div class="m-title">الهندسة وعلوم الحاسب</div>
                     </div>
                 </div>
 
@@ -1872,7 +1934,7 @@
                     <div class="stat-icon-emblem">💼</div>
                     <div class="stat-metric-info">
                         <div class="m-count">
-                            <b id="mainBannerBusCount" style="color: #fbbf24;">0</b>
+                            <b id="mainBannerBusCount" style="color: #fbbf24;">1</b>
                             <small class="unit">طالب</small>
                         </div>
                         <div class="m-title">مسار إدارة الأعمال</div>
@@ -1883,10 +1945,10 @@
                     <div class="stat-icon-emblem">🎨</div>
                     <div class="stat-metric-info">
                         <div class="m-count">
-                            <b id="mainBannerArtCount" style="color: #d8b4fe;">0</b>
+                            <b id="mainBannerArtCount" style="color: #d8b4fe;">2</b>
                             <small class="unit">طالب</small>
                         </div>
-                        <div class="m-title">مسار الآداب والفنون</div>
+                        <div class="m-title">مسار الأدب والفنون</div>
                     </div>
                 </div>
             </div>
@@ -1896,8 +1958,8 @@
 
             <aside class="input-panel">
                 <div class="panel-headline">
-                    <h2>✍️ <b>استمارة تسجيل الرغبات</b></h2>
-                    <div class="secure-lock-tag" id="panelCapacityTag">🔒 فصول الخدمات</div>
+                    <h2>✍️ <b>استمارة تأكيد واعتماد الرغبات</b></h2>
+                    <div class="secure-lock-tag" id="panelCapacityTag">🔒 فصول الخدمات (44 طالباً)</div>
                 </div>
 
                 <form id="studentRegistrationForm" onsubmit="submitStudentForm(event)">
@@ -1906,18 +1968,18 @@
                         <label for="inputStudentCode"><strong class="req">*</strong> كود الطالب الأكاديمي (9 أرقام):</label>
                         <input type="text" id="inputStudentCode" class="form-control" placeholder="اكتب كود الطالب للتحقق الفوري..." oninput="handleCodeVerification(this.value)" autocomplete="off" required>
                         <div class="code-verification-status" id="codeVerifyFeedback">
-                            <div class="status-idle">ℹ️ اكتب الكود المعتمد لظهور اسم الطالب تلقائياً.</div>
+                            <div class="status-idle">ℹ️ اكتب الكود المعتمد لظهور اسم الطالب والمسار المحدد تلقائياً.</div>
                         </div>
                     </div>
 
                     <div class="field-group">
-                        <label for="inputStudentName">اسم الطالب (معتمد تلقائياً):</label>
+                        <label for="inputStudentName">اسم الطالب (معتمد رسمياً):</label>
                         <input type="text" id="inputStudentName" class="form-control" placeholder="يظهر الاسم تلقائياً بعد مطابقة الكود" readonly required>
                     </div>
 
                     <div class="field-group">
                         <label for="inputStudentAddress"><strong class="req">*</strong> العنوان ومحل الإقامة بالتفصيل:</label>
-                        <input type="text" id="inputStudentAddress" class="form-control" placeholder="مثال: ميت غمر - شارع المعاهدة" oninput="saveInputDraft()" disabled required>
+                        <input type="text" id="inputStudentAddress" class="form-control" placeholder="مثال: كفر سرنجا - ميت غمر" oninput="saveInputDraft()" disabled required>
                     </div>
 
                     <div class="field-group">
@@ -1926,13 +1988,13 @@
                     </div>
 
                     <div class="field-group">
-                        <label for="selectStudentTrack"><strong class="req">*</strong> حدد المسار الأكاديمي المستهدف:</label>
+                        <label for="selectStudentTrack"><strong class="req">*</strong> المسار الأكاديمي المخصص:</label>
                         <select id="selectStudentTrack" class="form-control" onchange="handleTrackChange(this.value); saveInputDraft();" disabled required>
                             <option value="">-- اضغط لتحديد المسار --</option>
-                            <option value="الطب">🩺 مسار الطب</option>
-                            <option value="الهندسة">📐 مسار الهندسة</option>
-                            <option value="أعمال">💼 مسار الأعمال</option>
-                            <option value="أداب وفنون">🎨 مسار أداب وفنون</option>
+                            <option value="الطب">🩺 مسار الطب وعلوم الحياة (29 طالب)</option>
+                            <option value="الهندسة">📐 مسار الهندسة وعلوم الحاسب (12 طالب)</option>
+                            <option value="أعمال">💼 مسار الأعمال (طالب واحد)</option>
+                            <option value="أداب وفنون">🎨 مسار الأدب والفنون (طالبان)</option>
                         </select>
                     </div>
 
@@ -1956,36 +2018,36 @@
             <section class="portal-guide-panel">
                 <div class="guide-header-box">
                     <h3>📘 <b>دليل المسارات الأكاديمية وضوابط الاختيار الرسمية</b></h3>
-                    <p>العام الدراسي 2026 / 2027 م - مرحلة الثانوية العامة (فصول الخدمات بمدرسة محمد هاشم النقيب)</p>
+                    <p>العام الدراسي 2026 / 2027 م - مرحلة الثانوية العامة (مدرسة محمد هاشم النقيب بكفر سرنجا)</p>
                 </div>
 
                 <div class="tracks-guide-cards-grid">
                     <div class="guide-track-card card-med">
-                        <h4>🩺 مسار الطب والعلوم الصحية</h4>
+                        <h4>🩺 مسار الطب وعلوم الحياة (29 طالباً)</h4>
                         <ul>
                             <li><i class="dot"></i> <strong>المواد التخصصية:</strong> فيزياء - رياضيات</li>
-                            <li><i class="dot"></i> <strong>الكليات المستهدفة:</strong> الطب البشري، طب الأسنان، الصيدلة، العلاج الطبيعي، العلوم الطبية.</li>
+                            <li><i class="dot"></i> <strong>الكليات المستهدفة:</strong> الطب البشري، طب الأسنان، الصيدلة، العلاج الطبيعي، العلوم الطبية والتمريض.</li>
                         </ul>
                     </div>
 
                     <div class="guide-track-card card-eng">
-                        <h4>📐 مسار الهندسة والتكنولوجيا</h4>
+                        <h4>📐 مسار الهندسة وعلوم الحاسب (12 طالباً)</h4>
                         <ul>
                             <li><i class="dot"></i> <strong>المواد التخصصية:</strong> برمجة - كيمياء</li>
-                            <li><i class="dot"></i> <strong>الكليات المستهدفة:</strong> الهندسة، الحاسبات والذكاء الاصطناعي، التكنولوجيا التطبيقية.</li>
+                            <li><i class="dot"></i> <strong>الكليات المستهدفة:</strong> كليات الهندسة، الحاسبات والذكاء الاصطناعي، الكليات التكنولوجية التطبيقية.</li>
                         </ul>
                     </div>
 
                     <div class="guide-track-card card-bus">
-                        <h4>💼 مسار إدارة الأعمال والاقتصاد</h4>
+                        <h4>💼 مسار إدارة الأعمال (طالب واحد)</h4>
                         <ul>
                             <li><i class="dot"></i> <strong>المواد التخصصية:</strong> محاسبة - أعمال</li>
-                            <li><i class="dot"></i> <strong>الكليات المستهدفة:</strong> كليات التجارة وإدارة الأعمال، الاقتصاد والعلوم السياسية، نظم المعلومات.</li>
+                            <li><i class="dot"></i> <strong>الكليات المستهدفة:</strong> كليات التجارة وإدارة الأعمال، الاقتصاد والعلوم السياسية، نظم المعلومات الإدارية.</li>
                         </ul>
                     </div>
 
                     <div class="guide-track-card card-art">
-                        <h4>🎨 مسار الآداب والفنون والإنسانيات</h4>
+                        <h4>🎨 مسار الأدب والفنون (طالبان)</h4>
                         <ul>
                             <li><i class="dot"></i> <strong>المواد التخصصية:</strong> علم نفس - لغة فرنسية</li>
                             <li><i class="dot"></i> <strong>الكليات المستهدفة:</strong> الألسن، اللغات والترجمة، الإعلام، الآداب، التربية، الفنون الجميلة.</li>
@@ -2005,7 +2067,7 @@
 
                 <div class="official-speech-card">
                     <p>
-                        « أبنائي الطلاب وأولياء الأمور، تسجيل الرغبة يتم لمرة واحدة معتمدة بكود الطالب الموحد، ويُرجى تحري الدقة الكاملة عند اختيار المسار والمادة التخصصية المقررة قبل الضغط على زر الاعتماد الرسمي. »
+                        « أبنائي الطلاب وأولياء الأمور، تسجيل وتأكيد الرغبة يتم لمرة واحدة معتمدة بكود الطالب الموحد، ويُرجى تحري الدقة الكاملة عند مراجعة المسار واختيار المادة التخصصية المقررة قبل الضغط على زر الاعتماد الرسمي. »
                     </p>
                     <div class="official-speech-signature">
                         أ/ عبد الحميد عثمان
@@ -2023,11 +2085,11 @@
             <button class="modal-close" onclick="closeThankYouModal()">✕</button>
             <div class="sovereign-crown">🌟</div>
             <h2 class="thank-title">تم اعتماد وتسجيل الرغبات بنجاح تام</h2>
-            <div class="thank-subtitle">مدرسة محمد هاشم النقيب الثانوية المشتركة</div>
+            <div class="thank-subtitle">مدرسة محمد هاشم النقيب الثانوية المشتركة بكفر سرنجا</div>
 
-            <div class="official-speech-card">
+            <div class="official-speech-card" style="margin: 16px 0;">
                 <p>
-                    « أبنائي وبناتي طلاب وطالبات فصول الخدمات، يطيب لإدارة المدرسة أن تبارك لكم إتمام تحديد مساركم التخصصي للعام الدراسي 2026 / 2027 م متمنين لكم دوام الرفعة والتميز والتفوق العلمي. »
+                    « أبنائي وبناتي طلاب وطالبات فصول الخدمات، يطيب لإدارة المدرسة أن تبارك لكم إتمام تأكيد مساركم التخصصي للعام الدراسي 2026 / 2027 م متمنين لكم دوام الرفعة والتميز والتفوق العلمي. »
                 </p>
                 <div class="official-speech-signature">
                     عبد الحميد عثمان
@@ -2074,21 +2136,56 @@
         </div>
     </div>
 
+    <!-- نافذة الحذف الأمنية المتقدمة والمحمية بكلمة المرور -->
+    <div class="modal-screen" id="adminDeleteConfirmModal">
+        <div class="modal-box modal-delete-box">
+            <button class="modal-close" onclick="closeAdminDeleteModal()">✕</button>
+            <div class="delete-warning-emblem">⚠️</div>
+            <h3 style="font-size: 1.32rem; font-weight: 900; color: #fff; margin-bottom: 6px;">منطقة الحظر الأمني المعتمد</h3>
+            <p style="color: #fca5a5; font-size: 0.88rem; font-weight: 700;">تحذير مشدد: هذا الإجراء سيقوم بحذف سجل الطالب نهائياً من كافة قواعد البيانات السحابية والمحلية!</p>
+
+            <div class="student-delete-preview-card" id="deleteTargetPreview">
+                <!-- معاينة بيانات الطالب المستهدف للحذف -->
+            </div>
+
+            <div class="field-group" style="text-align: right; margin-bottom: 12px;">
+                <label for="deleteSecretKeyInput" style="color: #fecaca;"><strong class="req">*</strong> كلمة المرور الأمنية الخاصة المعتمدة للحذف:</label>
+                <input type="password" id="deleteSecretKeyInput" class="form-control" placeholder="أدخل كلمة المرور الخاصة بالحذف..." style="border-color: rgba(239, 68, 68, 0.6); background: rgba(20, 3, 7, 0.95);" onkeydown="if(event.key==='Enter') confirmExecuteStudentDelete()">
+            </div>
+
+            <div id="deleteAuthFeedback" style="color: #ef4444; font-size: 0.85rem; font-weight: 800; margin-bottom: 14px; display: none;">
+                ❌ كلمة المرور الخاصة بالحذف غير صحيحة! تم تسجيل المحاولة في سجل المراقبة.
+            </div>
+
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button class="tool-btn btn-delete-inline" style="padding: 11px 22px; font-size: 0.95rem;" onclick="confirmExecuteStudentDelete()">
+                    <i>🗑️</i> تأكيد الحذف النهائي السحابي
+                </button>
+                <button class="tool-btn btn-glass" style="padding: 11px 20px;" onclick="closeAdminDeleteModal()">
+                    <i>✕</i> تراجع وإلغاء
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div class="modal-screen" id="adminDashboardModal">
         <div class="modal-box admin-dashboard-box">
             <button class="modal-close" onclick="closeAdminDashboardModal()">✕</button>
             
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid rgba(0, 240, 255, 0.3); padding-bottom: 14px; margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid rgba(0, 240, 255, 0.3); padding-bottom: 14px; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
                 <div>
                     <h2 style="font-size: 1.4rem; font-weight: 900; color: #fff; display: flex; align-items: center; gap: 8px;">
                         <i>📊</i> لوحة القيادة الإحصائية والإدارة المتقدمة
                     </h2>
                     <div style="color: var(--accent-cyan); font-size: 0.88rem; font-weight: 700;">
-                        إدارة ميت غمر التعليمية | مدرسة محمد هاشم النقيب الثانوية المشتركة (فصول الخدمات 2026 / 2027 م)
+                        إدارة ميت غمر التعليمية | مدرسة محمد هاشم النقيب بكفر سرنجا (كشف الصف الثاني بكالوريا 2026 / 2027 م)
                     </div>
                 </div>
                 <div style="display: flex; gap: 8px;">
-                    <button class="tool-btn btn-admin-access" style="padding: 8px 16px; font-size: 0.86rem;" onclick="openNewStudentModal()">
+                    <button class="tool-btn btn-admin-access" style="padding: 8px 16px; font-size: 0.86rem;" onclick="triggerManualSync()">
+                        <i>⚡</i> مزامنة سحابية الآن
+                    </button>
+                    <button class="tool-btn btn-glass" style="padding: 8px 16px; font-size: 0.86rem;" onclick="openNewStudentModal()">
                         <i>➕</i> إضافة طالب جديد
                     </button>
                     <button class="tool-btn btn-glass" style="padding: 8px 16px; font-size: 0.86rem;" onclick="logoutAdminDashboard()">
@@ -2099,50 +2196,54 @@
 
             <div class="admin-kpis-row">
                 <div class="admin-metric-card">
-                    <div class="m-title">إجمالي المقيدين</div>
+                    <div class="m-title">إجمالي المقيدين بالكشف</div>
                     <div class="m-num" id="dashTotalStudentsCount">44</div>
-                    <div class="m-desc">كشف الخدمات الحالي</div>
+                    <div class="m-desc">17 بنين | 27 بنات</div>
                 </div>
                 <div class="admin-metric-card">
-                    <div class="m-title">تم تسجيل رغباتهم</div>
+                    <div class="m-title">أكدوا تسجيل الرغبة</div>
                     <div class="m-num" style="color: var(--success);" id="dashCountRegistered">0</div>
-                    <div class="m-desc" id="dashPercentRegistered">0%</div>
+                    <div class="m-desc" id="dashPercentRegistered">0% من الإجمالي</div>
                 </div>
                 <div class="admin-metric-card">
                     <div class="m-title">الطلاب المتأخرين</div>
                     <div class="m-num" style="color: var(--danger);" id="dashCountPending">44</div>
-                    <div class="m-desc">لم يسجلوا بعد</div>
+                    <div class="m-desc">بانتظار تأكيد المادة</div>
                 </div>
                 <div class="admin-metric-card">
                     <div class="m-title">حالة المزامنة والنسخ</div>
-                    <div class="m-num" style="color: var(--primary-color); font-size: 1.3rem; padding-top: 8px;" id="dashSyncHealthText">متزامن بالكامل ⚡</div>
-                    <div class="m-desc" id="dashLastSyncTimeLabel">آخر حفظ: الآن</div>
+                    <div class="m-num" style="color: var(--primary-color); font-size: 1.3rem; padding-top: 8px;" id="dashSyncHealthText">متزامن سحابياً ⚡</div>
+                    <div class="m-desc" id="dashLastSyncTimeLabel">آخر فحص: الآن</div>
                 </div>
             </div>
 
             <div class="tracks-breakdown-grid">
                 <div class="track-stat-pill" style="border-right: 4px solid #10b981;">
-                    <h4><b>🩺 مسار الطب</b> <strong id="dashTotalMed" style="color: #10b981;">0</strong></h4>
+                    <h4><b>🩺 الطب وعلوم الحياة</b> <strong id="dashTotalMed" style="color: #10b981;">29</strong></h4>
                     <div class="track-detail-line"><b>فيزياء:</b> <strong id="dashSubMedPhys">0</strong></div>
                     <div class="track-detail-line"><b>رياضة:</b> <strong id="dashSubMedMath">0</strong></div>
+                    <div class="track-detail-line"><small style="color:var(--accent-cyan);">إجمالي المسار الرسمي: 29 طالب</small></div>
                 </div>
 
                 <div class="track-stat-pill" style="border-right: 4px solid #38bdf8;">
-                    <h4><b>📐 مسار الهندسة</b> <strong id="dashTotalEng" style="color: #38bdf8;">0</strong></h4>
+                    <h4><b>📐 الهندسة وعلوم الحاسب</b> <strong id="dashTotalEng" style="color: #38bdf8;">12</strong></h4>
                     <div class="track-detail-line"><b>برمجة:</b> <strong id="dashSubEngProg">0</strong></div>
                     <div class="track-detail-line"><b>كيمياء:</b> <strong id="dashSubEngChem">0</strong></div>
+                    <div class="track-detail-line"><small style="color:var(--accent-cyan);">إجمالي المسار الرسمي: 12 طالب</small></div>
                 </div>
 
                 <div class="track-stat-pill" style="border-right: 4px solid #f59e0b;">
-                    <h4><b>💼 مسار الأعمال</b> <strong id="dashTotalBus" style="color: #f59e0b;">0</strong></h4>
+                    <h4><b>💼 إدارة الأعمال</b> <strong id="dashTotalBus" style="color: #f59e0b;">1</strong></h4>
                     <div class="track-detail-line"><b>محاسبة:</b> <strong id="dashSubBusAcc">0</strong></div>
-                    <div class="track-detail-line"><b>إدارة أعمال:</b> <strong id="dashSubBusMgt">0</strong></div>
+                    <div class="track-detail-line"><b>أعمال:</b> <strong id="dashSubBusMgt">0</strong></div>
+                    <div class="track-detail-line"><small style="color:var(--accent-cyan);">إجمالي المسار الرسمي: 1 طالب</small></div>
                 </div>
 
                 <div class="track-stat-pill" style="border-right: 4px solid #c084fc;">
-                    <h4><b>🎨 أداب وفنون</b> <strong id="dashTotalArt" style="color: #c084fc;">0</strong></h4>
+                    <h4><b>🎨 الأدب والفنون</b> <strong id="dashTotalArt" style="color: #c084fc;">2</strong></h4>
                     <div class="track-detail-line"><b>علم نفس:</b> <strong id="dashSubArtPsych">0</strong></div>
                     <div class="track-detail-line"><b>لغة فرنسية:</b> <strong id="dashSubArtFrench">0</strong></div>
+                    <div class="track-detail-line"><small style="color:var(--accent-cyan);">إجمالي المسار الرسمي: 2 طالب</small></div>
                 </div>
             </div>
 
@@ -2150,17 +2251,20 @@
                 <div class="admin-roster-controls">
                     <div class="search-wrapper">
                         <i class="search-icon-symbol">🔍</i>
-                        <input type="text" id="rosterSearchBox" placeholder="بحث باسم، كود، أو هاتف الطالب..." oninput="filterRosterTable(this.value)">
+                        <input type="text" id="rosterSearchBox" placeholder="بحث باسم، كود، هاتف، أو مرات التعديل..." oninput="filterRosterTable(this.value)">
                     </div>
 
                     <div class="filter-tags-cluster">
-                        <div class="filter-pill active" onclick="applyRosterFilter('all', this)">الكل (<b id="filterAllCount">0</b>)</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('registered', this)">المسجلين (<b id="filterRegCount">0</b>)</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('pending', this)">غير المسجلين (<b id="filterPendCount">0</b>)</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('الطب', this)">الطب</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('الهندسة', this)">الهندسة</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('أعمال', this)">الأعمال</div>
-                        <div class="filter-pill" onclick="applyRosterFilter('أداب وفنون', this)">الآداب</div>
+                        <div class="filter-pill active" onclick="applyRosterFilter('all', this)">الكل (<b id="filterAllCount">44</b>)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('registered', this)">المؤكدين (<b id="filterRegCount">0</b>)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('pending', this)">غير المؤكدين (<b id="filterPendCount">44</b>)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('edited', this)">تم تعديلهم (<b id="filterEditedCount">0</b>)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('الطب', this)">الطب (29)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('الهندسة', this)">الهندسة (12)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('أعمال', this)">الأعمال (1)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('أداب وفنون', this)">الآداب (2)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('بنين', this)">بنين (17)</div>
+                        <div class="filter-pill" onclick="applyRosterFilter('بنات', this)">بنات (27)</div>
                     </div>
                 </div>
 
@@ -2170,12 +2274,14 @@
                             <tr>
                                 <th class="id-col">م</th>
                                 <th>كود الطالب</th>
-                                <th>اسم الطالب</th>
+                                <th>اسم الطالب الرباعي / الخماسي</th>
+                                <th>النوع</th>
                                 <th>المسار المحدد</th>
                                 <th>المادة المقررة</th>
+                                <th style="text-align: center;">مرات التعديل</th>
                                 <th>العنوان ومحل الإقامة</th>
                                 <th>رقم الهاتف</th>
-                                <th>حالة التسجيل</th>
+                                <th>حالة التأكيد</th>
                                 <th>تاريخ الاعتماد</th>
                                 <th style="text-align: center; min-width: 140px;">تحكم وإجراء</th>
                             </tr>
@@ -2188,7 +2294,7 @@
 
             <div class="audit-log-section">
                 <h4 style="color: var(--primary-color); margin-bottom: 8px; font-size: 0.92rem; font-weight: 900;">
-                    <i>🛡️</i> سجل العمليات والمراقبة (Audit Trail):
+                    <i>🛡️</i> سجل العمليات والمراقبة الحية (Audit Trail):
                 </h4>
                 <div class="audit-log-container" id="adminAuditLogList">
                 </div>
@@ -2196,7 +2302,7 @@
 
             <div class="admin-command-bar">
                 <button class="tool-btn btn-admin-access" onclick="printOfficialRoster()">
-                    <i>🖨️</i> طباعة الكشف العام (ورقتان رسميتان فقط 📜)
+                    <i>🖨️</i> طباعة الكشف العام الرسمي (ورقتان فقط 📜)
                 </button>
                 <button class="tool-btn btn-glass" onclick="printLateStudentsReport()">
                     <i>⚠️</i> طباعة كشف المتأخرين
@@ -2223,7 +2329,7 @@
     <div class="modal-screen" id="adminEditStudentModal">
         <div class="modal-box" style="max-width: 520px;">
             <button class="modal-close" onclick="closeAdminEditModal()">✕</button>
-            <h3 style="font-size: 1.25rem; font-weight: 900; color: #fff; margin-bottom: 14px;">✏️ تعديل بيانات الطالب</h3>
+            <h3 style="font-size: 1.25rem; font-weight: 900; color: #fff; margin-bottom: 14px;">✏️ تعديل بيانات الطالب وتحديث السجل</h3>
             
             <form id="adminEditStudentForm" onsubmit="saveAdminStudentEdit(event)">
                 <input type="hidden" id="editStudentOriginalCode">
@@ -2236,7 +2342,14 @@
                     <input type="text" id="editStudentNameField" class="form-control" required>
                 </div>
                 <div class="field-group">
-                    <label for="editStudentAddressField">العنوان:</label>
+                    <label for="editStudentGenderSelect">النوع:</label>
+                    <select id="editStudentGenderSelect" class="form-control">
+                        <option value="ذكر">ذكر (بنين)</option>
+                        <option value="أنثى">أنثى (بنات)</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label for="editStudentAddressField">العنوان ومحل الإقامة:</label>
                     <input type="text" id="editStudentAddressField" class="form-control">
                 </div>
                 <div class="field-group">
@@ -2247,10 +2360,10 @@
                     <label for="editStudentTrackSelect">المسار الأكاديمي:</label>
                     <select id="editStudentTrackSelect" class="form-control" onchange="handleEditTrackChange(this.value)">
                         <option value="">-- بدون مسار --</option>
-                        <option value="الطب">🩺 مسار الطب</option>
-                        <option value="الهندسة">📐 مسار الهندسة</option>
-                        <option value="أعمال">💼 مسار الأعمال</option>
-                        <option value="أداب وفنون">🎨 مسار أداب وفنون</option>
+                        <option value="الطب">🩺 مسار الطب وعلوم الحياة</option>
+                        <option value="الهندسة">📐 مسار الهندسة وعلوم الحاسب</option>
+                        <option value="أعمال">💼 مسار إدارة الأعمال</option>
+                        <option value="أداب وفنون">🎨 مسار الأدب والفنون</option>
                     </select>
                 </div>
                 <div class="field-group">
@@ -2262,7 +2375,7 @@
 
                 <div style="display: flex; gap: 10px; margin-top: 14px;">
                     <button type="submit" class="btn-submit-choice" style="margin-top: 0;">
-                        حفظ ومزامنة 💾
+                        حفظ ومزامنة وتحديث العداد 💾
                     </button>
                     <button type="button" class="btn-clear-fields" style="margin-top: 0;" onclick="closeAdminEditModal()">
                         إلغاء
@@ -2287,6 +2400,13 @@
                     <input type="text" id="addStudentNameField" class="form-control" placeholder="اسم الطالب..." required>
                 </div>
                 <div class="field-group">
+                    <label for="addStudentGenderSelect">النوع:</label>
+                    <select id="addStudentGenderSelect" class="form-control">
+                        <option value="ذكر">ذكر (بنين)</option>
+                        <option value="أنثى">أنثى (بنات)</option>
+                    </select>
+                </div>
+                <div class="field-group">
                     <label for="addStudentAddressField">العنوان ومحل الإقامة:</label>
                     <input type="text" id="addStudentAddressField" class="form-control">
                 </div>
@@ -2295,13 +2415,13 @@
                     <input type="tel" id="addStudentPhoneField" class="form-control">
                 </div>
                 <div class="field-group">
-                    <label for="addStudentTrackSelect">المسار الأكاديمي (اختياري):</label>
+                    <label for="addStudentTrackSelect">المسار الأكاديمي:</label>
                     <select id="addStudentTrackSelect" class="form-control" onchange="handleAddTrackChange(this.value)">
-                        <option value="">-- بانتظار التسجيل --</option>
-                        <option value="الطب">🩺 مسار الطب</option>
-                        <option value="الهندسة">📐 مسار الهندسة</option>
-                        <option value="أعمال">💼 مسار الأعمال</option>
-                        <option value="أداب وفنون">🎨 مسار أداب وفنون</option>
+                        <option value="">-- حدد المسار --</option>
+                        <option value="الطب">🩺 مسار الطب وعلوم الحياة</option>
+                        <option value="الهندسة">📐 مسار الهندسة وعلوم الحاسب</option>
+                        <option value="أعمال">💼 مسار إدارة الأعمال</option>
+                        <option value="أداب وفنون">🎨 مسار الأدب والفنون</option>
                     </select>
                 </div>
                 <div class="field-group">
@@ -2340,67 +2460,76 @@
     </div>
 
     <script>
+        // كشف طلاب الصف الثاني بكالوريا (44 طالباً وطالبة) المعتمد رسمياً بمدرسة محمد هاشم النقيب الثانوية المشتركة بكفر سرنجا
         const OFFICIAL_STUDENTS_LIST = [
-            {"id": 1, "code": "471017032", "name": "احمد السيد فتحى السيد احمد احمد الصعيدي"},
-            {"id": 2, "code": "471266563", "name": "احمد محمد نبيل محمود عثمان"},
-            {"id": 3, "code": "472682940", "name": "اسراء صبحى السيد محمد محمد حجازی"},
-            {"id": 4, "code": "472440171", "name": "السيد رضا رمضان السيد السيد حجازي"},
-            {"id": 5, "code": "471017175", "name": "السيد محمد محمد السيد عبد الفتاح النقيب"},
-            {"id": 6, "code": "472447159", "name": "امال محمد الشحات محمد محمد الدسوقي"},
-            {"id": 7, "code": "472943687", "name": "ایمان السيد عبد العزيز السيد الصفطي"},
-            {"id": 8, "code": "472684036", "name": "ایمان سامح عوض احمد محجوب السبع"},
-            {"id": 9, "code": "471001017", "name": "ايه احمد فرج متولى فرج عوف"},
-            {"id": 10, "code": "472939491", "name": "آیه عبد الرحمن مصطفى شعبان خلیفه"},
-            {"id": 11, "code": "476502605", "name": "تبارك السيد حسن سليم حسن عامر"},
-            {"id": 12, "code": "464213126", "name": "تفريح السيد عبد الله محمد عبد الفتاح"},
-            {"id": 13, "code": "472980584", "name": "حبيبه احمد رضا عبد الفتاح محمد بدوى"},
-            {"id": 14, "code": "471264612", "name": "حبيبه الشحات جوده احمد ابوالخیر"},
-            {"id": 15, "code": "471263964", "name": "دينا عصام عبد المجيد صالح هلال"},
-            {"id": 16, "code": "471511440", "name": "رحمه سعد ابو الفتوح محمد عبد الله الفواخري"},
-            {"id": 17, "code": "469961437", "name": "روان فتحی محمد شعبان عبد المقصود الحمل"},
-            {"id": 18, "code": "463712839", "name": "ريناد رفعت عبد الفتاح محمد عبد الرحمن"},
-            {"id": 19, "code": "476503386", "name": "سعاد محمد امین منصور زید"},
-            {"id": 20, "code": "472687697", "name": "سما وحيد عثمان عوض الله غانم"},
-            {"id": 21, "code": "472640604", "name": "سما وليد صبحى عبد الفتاح البيومي"},
-            {"id": 22, "code": "471511124", "name": "عبد الرحمن مجدى شعبان ابو المعاطى"},
-            {"id": 23, "code": "471321928", "name": "عبد اللطيف السعيد عبد اللطيف السعيد النجار"},
-            {"id": 24, "code": "472640677", "name": "عماد ابراهيم عبد الفتاح على زاهر"},
-            {"id": 25, "code": "471740171", "name": "عماد السيد عبد الهادي السعيد هلال"},
-            {"id": 26, "code": "473045937", "name": "عمر محمد عبد الحميد عبد الحق أحمد"},
-            {"id": 27, "code": "472640702", "name": "عمر هاني عزب محمد عزب رشوان"},
-            {"id": 28, "code": "471015962", "name": "فاطمه احمد عبد الرحيم طه عبد الفتاح الشافعي"},
-            {"id": 29, "code": "471284077", "name": "محمد حسن محمد حسن عبد المعطى البحراوي"},
-            {"id": 30, "code": "472444126", "name": "محمد عطية عطية على عثمان"},
-            {"id": 31, "code": "472682166", "name": "محمود سامى ابراهيم على العوضى"},
-            {"id": 32, "code": "472681575", "name": "مصطفى علاء ابراهيم عبد العظيم محمد عثمان"},
-            {"id": 33, "code": "471265833", "name": "ملك سعد محمد طه فوده"},
-            {"id": 34, "code": "472691028", "name": "ملك هاني ابراهيم ابراهيم عبد الله الفواخري"},
-            {"id": 35, "code": "471265496", "name": "منار اسامه السيد محمد سالم بدر"},
-            {"id": 36, "code": "471265063", "name": "منى حسن محمد عبدالوهاب الدسوقى"},
-            {"id": 37, "code": "472691463", "name": "نادية هاني ابراهيم ابراهيم عبدالله الفواخري"},
-            {"id": 38, "code": "472199442", "name": "نور الدین خالد همام محمد همام جليلة"},
-            {"id": 39, "code": "472692480", "name": "وعد صبرى رمضان السيد السيد حجازي"},
-            {"id": 40, "code": "472692549", "name": "ياسمين خالد كمال عبدالله محمد"},
-            {"id": 41, "code": "471000501", "name": "ياسمين وليد السيد متولى عامر"},
-            {"id": 42, "code": "472681926", "name": "يوسف محمد يوسف محمد سليمان"},
-            {"id": 43, "code": "471254068", "name": "يوسف محمد يوسف يوسف محمد ابراهيم الاقطع"},
-            {"id": 44, "code": "472682025", "name": "يوسف مصطفى احمد عباده الخولى"}
+            // مسار الهندسة وعلوم الحاسب (12 طالباً)
+            {"id": 1, "code": "472440171", "name": "السيد رضا رمضان السيد السيد حجازي", "track": "الهندسة", "gender": "ذكر"},
+            {"id": 2, "code": "471017175", "name": "السيد محمد محمد السيد عبد الفتاح النقيب", "track": "الهندسة", "gender": "ذكر"},
+            {"id": 3, "code": "472943687", "name": "ایمان السيد عبد العزيز السيد الصفطي", "track": "الهندسة", "gender": "أنثى"},
+            {"id": 4, "code": "471321928", "name": "عبد اللطيف السعيد عبد اللطيف السعيد النجار", "track": "الهندسة", "gender": "ذكر"},
+            {"id": 5, "code": "472640677", "name": "عماد ابراهيم عبد الفتاح على زاهر", "track": "الهندسة", "gender": "ذكر"},
+            {"id": 6, "code": "471740171", "name": "عماد السيد عبد الهادي السعيد هلال", "track": "الهندسة", "gender": "ذكر"},
+            {"id": 7, "code": "473045937", "name": "عمر محمد عبد الحميد عبد الحق أحمد", "track": "الهندسة", "gender": "ذكر"},
+            {"id": 8, "code": "472640702", "name": "عمر هاني عزب محمد عزب رشوان", "track": "الهندسة", "gender": "ذكر"},
+            {"id": 9, "code": "472444126", "name": "محمد عطية عطية على عثمان", "track": "الهندسة", "gender": "ذكر"},
+            {"id": 10, "code": "472681575", "name": "مصطفى علاء ابراهيم عبد العظيم محمد عثمان", "track": "الهندسة", "gender": "ذكر"},
+            {"id": 11, "code": "472681926", "name": "يوسف محمد يوسف محمد سليمان", "track": "الهندسة", "gender": "ذكر"},
+            {"id": 12, "code": "472682025", "name": "يوسف مصطفى احمد عباده الخولى", "track": "الهندسة", "gender": "ذكر"},
+
+            // مسار الأدب والفنون (2 طالباً)
+            {"id": 13, "code": "471001017", "name": "ايه احمد فرج متولى فرج عوف", "track": "أداب وفنون", "gender": "أنثى"},
+            {"id": 14, "code": "471254068", "name": "يوسف محمد يوسف يوسف محمد ابراهيم الاقطع", "track": "أداب وفنون", "gender": "ذكر"},
+
+            // مسار إدارة الأعمال (1 طالب)
+            {"id": 15, "code": "472684036", "name": "ایمان سامح عوض احمد محجوب السبع", "track": "أعمال", "gender": "أنثى"},
+
+            // مسار الطب وعلوم الحياة (29 طالباً)
+            {"id": 16, "code": "471017032", "name": "احمد السيد فتحى السيد احمد احمد الصعيدي", "track": "الطب", "gender": "ذكر"},
+            {"id": 17, "code": "471266563", "name": "احمد محمد نبيل محمود عثمان", "track": "الطب", "gender": "ذكر"},
+            {"id": 18, "code": "472682940", "name": "اسراء صبحى السيد محمد محمد حجازی", "track": "الطب", "gender": "أنثى"},
+            {"id": 19, "code": "472447159", "name": "امال محمد الشحات محمد محمد الدسوقي", "track": "الطب", "gender": "أنثى"},
+            {"id": 20, "code": "472939491", "name": "آيه عبد الرحمن مصطفى شعبان خلیفه", "track": "الطب", "gender": "أنثى"},
+            {"id": 21, "code": "476502605", "name": "تبارك السيد حسن سليم حسن عامر", "track": "الطب", "gender": "أنثى"},
+            {"id": 22, "code": "464213126", "name": "تفريح السيد عبد الله محمد عبد الفتاح", "track": "الطب", "gender": "أنثى"},
+            {"id": 23, "code": "472980584", "name": "حبيبه احمد رضا عبد الفتاح محمد بدوى", "track": "الطب", "gender": "أنثى"},
+            {"id": 24, "code": "471264612", "name": "حبيبه الشحات جوده احمد ابوالخیر", "track": "الطب", "gender": "أنثى"},
+            {"id": 25, "code": "471263964", "name": "دينا عصام عبد المجيد صالح هلال", "track": "الطب", "gender": "أنثى"},
+            {"id": 26, "code": "471511440", "name": "رحمه سعد ابو الفتوح محمد عبد الله الفواخري", "track": "الطب", "gender": "أنثى"},
+            {"id": 27, "code": "469961437", "name": "روان فتحی محمد شعبان عبد المقصود الحمل", "track": "الطب", "gender": "أنثى"},
+            {"id": 28, "code": "463712839", "name": "ريناد رفعت عبد الفتاح محمد عبد الرحمن", "track": "الطب", "gender": "أنثى"},
+            {"id": 29, "code": "476503386", "name": "سعاد محمد امین منصور زيد", "track": "الطب", "gender": "أنثى"},
+            {"id": 30, "code": "472687697", "name": "سما وحيد عثمان عوض الله غانم", "track": "الطب", "gender": "أنثى"},
+            {"id": 31, "code": "472640604", "name": "سما وليد صبحى عبد الفتاح البيومي", "track": "الطب", "gender": "أنثى"},
+            {"id": 32, "code": "471511124", "name": "عبد الرحمن مجدى شعبان ابو المعاطى ودع", "track": "الطب", "gender": "ذكر"},
+            {"id": 33, "code": "471015962", "name": "فاطمه احمد عبد الرحيم طه عبد الفتاح الشافعي", "track": "الطب", "gender": "أنثى"},
+            {"id": 34, "code": "471284077", "name": "محمد حسن محمد حسن عبد المعطى البحراوي", "track": "الطب", "gender": "ذكر"},
+            {"id": 35, "code": "472682166", "name": "محمود سامى ابراهيم على العوضى", "track": "الطب", "gender": "ذكر"},
+            {"id": 36, "code": "471265833", "name": "ملك سعد محمد طه فوده", "track": "الطب", "gender": "أنثى"},
+            {"id": 37, "code": "472691028", "name": "ملك هاني ابراهيم ابراهيم عبد الله الفواخري", "track": "الطب", "gender": "أنثى"},
+            {"id": 38, "code": "471265496", "name": "منار اسامه السيد محمد سالم بدر", "track": "الطب", "gender": "أنثى"},
+            {"id": 39, "code": "471265063", "name": "منى حسن محمد عبدالوهاب الدسوقى", "track": "الطب", "gender": "أنثى"},
+            {"id": 40, "code": "472691463", "name": "نادية هاني ابراهيم ابراهيم عبدالله الفواخري", "track": "الطب", "gender": "أنثى"},
+            {"id": 41, "code": "472199442", "name": "نور الدين خالد همام محمد همام جليلة", "track": "الطب", "gender": "أنثى"},
+            {"id": 42, "code": "472692480", "name": "وعد صبرى رمضان السيد السيد حجازي", "track": "الطب", "gender": "أنثى"},
+            {"id": 43, "code": "472692549", "name": "ياسمين خالد كمال عبدالله محمد", "track": "الطب", "gender": "أنثى"},
+            {"id": 44, "code": "471000501", "name": "ياسمين وليد السيد متولى عامر", "track": "الطب", "gender": "أنثى"}
         ];
 
         const TRACKS_SUBJECTS_MAP = {
-            "الطب": { "badge": "track-med", "icon": "🩺", "subjects": ["فيزياء", "رياضه"] },
-            "الهندسة": { "badge": "track-eng", "icon": "📐", "subjects": ["برمجة", "كيمياء"] },
-            "أعمال": { "badge": "track-bus", "icon": "💼", "subjects": ["محاسبة", "أعمال"] },
-            "أداب وفنون": { "badge": "track-art", "icon": "🎨", "subjects": ["علم نفس", "فرنساوي"] }
+            "الطب": { "badge": "track-med", "icon": "🩺", "name": "مسار الطب وعلوم الحياة", "subjects": ["فيزياء", "رياضه"] },
+            "الهندسة": { "badge": "track-eng", "icon": "📐", "name": "مسار الهندسة وعلوم الحاسب", "subjects": ["برمجة", "كيمياء"] },
+            "أعمال": { "badge": "track-bus", "icon": "💼", "name": "مسار إدارة الأعمال", "subjects": ["محاسبة", "أعمال"] },
+            "أداب وفنون": { "badge": "track-art", "icon": "🎨", "name": "مسار الأدب والفنون", "subjects": ["علم نفس", "فرنساوي"] }
         };
 
         const EMBEDDED_CLOUD_ENDPOINT = "https://script.google.com/macros/s/AKfycbyvBEtNZYE57bcVdgGRXTYK2q2-5ey0SSK0RLIgc69ckUPQh0Y7Kd2gK1buVRXXhq3w/exec";
-        const LOCAL_STORAGE_KEY = "NAQEEB_2026_TRACKS_SERVICE_ROSTER";
+        const LOCAL_STORAGE_KEY = "NAQEEB_2026_TRACKS_SERVICE_ROSTER_V4";
         const AUDIT_LOG_KEY = "NAQEEB_AUDIT_LOGS_TRAIL";
         const DRAFT_STORAGE_KEY = "NAQEEB_STUDENT_FORM_DRAFT";
         const SNAPSHOT_ROTATION_KEY = "NAQEEB_SNAPSHOTS_ROTATION";
         const BROADCAST_CHANNEL_NAME = "NAQEEB_ROSTER_SYNC_CHANNEL";
         const ADMIN_SECRET = "A&M";
+        const DELETE_SECURITY_PASSWORD = "mrmahmoud2026";
 
         let studentsRegistry = [];
         let auditLogs = [];
@@ -2408,11 +2537,11 @@
         let activeSearchTerm = "";
         let audioFXActive = true;
         let recentSuccessStudent = null;
+        let studentTargetForDelete = null;
         let syncBroadcastChannel = null;
         let autoSyncDebounceTimer = null;
         let isSyncingActive = false;
 
-        // دالة مساعدة لتحويل الأرقام العربية والمشرقية إلى أرقام إنجليزية لضمان صحة الأكواد والبحث
         function normalizeDigits(str) {
             if (!str) return '';
             return str.toString()
@@ -2578,11 +2707,18 @@
             const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
             if (raw) {
                 try {
-                    studentsRegistry = JSON.parse(raw);
-                    if (!Array.isArray(studentsRegistry) || studentsRegistry.length === 0) resetToDefaultData();
-                } catch(e) { resetToDefaultData(); }
+                    const parsed = JSON.parse(raw);
+                    if (Array.isArray(parsed) && parsed.length >= 44) {
+                        studentsRegistry = parsed.map(st => ({
+                            ...st,
+                            editCount: st.editCount || 0
+                        }));
+                    } else {
+                        resetToOfficialData();
+                    }
+                } catch(e) { resetToOfficialData(); }
             } else {
-                resetToDefaultData();
+                resetToOfficialData();
             }
 
             setupInterTabSynchronization();
@@ -2596,17 +2732,19 @@
             setInterval(pullFromCloud, 20000);
         }
 
-        function resetToDefaultData() {
+        function resetToOfficialData() {
             studentsRegistry = OFFICIAL_STUDENTS_LIST.map(st => ({
                 id: st.id,
                 code: st.code,
                 name: st.name,
+                gender: st.gender || "ذكر",
                 address: "",
                 phone: "",
-                track: "",
+                track: st.track || "",
                 subject: "",
                 isRegistered: false,
                 registrationDate: "",
+                editCount: 0,
                 updatedAt: Date.now(),
                 isDeleted: false
             }));
@@ -2634,7 +2772,7 @@
                 clearTimeout(autoSyncDebounceTimer);
                 autoSyncDebounceTimer = setTimeout(() => {
                     pushToCloud();
-                }, 500);
+                }, 600);
             }
         }
 
@@ -2652,7 +2790,7 @@
                 syncBroadcastChannel = new BroadcastChannel(BROADCAST_CHANNEL_NAME);
                 syncBroadcastChannel.onmessage = (e) => {
                     if (e.data && e.data.type === 'SYNC_UPDATE') {
-                        mergeIncomingData(e.data.payload, 'شاشة أخرى متصلة');
+                        mergeIncomingData(e.data.payload, 'شاشة أخرى متزامنة');
                     }
                 };
             }
@@ -2705,6 +2843,7 @@
                     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                     body: JSON.stringify({
                         action: 'SYNC_ALL_STUDENTS',
+                        school: 'مدرسة محمد هاشم النقيب بكفر سرنجا',
                         data: studentsRegistry,
                         timestamp: Date.now()
                     })
@@ -2734,7 +2873,7 @@
 
         function triggerManualSync() {
             triggerSoundEffect('click');
-            showToast('بدء المزامنة الفورية الشاملة...', '⚡');
+            showToast('بدء المزامنة الفورية الشاملة مع السحابة...', '⚡');
             pullFromCloud();
             pushToCloud();
         }
@@ -2749,15 +2888,15 @@
             if (status === 'online') {
                 dot.style.background = '#10b981';
                 text.textContent = 'مزامنة سحابية نشطة ⚡';
-                if (health) health.textContent = 'سحابي متزامن ⚡';
+                if (health) health.textContent = 'متزامن سحابياً ⚡';
             } else if (status === 'syncing') {
                 dot.classList.add('syncing');
-                text.textContent = 'جاري الحفظ والمزامنة...';
+                text.textContent = 'جاري المزامنة والحفظ...';
                 if (health) health.textContent = 'جاري المزامنة...';
             } else if (status === 'offline') {
                 dot.classList.add('offline');
                 text.textContent = 'حفظ محلي (بدون إنترنت ⚠️)';
-                if (health) health.textContent = 'حفظ محلي فقط';
+                if (health) health.textContent = 'حفظ محلي فقط ⚠️';
             } else {
                 dot.style.background = '#00d2ff';
                 text.textContent = 'مزامنة محلية فورية 🟢';
@@ -2767,12 +2906,12 @@
 
         function setupNetworkListeners() {
             window.addEventListener('online', () => {
-                showToast('تم استعادة الاتصال بالإنترنت، جاري المزامنة...', '🌐');
+                showToast('تم استعادة الاتصال بالإنترنت، جاري المزامنة السحابية...', '🌐');
                 pushToCloud();
                 pullFromCloud();
             });
             window.addEventListener('offline', () => {
-                showToast('انقطع الإنترنت: النظام يعمل بالحفظ المحلي الآمن.', '⚠️');
+                showToast('انقطع الاتصال: النظام يعمل بكفاءة كاملة مع الحفظ المحلي الآمن.', '⚠️');
                 updateSyncStatusUI('offline');
             });
             window.addEventListener('beforeunload', (e) => {
@@ -2787,8 +2926,8 @@
                     e.preventDefault();
                     openAdminGateModal();
                 } else if (e.key === 'Escape') {
-                    // إغلاق أي نافذة منبثقة نشطة
                     closeAdminPasswordModal();
+                    closeAdminDeleteModal();
                     closeAdminEditModal();
                     closeAdminAddModal();
                     closeThankYouModal();
@@ -2851,7 +2990,7 @@
             saveInputDraft();
 
             if (!code) {
-                feedbackEl.innerHTML = '<div class="status-idle">ℹ️ اكتب الكود المعتمد لظهور اسم الطالب تلقائياً.</div>';
+                feedbackEl.innerHTML = '<div class="status-idle">ℹ️ اكتب الكود المعتمد لظهور اسم الطالب والمسار المحدد تلقائياً.</div>';
                 nameField.value = '';
                 addressField.value = '';
                 phoneField.value = '';
@@ -2863,7 +3002,9 @@
             const matched = studentsRegistry.find(s => s.code === code && !s.isDeleted);
 
             if (matched) {
-                feedbackEl.innerHTML = `<div class="status-verified">✅ تم التحقق: كود معتمد بالصف الثاني الثانوي (مسلسل: ${matched.id})</div>`;
+                const trkName = TRACKS_SUBJECTS_MAP[matched.track] ? TRACKS_SUBJECTS_MAP[matched.track].name : matched.track;
+                const editsLabel = (matched.editCount && matched.editCount > 0) ? ` | [تم تعديل البيانات ${matched.editCount} مرة]` : '';
+                feedbackEl.innerHTML = `<div class="status-verified">✅ تم التحقق: كود معتمد بالصف الثاني بكالوريا - ${trkName} (مسلسل: ${matched.id})${editsLabel}</div>`;
                 nameField.value = matched.name;
                 codeInput.classList.add('field-highlight-pulse');
                 [addressField, phoneField, trackSelect, submitBtn].forEach(el => el.disabled = false);
@@ -2877,14 +3018,14 @@
                     if (matched.subject) subjectSelect.value = matched.subject;
                 } else {
                     trackSelect.value = '';
-                    subjectSelect.innerHTML = '<option value="">-- اضغط لاختيار المادة --</option>';
+                    subjectSelect.innerHTML = '<option value="">-- اضغط لاختيار المادة المقررة --</option>';
                     subjectSelect.disabled = true;
                 }
                 triggerSoundEffect('click');
             } else {
                 codeInput.classList.remove('field-highlight-pulse');
                 feedbackEl.innerHTML = code.length >= 8 
-                    ? '<div class="status-unverified">⛔ كود غير مدرج بكشوف فصول الخدمات المعتمدة!</div>' 
+                    ? '<div class="status-unverified">⛔ كود غير مدرج بكشوف الصف الثاني بكالوريا بكفر سرنجا!</div>' 
                     : '<div class="status-idle">⏳ جاري كتابة الكود المكون من 9 أرقام...</div>';
                 nameField.value = '';
                 [addressField, phoneField, trackSelect, subjectSelect, submitBtn].forEach(el => el.disabled = true);
@@ -2933,8 +3074,13 @@
 
             if (!track || !subject) {
                 triggerSoundEffect('error');
-                alert('⚠️ يرجى تحديد المسار والمادة المقررة!');
+                alert('⚠️ يرجى تحديد المسار والمادة التخصصية المقررة!');
                 return;
+            }
+
+            // إذا كان الطالب مسجلاً مسبقاً ويقوم بالتعديل، يتم زيادة عداد التعديلات
+            if (studentsRegistry[idx].isRegistered) {
+                studentsRegistry[idx].editCount = (studentsRegistry[idx].editCount || 0) + 1;
             }
 
             studentsRegistry[idx].address = address;
@@ -2945,7 +3091,7 @@
             studentsRegistry[idx].registrationDate = new Date().toLocaleString('ar-EG');
             studentsRegistry[idx].updatedAt = Date.now();
 
-            logAuditAction('تسجيل رغبة طالب', `${studentsRegistry[idx].name} -> مسار ${track} (${subject})`, 'بوابة الطلاب');
+            logAuditAction('تأكيد/تعديل رغبة طالب', `${studentsRegistry[idx].name} -> ${track} (${subject}) [مرات التعديل: ${studentsRegistry[idx].editCount}]`, 'بوابة الطلاب');
             persistData(true);
             triggerSoundEffect('success');
             sessionStorage.removeItem(DRAFT_STORAGE_KEY);
@@ -2962,13 +3108,15 @@
         }
 
         function displayThankYouModal(student) {
+            const trkName = TRACKS_SUBJECTS_MAP[student.track] ? TRACKS_SUBJECTS_MAP[student.track].name : student.track;
             document.getElementById('modalStudentDetails').innerHTML = `
                 <div class="receipt-item"><div class="lbl">اسم الطالب:</div><div class="val">${student.name}</div></div>
                 <div class="receipt-item"><div class="lbl">كود الطالب:</div><div class="val" style="font-family: monospace; color: var(--accent-cyan);">${student.code}</div></div>
-                <div class="receipt-item"><div class="lbl">المسار المعتمد:</div><div class="val" style="color: var(--primary-color);">${student.track}</div></div>
+                <div class="receipt-item"><div class="lbl">المسار المعتمد:</div><div class="val" style="color: var(--primary-color);">${trkName}</div></div>
                 <div class="receipt-item"><div class="lbl">المادة المقررة:</div><div class="val" style="color: #34d399;">${student.subject}</div></div>
+                <div class="receipt-item"><div class="lbl">مرات التعديل:</div><div class="val" style="color: #fbbf24;">${student.editCount || 0} مرات</div></div>
                 <div class="receipt-item"><div class="lbl">تاريخ التسجيل:</div><div class="val" style="font-size: 0.84rem;">${student.registrationDate}</div></div>
-                <div class="receipt-item"><div class="lbl">رقم المسلسل:</div><div class="val" style="font-family: monospace;"># ${student.id}</div></div>
+                <div class="receipt-item"><div class="lbl">رقم المسلسل بالكشف:</div><div class="val" style="font-family: monospace;"># ${student.id}</div></div>
             `;
             document.getElementById('thankYouModal').classList.add('active');
         }
@@ -2980,13 +3128,15 @@
 
         function shareStudentChoiceWhatsApp() {
             if (!recentSuccessStudent) return;
+            const trkName = TRACKS_SUBJECTS_MAP[recentSuccessStudent.track] ? TRACKS_SUBJECTS_MAP[recentSuccessStudent.track].name : recentSuccessStudent.track;
             const txt = encodeURIComponent(
-                `*إشعار تسجيل رغبات رسمي - مدرسة محمد هاشم النقيب الثانوية المشتركة*\n` +
-                `*فصول الخدمات - الصف الثاني الثانوي 2026 / 2027 م*\n\n` +
+                `*إشعار تسجيل رغبات رسمي - مدرسة محمد هاشم النقيب الثانوية المشتركة بكفر سرنجا*\n` +
+                `*فصول الخدمات - الصف الثاني بكالوريا 2026 / 2027 م*\n\n` +
                 `👤 *الطالب:* ${recentSuccessStudent.name}\n` +
                 `🆔 *الكود:* ${recentSuccessStudent.code}\n` +
-                `🎯 *المسار:* مسار ${recentSuccessStudent.track}\n` +
+                `🎯 *المسار الأكاديمي:* ${trkName}\n` +
                 `📚 *المادة المقررة:* ${recentSuccessStudent.subject}\n` +
+                `🔄 *مرات التعديل:* ${recentSuccessStudent.editCount || 0}\n` +
                 `📅 *تاريخ الاعتماد:* ${recentSuccessStudent.registrationDate}\n\n` +
                 `وكيل المدرسة: أ/ عبد الحميد عثمان`
             );
@@ -3003,18 +3153,24 @@
             const totalCount = activeStudents.length;
             const regCount = activeStudents.filter(s => s.isRegistered).length;
             const pendCount = totalCount - regCount;
+            const editedCount = activeStudents.filter(s => (s.editCount || 0) > 0).length;
 
             const allCountEl = document.getElementById('filterAllCount');
             const regCountEl = document.getElementById('filterRegCount');
             const pendCountEl = document.getElementById('filterPendCount');
+            const editedCountEl = document.getElementById('filterEditedCount');
             if (allCountEl) allCountEl.textContent = totalCount;
             if (regCountEl) regCountEl.textContent = regCount;
             if (pendCountEl) pendCountEl.textContent = pendCount;
+            if (editedCountEl) editedCountEl.textContent = editedCount;
 
             const filtered = activeStudents.filter(st => {
                 if (activeFilter === 'registered' && !st.isRegistered) return false;
                 if (activeFilter === 'pending' && st.isRegistered) return false;
+                if (activeFilter === 'edited' && (!st.editCount || st.editCount === 0)) return false;
                 if (['الطب', 'الهندسة', 'أعمال', 'أداب وفنون'].includes(activeFilter) && st.track !== activeFilter) return false;
+                if (activeFilter === 'بنين' && st.gender !== 'ذكر') return false;
+                if (activeFilter === 'بنات' && st.gender !== 'أنثى') return false;
 
                 if (activeSearchTerm) {
                     const q = activeSearchTerm.toLowerCase();
@@ -3023,45 +3179,57 @@
                            st.code.includes(cleanQ) || 
                            (st.phone || '').includes(cleanQ) || 
                            (st.track || '').toLowerCase().includes(q) ||
-                           (st.address || '').toLowerCase().includes(q);
+                           (st.address || '').toLowerCase().includes(q) ||
+                           String(st.editCount || 0).includes(cleanQ);
                 }
                 return true;
             });
 
             if (filtered.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; padding: 25px; color: var(--text-muted); font-size: 0.95rem;">🔍 لا توجد نتائج مطابقة للبحث أو الفلتر المحدد</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="12" style="text-align: center; padding: 25px; color: var(--text-muted); font-size: 0.95rem;">🔍 لا توجد نتائج مطابقة للبحث أو الفلتر المحدد</td></tr>`;
                 return;
             }
 
             filtered.forEach(st => {
                 const tr = document.createElement('tr');
                 let trackBadge = '<b class="badge-track track-none">لم يحدد</b>';
-                if (st.isRegistered && st.track) {
+                if (st.track) {
                     const cfg = TRACKS_SUBJECTS_MAP[st.track] || { badge: 'track-med', icon: '✨' };
                     trackBadge = `<b class="badge-track ${cfg.badge}">${cfg.icon} ${st.track}</b>`;
                 }
+
+                const genderBadge = st.gender === 'أنثى' 
+                    ? '<span class="badge-gender gender-female">بنت</span>' 
+                    : '<span class="badge-gender gender-male">بنين</span>';
+
+                const editsCountVal = st.editCount || 0;
+                const editBadge = editsCountVal > 0 
+                    ? `<span class="badge-edits has-edits" title="تم تعديل هذا السجل ${editsCountVal} مرة">🔄 ${editsCountVal}</span>` 
+                    : `<span class="badge-edits" title="لم يتم تعديل السجل">0</span>`;
 
                 const subjectBadge = (st.isRegistered && st.subject)
                     ? `<b class="badge-subject">${st.subject}</b>`
                     : `<b style="color: var(--text-muted); font-size: 0.85rem;">-</b>`;
 
                 const statusBadge = st.isRegistered
-                    ? '<b class="badge-status status-ok">✅ تم التسجيل</b>'
-                    : '<b class="badge-status status-wait">⏳ بانتظار الاختيار</b>';
+                    ? '<b class="badge-status status-ok">✅ تم التأكيد</b>'
+                    : '<b class="badge-status status-wait">⏳ قيد التأكيد</b>';
 
                 tr.innerHTML = `
                     <td class="id-col">${st.id}</td>
                     <td class="code-col">${st.code}</td>
                     <td class="name-col">${st.name}</td>
+                    <td>${genderBadge}</td>
                     <td>${trackBadge}</td>
                     <td>${subjectBadge}</td>
+                    <td style="text-align: center;">${editBadge}</td>
                     <td style="font-size: 0.85rem; color: #cbd5e1;">${st.address || '-'}</td>
                     <td style="font-family: monospace; font-size: 0.85rem; color: var(--accent-cyan); font-weight: 800;">${st.phone || '-'}</td>
                     <td>${statusBadge}</td>
                     <td style="font-size: 0.78rem; color: #94a3b8; font-weight: 700;">${st.registrationDate || '-'}</td>
                     <td style="text-align: center; white-space: nowrap;">
                         <button class="btn-edit-inline" onclick="openAdminEditStudentModal('${st.code}')">تعديل ✏️</button>
-                        <button class="btn-delete-inline" onclick="deleteStudentAdmin('${st.code}')">حذف 🗑️</button>
+                        <button class="btn-delete-inline" onclick="openAdminDeleteModal('${st.code}')">حذف 🗑️</button>
                     </td>
                 `;
                 tbody.appendChild(tr);
@@ -3094,9 +3262,12 @@
             const dashPend = document.getElementById('dashCountPending');
             const panelCap = document.getElementById('panelCapacityTag');
 
+            const males = activeStudents.filter(s => s.gender === 'ذكر').length;
+            const females = activeStudents.filter(s => s.gender === 'أنثى').length;
+
             if (dashTotal) dashTotal.textContent = total;
             if (dashReg) dashReg.textContent = reg;
-            if (dashPct) dashPct.textContent = `${pct}% من الإجمالي`;
+            if (dashPct) dashPct.textContent = `${pct}% من الإجمالي (${males} بنين | ${females} بنات)`;
             if (dashPend) dashPend.textContent = pend;
             if (panelCap) panelCap.textContent = `🔒 فصول الخدمات (${total} طالباً)`;
 
@@ -3113,7 +3284,7 @@
             let medPhys = 0, medMath = 0, engProg = 0, engChem = 0, busAcc = 0, busMgt = 0, artPsych = 0, artFrench = 0;
 
             activeStudents.forEach(s => {
-                if (s.isRegistered && s.track && tally[s.track] !== undefined) {
+                if (s.track && tally[s.track] !== undefined) {
                     tally[s.track]++;
                     const sub = (s.subject || '').trim();
                     if (s.track === 'الطب') { 
@@ -3184,7 +3355,7 @@
                 updateAllMetrics();
                 renderRosterTable();
                 document.getElementById('adminDashboardModal').classList.add('active');
-                logAuditAction('دخول لوحة التحكم', 'تسجيل دخول ناجح للإدارة', 'Admin');
+                logAuditAction('دخول لوحة التحكم', 'تسجيل دخول إداري ناجح', 'Admin');
             } else {
                 triggerSoundEffect('error');
                 document.getElementById('adminAuthFeedback').style.display = 'block';
@@ -3197,21 +3368,53 @@
         }
         function logoutAdminDashboard() { closeAdminDashboardModal(); }
 
-        function deleteStudentAdmin(code) {
+        // نافذة الحذف الأمنية المحمية بكلمة المرور الخاصة
+        function openAdminDeleteModal(code) {
             triggerSoundEffect('click');
             const student = studentsRegistry.find(s => s.code === code && !s.isDeleted);
             if (!student) return;
 
-            const conf = confirm(`⚠️ هل أنت متأكد تماماً من حذف الطالب:\n\n« ${student.name} » (كود: ${student.code}) ؟\n\nسيتم حذفه من كافة السجلات والشاشات المتزامنة فوراً.`);
-            if (!conf) return;
+            studentTargetForDelete = student;
+            const previewEl = document.getElementById('deleteTargetPreview');
+            previewEl.innerHTML = `
+                <div style="font-weight: 900; color: #fff; margin-bottom: 4px;">👤 الطالب: <span style="color: var(--primary-color);">${student.name}</span></div>
+                <div style="display: flex; justify-content: space-between; color: #cbd5e1;">
+                    <span>🆔 كود الطالب: <b>${student.code}</b></span>
+                    <span>🎯 المسار: <b>${student.track || 'غير محدد'}</b></span>
+                </div>
+                <div style="margin-top: 4px; font-size: 0.8rem; color: #fca5a5;">🔄 إجمالي التعديلات المسجلة للطالب: <b>${student.editCount || 0}</b></div>
+            `;
 
-            student.isDeleted = true;
-            student.updatedAt = Date.now();
+            document.getElementById('deleteSecretKeyInput').value = '';
+            document.getElementById('deleteAuthFeedback').style.display = 'none';
+            document.getElementById('adminDeleteConfirmModal').classList.add('active');
+            setTimeout(() => document.getElementById('deleteSecretKeyInput').focus(), 150);
+        }
 
-            logAuditAction('حذف طالب', `تم حذف الطالب (${student.name}) كود (${student.code})`, 'Admin');
-            persistData(true);
-            triggerSoundEffect('delete');
-            showToast(`تم حذف الطالب (${student.name}) بنجاح وتمت المزامنة`, '🗑️');
+        function closeAdminDeleteModal() {
+            triggerSoundEffect('click');
+            document.getElementById('adminDeleteConfirmModal').classList.remove('active');
+            studentTargetForDelete = null;
+        }
+
+        function confirmExecuteStudentDelete() {
+            const enteredPass = document.getElementById('deleteSecretKeyInput').value.trim();
+            if (!studentTargetForDelete) return;
+
+            if (enteredPass === DELETE_SECURITY_PASSWORD) {
+                triggerSoundEffect('delete');
+                studentTargetForDelete.isDeleted = true;
+                studentTargetForDelete.updatedAt = Date.now();
+
+                logAuditAction('حذف أمني معتمد', `تم حذف الطالب (${studentTargetForDelete.name}) كود (${studentTargetForDelete.code}) باستخدام كلمة المرور الأمنية الخاصة.`, 'SuperAdmin');
+                persistData(true);
+                closeAdminDeleteModal();
+                showToast(`تم حذف سجل الطالب (${studentTargetForDelete.name}) بنجاح وتحديث السحابة!`, '🗑️');
+            } else {
+                triggerSoundEffect('error');
+                document.getElementById('deleteAuthFeedback').style.display = 'block';
+                logAuditAction('محاولة حذف فاشلة', `محاولة غير مصرح بها لحذف الطالب (${studentTargetForDelete.name}) بكلمة مرور خاطئة!`, 'SecurityAlert');
+            }
         }
 
         function openAdminEditStudentModal(code) {
@@ -3222,6 +3425,7 @@
             document.getElementById('editStudentOriginalCode').value = student.code;
             document.getElementById('editStudentCodeField').value = student.code;
             document.getElementById('editStudentNameField').value = student.name;
+            document.getElementById('editStudentGenderSelect').value = student.gender || 'ذكر';
             document.getElementById('editStudentAddressField').value = student.address || '';
             document.getElementById('editStudentPhoneField').value = student.phone || '';
             document.getElementById('editStudentTrackSelect').value = student.track || '';
@@ -3250,6 +3454,7 @@
             const originalCode = document.getElementById('editStudentOriginalCode').value;
             const newCode = normalizeDigits(document.getElementById('editStudentCodeField').value);
             const newName = document.getElementById('editStudentNameField').value.trim();
+            const newGender = document.getElementById('editStudentGenderSelect').value;
             const newAddress = document.getElementById('editStudentAddressField').value.trim();
             const newPhone = normalizeDigits(document.getElementById('editStudentPhoneField').value);
             const newTrack = document.getElementById('editStudentTrackSelect').value;
@@ -3258,8 +3463,12 @@
             const idx = studentsRegistry.findIndex(s => s.code === originalCode && !s.isDeleted);
             if (idx === -1) return;
 
+            // زيادة عداد التعديلات للطالب
+            studentsRegistry[idx].editCount = (studentsRegistry[idx].editCount || 0) + 1;
+
             studentsRegistry[idx].code = newCode;
             studentsRegistry[idx].name = newName;
+            studentsRegistry[idx].gender = newGender;
             studentsRegistry[idx].address = newAddress;
             studentsRegistry[idx].phone = newPhone;
             studentsRegistry[idx].track = newTrack;
@@ -3270,11 +3479,11 @@
                 studentsRegistry[idx].registrationDate = new Date().toLocaleString('ar-EG');
             }
 
-            logAuditAction('تعديل إداري', `تعديل بيانات الطالب (${newName})`, 'Admin');
+            logAuditAction('تعديل إداري معتمد', `تعديل بيانات الطالب (${newName}) - العداد الحالي: ${studentsRegistry[idx].editCount}`, 'Admin');
             persistData(true);
             triggerSoundEffect('success');
             closeAdminEditModal();
-            showToast('تم حفظ التعديلات والمزامنة الفورية! 💾', '✅');
+            showToast(`تم حفظ التعديلات وتحديث عداد التعديل (${studentsRegistry[idx].editCount}) والمزامنة! 💾`, '✅');
         }
 
         function openNewStudentModal() {
@@ -3298,6 +3507,7 @@
             e.preventDefault();
             const code = normalizeDigits(document.getElementById('addStudentCodeField').value);
             const name = document.getElementById('addStudentNameField').value.trim();
+            const gender = document.getElementById('addStudentGenderSelect').value;
             const address = document.getElementById('addStudentAddressField').value.trim();
             const phone = normalizeDigits(document.getElementById('addStudentPhoneField').value);
             const track = document.getElementById('addStudentTrackSelect').value;
@@ -3313,25 +3523,27 @@
                 id: studentsRegistry.filter(s => !s.isDeleted).length + 1,
                 code: code,
                 name: name,
+                gender: gender,
                 address: address,
                 phone: phone,
                 track: track,
                 subject: subject,
                 isRegistered: isReg,
                 registrationDate: isReg ? new Date().toLocaleString('ar-EG') : "",
+                editCount: 0,
                 updatedAt: Date.now(),
                 isDeleted: false
             };
 
             studentsRegistry.push(newStudent);
-            logAuditAction('إضافة طالب جديد', `إدراج (${name}) بكود (${code})`, 'Admin');
+            logAuditAction('إضافة طالب جديد', `إدراج (${name}) بكود (${code}) في مسار (${track})`, 'Admin');
             persistData(true);
             triggerSoundEffect('success');
             closeAdminAddModal();
             showToast('تمت إضافة الطالب وحفظه بنجاح!', '✅');
         }
 
-        function generateOfficialTwoPagePrint(studentsList, customReportTitle = 'كشف رغبات وتوزيع مسارات الصف الثاني الثانوي - العام الدراسي 2026 / 2027 م') {
+        function generateOfficialTwoPagePrint(studentsList, customReportTitle = 'كشف رغبات وتوزيع مسارات الصف الثاني بكالوريا - العام الدراسي 2026 / 2027 م') {
             const printSec = document.getElementById('dedicatedPrintSection');
             printSec.innerHTML = '';
 
@@ -3346,9 +3558,11 @@
                         <td style="font-weight: 900; width: 30px;">${s.id}</td>
                         <td class="code-td" style="width: 80px;">${s.code}</td>
                         <td class="name-td">${s.name}</td>
+                        <td style="width: 45px; font-weight: 800;">${s.gender === 'أنثى' ? 'بنت' : 'بنين'}</td>
                         <td style="font-weight: 800; width: 85px;">${s.track || 'لم يحدد'}</td>
                         <td style="font-weight: 800; width: 75px;">${s.subject || '-'}</td>
-                        <td style="font-size: 7.8pt; width: 75px;">${s.isRegistered ? 'مسجل ✅' : 'قيد الانتظار ⏳'}</td>
+                        <td style="width: 45px; font-weight: 800;">${s.editCount || 0}</td>
+                        <td style="font-size: 7.8pt; width: 75px;">${s.isRegistered ? 'مؤكد ✅' : 'قيد التأكيد ⏳'}</td>
                         <td style="width: 95px;"></td>
                     </tr>
                 `).join('');
@@ -3359,12 +3573,12 @@
                             <div class="print-official-header">
                                 <div class="gov-title">جمهورية مصر العربية - وزارة التربية والتعليم والتعليم الفني</div>
                                 <div class="gov-title">مديرية التربية والتعليم بالدقهلية - إدارة ميت غمر التعليمية</div>
-                                <div class="school-title">مدرسة محمد هاشم النقيب الثانوية المشتركة (فصول الخدمات)</div>
+                                <div class="school-title">مدرسة محمد هاشم النقيب الثانوية المشتركة بكفر سرنجا (فصول الخدمات)</div>
                                 <div class="report-title-badge">${customReportTitle}</div>
                             </div>
                             <div class="print-page-subinfo">
                                 <div>📋 كشف الطلاب المقيدين: من مسلسل (${fromNum}) إلى (${toNum})</div>
-                                <div>العام الدراسي: 2026 / 2027 م</div>
+                                <div>إجمالي طلاب المرحلة: 44 طالباً وطالبة</div>
                                 <div>صفحة رقم: [ ${pageNumber} من ${totalPages} ]</div>
                             </div>
                         </div>
@@ -3375,8 +3589,10 @@
                                     <th style="width: 30px;">م</th>
                                     <th style="width: 80px;">كود الطالب</th>
                                     <th>اسم الطالب الرباعي / الخماسي</th>
+                                    <th style="width: 45px;">النوع</th>
                                     <th style="width: 85px;">المسار المحدد</th>
                                     <th style="width: 75px;">المادة المقررة</th>
+                                    <th style="width: 45px;">التعديل</th>
                                     <th style="width: 75px;">حالة التسجيل</th>
                                     <th style="width: 95px;">توقيع الطالب</th>
                                 </tr>
@@ -3421,7 +3637,7 @@
         function printOfficialRoster() {
             triggerSoundEffect('click');
             const activeStudents = studentsRegistry.filter(s => !s.isDeleted);
-            generateOfficialTwoPagePrint(activeStudents, 'كشف رغبات وتوزيع مسارات الصف الثاني الثانوي - العام الدراسي 2026 / 2027 م');
+            generateOfficialTwoPagePrint(activeStudents, 'كشف رغبات وتوزيع مسارات الصف الثاني بكالوريا - مدرسة محمد هاشم النقيب بكفر سرنجا');
             setTimeout(() => {
                 window.print();
             }, 200);
@@ -3431,16 +3647,15 @@
             triggerSoundEffect('click');
             const late = studentsRegistry.filter(s => !s.isDeleted && !s.isRegistered);
             if (late.length === 0) {
-                alert('الجميع سجلوا بنجاح! لا توجد كشوف متأخرين حالياً.');
+                alert('الجميع قاموا بتأكيد المادة التخصصية بنجاح! لا توجد كشوف متأخرين حالياً.');
                 return;
             }
-            generateOfficialTwoPagePrint(late, `كشف الطلاب المتأخرين عن تسجيل الرغبات (${late.length} طالب)`);
+            generateOfficialTwoPagePrint(late, `كشف الطلاب المتأخرين عن تأكيد المادة التخصصية (${late.length} طالب)`);
             setTimeout(() => {
                 window.print();
             }, 200);
         }
 
-        // توليد وطباعة إيصال الرغبة الفردي للطالب بصيغة رسمية راقية
         function printStudentReceipt() {
             if (!recentSuccessStudent) {
                 alert('لا توجد بيانات طالب حالي للطباعة');
@@ -3448,28 +3663,30 @@
             }
             triggerSoundEffect('click');
             const printSec = document.getElementById('dedicatedPrintSection');
+            const trkName = TRACKS_SUBJECTS_MAP[recentSuccessStudent.track] ? TRACKS_SUBJECTS_MAP[recentSuccessStudent.track].name : recentSuccessStudent.track;
             printSec.innerHTML = `
                 <div class="student-receipt-print-card">
                     <div class="receipt-print-header">
                         <h2>جمهورية مصر العربية - وزارة التربية والتعليم والتعليم الفني</h2>
                         <p>مديرية التربية والتعليم بالدقهلية - إدارة ميت غمر التعليمية</p>
-                        <h2 style="margin-top: 4px;">مدرسة محمد هاشم النقيب الثانوية المشتركة (فصول الخدمات)</h2>
-                        <div class="receipt-badge-title">إيصال وإفادة تسجيل رغبات المسار الأكاديمي 2026 / 2027 م</div>
+                        <h2 style="margin-top: 4px;">مدرسة محمد هاشم النقيب الثانوية المشتركة بكفر سرنجا</h2>
+                        <div class="receipt-badge-title">إيصال وإفادة تأكيد مسار الصف الثاني بكالوريا 2026 / 2027 م</div>
                     </div>
 
                     <div class="receipt-print-grid">
                         <div class="receipt-field-row"><span>اسم الطالب الرباعي:</span> <b>${recentSuccessStudent.name}</b></div>
                         <div class="receipt-field-row"><span>رقم المسلسل بالكشف:</span> <b># ${recentSuccessStudent.id}</b></div>
                         <div class="receipt-field-row"><span>كود الطالب الموحد:</span> <b style="font-family: monospace;">${recentSuccessStudent.code}</b></div>
-                        <div class="receipt-field-row"><span>المسار التخصصي المختار:</span> <b style="color: #000;">مسار ${recentSuccessStudent.track}</b></div>
+                        <div class="receipt-field-row"><span>المسار التخصصي الرسمي:</span> <b style="color: #000;">${trkName}</b></div>
                         <div class="receipt-field-row"><span>المادة التخصصية المقررة:</span> <b>${recentSuccessStudent.subject}</b></div>
+                        <div class="receipt-field-row"><span>عدد مرات تعديل البيانات:</span> <b>${recentSuccessStudent.editCount || 0} مرات</b></div>
                         <div class="receipt-field-row"><span>رقم هاتف التواصل:</span> <b style="font-family: monospace;">${recentSuccessStudent.phone || '-'}</b></div>
                         <div class="receipt-field-row"><span>العنوان ومحل الإقامة:</span> <b>${recentSuccessStudent.address || '-'}</b></div>
-                        <div class="receipt-field-row"><span>تاريخ ووقت التسجيل:</span> <b>${recentSuccessStudent.registrationDate}</b></div>
+                        <div class="receipt-field-row"><span>تاريخ ووقت الاعتماد:</span> <b>${recentSuccessStudent.registrationDate}</b></div>
                     </div>
 
                     <div class="receipt-pledge">
-                        <strong>إقرار وتعهد:</strong> أقر أنا الطالب الموضح بياناتي أعلاه بصحة ودقة اختياري للمسار الأكاديمي والمادة التخصصية المحددة للعام الدراسي 2026 / 2027 م بمدرسة محمد هاشم النقيب الثانوية المشتركة، ولا يحق لي المطالبة بالتحويل بعد انقضاء المواعيد المحددة.
+                        <strong>إقرار وتعهد:</strong> أقر أنا الطالب الموضح بياناتي أعلاه بصحة ودقة اختياري للمادة التخصصية وتأكيد مساري المعتمد للعام الدراسي 2026 / 2027 م بمدرسة محمد هاشم النقيب الثانوية المشتركة بكفر سرنجا.
                     </div>
 
                     <div class="receipt-sig-grid">
@@ -3497,15 +3714,17 @@
 
         function exportDataExcel() {
             triggerSoundEffect('click');
-            let csv = "\uFEFFم,كود الطالب,اسم الطالب,المسار المختار,المادة المقررة,العنوان,رقم الهاتف,حالة التسجيل,تاريخ التسجيل\n";
+            let csv = "\uFEFFم,كود الطالب,اسم الطالب,النوع,المسار المختار,المادة المقررة,مرات التعديل,العنوان,رقم الهاتف,حالة التسجيل,تاريخ التسجيل\n";
 
             studentsRegistry.filter(s => !s.isDeleted).forEach(s => {
                 csv += [
                     s.id,
                     `"${s.code}"`,
                     `"${s.name}"`,
+                    `"${s.gender || 'ذكر'}"`,
                     `"${s.track || 'غير محدد'}"`,
                     `"${s.subject || 'غير محدد'}"`,
+                    s.editCount || 0,
                     `"${s.address || '-'}"`,
                     `"${s.phone || '-'}"`,
                     `"${s.isRegistered ? 'تم التسجيل' : 'في الانتظار'}"`,
@@ -3516,7 +3735,7 @@
             const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
             const a = document.createElement("a");
             a.href = URL.createObjectURL(blob);
-            a.download = `كشف_رغبات_فصول_الخدمات_النقيب_${new Date().toLocaleDateString('ar-EG').replace(/\//g,'-')}.csv`;
+            a.download = `كشف_رغبات_الصف_الثاني_بكالوريا_النقيب_${new Date().toLocaleDateString('ar-EG').replace(/\//g,'-')}.csv`;
             a.click();
             showToast('تم تصدير ملف الإكسيل بنجاح!', '📊');
         }
@@ -3542,12 +3761,14 @@
                                     id: studentsRegistry.filter(s => !s.isDeleted).length + 1,
                                     code: code,
                                     name: name,
-                                    track: parts[3] || '',
-                                    subject: parts[4] || '',
-                                    address: parts[5] || '',
-                                    phone: normalizeDigits(parts[6] || ''),
-                                    isRegistered: parts[7] === 'تم التسجيل',
-                                    registrationDate: parts[8] || '',
+                                    gender: parts[3] || 'ذكر',
+                                    track: parts[4] || '',
+                                    subject: parts[5] || '',
+                                    editCount: parseInt(parts[6], 10) || 0,
+                                    address: parts[7] || '',
+                                    phone: normalizeDigits(parts[8] || ''),
+                                    isRegistered: parts[9] === 'تم التسجيل',
+                                    registrationDate: parts[10] || '',
                                     updatedAt: Date.now(),
                                     isDeleted: false
                                 });
@@ -3588,7 +3809,10 @@
                 try {
                     const data = JSON.parse(e.target.result);
                     if (Array.isArray(data) && data.length > 0) {
-                        studentsRegistry = data;
+                        studentsRegistry = data.map(st => ({
+                            ...st,
+                            editCount: st.editCount || 0
+                        }));
                         persistData(true);
                         triggerSoundEffect('success');
                         showToast('تم استعادة قاعدة البيانات بنجاح تام!', '✅');
