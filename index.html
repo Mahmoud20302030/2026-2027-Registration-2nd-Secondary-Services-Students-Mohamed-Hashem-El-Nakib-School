@@ -50,7 +50,6 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* شريط التمرير الاحترافي الزاهي */
         ::-webkit-scrollbar {
             width: 9px;
             height: 9px;
@@ -113,7 +112,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 22px;
         }
 
         .royal-header {
@@ -122,7 +121,7 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1.5px solid var(--border-glow);
             border-radius: var(--radius-lg);
-            padding: 24px 30px;
+            padding: 22px 28px;
             box-shadow: 0 16px 45px rgba(0, 0, 0, 0.75), 0 0 35px rgba(0, 240, 255, 0.25);
             display: flex;
             justify-content: space-between;
@@ -154,21 +153,23 @@
             display: flex;
             align-items: center;
             gap: 20px;
+            cursor: pointer;
         }
 
         .sovereign-badge {
-            width: 82px;
-            height: 82px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, rgba(0, 240, 255, 0.3), rgba(0, 102, 255, 0.25));
             border: 2px solid var(--primary-color);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 40px;
+            font-size: 38px;
             box-shadow: 0 0 30px var(--primary-glow);
             flex-shrink: 0;
             animation: pulseEmblem 3s infinite alternate;
+            user-select: none;
         }
 
         @keyframes pulseEmblem {
@@ -178,7 +179,7 @@
 
         .header-titles h1 {
             font-family: var(--font-title);
-            font-size: 1.75rem;
+            font-size: 1.72rem;
             font-weight: 900;
             color: #ffffff;
             letter-spacing: 0.5px;
@@ -197,7 +198,7 @@
         }
 
         .header-titles .sub-creds {
-            font-size: 1rem;
+            font-size: 0.98rem;
             color: var(--accent-cyan);
             font-weight: 800;
             display: flex;
@@ -279,7 +280,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 20px;
+            padding: 10px 18px;
             border-radius: var(--radius-md);
             font-family: var(--font-main);
             font-size: 0.92rem;
@@ -298,7 +299,7 @@
             border: 1px solid rgba(255, 255, 255, 0.25);
         }
         .btn-admin-access:hover {
-            transform: translateY(-2.5px);
+            transform: translateY(-2px);
             box-shadow: 0 8px 32px rgba(0, 240, 255, 0.85);
             background: linear-gradient(135deg, #0066ff, #00f0ff);
         }
@@ -322,7 +323,7 @@
             border-radius: var(--radius-md);
             padding: 9px 16px;
             font-family: monospace;
-            font-size: 0.96rem;
+            font-size: 0.94rem;
             font-weight: 800;
             color: var(--primary-color);
             display: flex;
@@ -370,22 +371,22 @@
             z-index: 1;
             background: linear-gradient(135deg, rgba(8, 24, 66, 0.98), rgba(3, 11, 32, 0.99));
             border-radius: calc(var(--radius-lg) - 3px);
-            padding: 24px 30px;
+            padding: 22px 28px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 24px;
+            gap: 22px;
         }
 
         .banner-info {
             display: flex;
             align-items: flex-start;
-            gap: 20px;
+            gap: 18px;
             flex: 1;
         }
 
         .banner-badge-icon {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             line-height: 1;
             animation: bounceWarn 2.2s infinite;
             filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.85));
@@ -398,7 +399,7 @@
         }
 
         .banner-text h3 {
-            font-size: 1.25rem;
+            font-size: 1.22rem;
             font-weight: 900;
             color: #ffffff;
             margin-bottom: 6px;
@@ -421,8 +422,8 @@
 
         .banner-text p {
             color: #e2e8f0;
-            font-size: 0.98rem;
-            line-height: 1.8;
+            font-size: 0.96rem;
+            line-height: 1.75;
             font-weight: 600;
         }
 
@@ -430,17 +431,17 @@
             background: rgba(2, 10, 30, 0.92);
             border: 1.5px solid rgba(0, 240, 255, 0.5);
             border-radius: var(--radius-md);
-            padding: 16px 22px;
+            padding: 14px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 230px;
+            min-width: 220px;
             flex-shrink: 0;
             box-shadow: 0 8px 30px rgba(0,0,0,0.65), 0 0 20px rgba(0, 210, 255, 0.25);
         }
 
         .countdown-heading {
-            font-size: 0.84rem;
+            font-size: 0.82rem;
             color: var(--primary-color);
             font-weight: 900;
             margin-bottom: 8px;
@@ -449,9 +450,9 @@
 
         .countdown-grid {
             display: flex;
-            gap: 9px;
+            gap: 8px;
             font-family: monospace;
-            font-size: 1.45rem;
+            font-size: 1.4rem;
             font-weight: 900;
             color: #ffffff;
         }
@@ -466,34 +467,218 @@
             background: linear-gradient(180deg, #102d68, #051438);
             border: 1.5px solid rgba(0, 240, 255, 0.55);
             border-radius: 9px;
-            padding: 6px 9px;
-            min-width: 42px;
+            padding: 5px 8px;
+            min-width: 40px;
             text-align: center;
             color: var(--primary-color);
             box-shadow: 0 0 15px rgba(0, 240, 255, 0.45);
         }
 
         .block-lbl {
-            font-size: 0.68rem;
+            font-size: 0.66rem;
             color: var(--accent-cyan);
             margin-top: 4px;
             font-weight: 800;
         }
 
+        /* لوحة الإحصائيات التفاعلية المبهرة في الشاشة الرئيسية */
+        .live-main-analytics-strip {
+            background: linear-gradient(145deg, rgba(5, 19, 53, 0.96), rgba(2, 10, 30, 0.98));
+            border: 1.8px solid var(--border-glow);
+            border-radius: var(--radius-lg);
+            padding: 20px 24px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75), 0 0 30px rgba(0, 240, 255, 0.18);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strip-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .strip-title-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pulse-beacon-dot {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #00f0ff;
+            box-shadow: 0 0 16px #00f0ff;
+            animation: pulseBeacon 1.2s infinite ease-in-out;
+        }
+
+        @keyframes pulseBeacon {
+            0% { transform: scale(0.9); opacity: 0.6; }
+            50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 22px #00f0ff; }
+            100% { transform: scale(0.9); opacity: 0.6; }
+        }
+
+        .strip-title-badge h2 {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .strip-title-badge h2 span {
+            color: var(--primary-color);
+            background: linear-gradient(135deg, #00f0ff, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .strip-progress-overview {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(2, 8, 24, 0.85);
+            padding: 7px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 240, 255, 0.35);
+        }
+
+        .strip-progress-overview .p-txt {
+            font-size: 0.86rem;
+            font-weight: 800;
+            color: #cbd5e1;
+        }
+
+        .strip-progress-overview .p-val {
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            font-family: var(--font-title);
+            text-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .main-completion-track {
+            width: 100%;
+            height: 10px;
+            background: rgba(2, 9, 28, 0.95);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            position: relative;
+        }
+
+        .main-completion-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #0055ff, #00d2ff, #00f0ff);
+            border-radius: 10px;
+            box-shadow: 0 0 16px rgba(0, 240, 255, 0.9);
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .main-stats-interactive-grid {
+            display: grid;
+            grid-template-columns: 1.3fr repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .stat-card-widget {
+            background: rgba(3, 14, 42, 0.85);
+            border: 1.5px solid rgba(0, 240, 255, 0.3);
+            border-radius: var(--radius-md);
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card-widget:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 25px rgba(0, 240, 255, 0.3);
+        }
+
+        .stat-card-widget::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4.5px;
+            height: 100%;
+        }
+
+        .card-total-stat::before { background: linear-gradient(180deg, #00f0ff, #0055ff); }
+        .card-med-stat::before { background: #10b981; }
+        .card-eng-stat::before { background: #38bdf8; }
+        .card-bus-stat::before { background: #f59e0b; }
+        .card-art-stat::before { background: #c084fc; }
+
+        .stat-icon-emblem {
+            font-size: 2rem;
+            line-height: 1;
+            filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.6));
+            flex-shrink: 0;
+        }
+
+        .stat-metric-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 0;
+            flex: 1;
+        }
+
+        .stat-metric-info .m-count {
+            font-size: 1.55rem;
+            font-weight: 900;
+            color: #ffffff;
+            font-family: var(--font-title);
+            line-height: 1.2;
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .stat-metric-info .m-count span.unit {
+            font-size: 0.78rem;
+            color: var(--accent-cyan);
+            font-weight: 700;
+        }
+
+        .stat-metric-info .m-title {
+            font-size: 0.82rem;
+            color: #cbd5e1;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 2px;
+        }
+
         .portal-workspace-grid {
             display: grid;
             grid-template-columns: 520px 1fr;
-            gap: 26px;
+            gap: 24px;
             align-items: start;
         }
 
-        /* تنسيق بطاقة الإدخال بألوان زاهية وتباين فائق واحترافي */
         .input-panel {
             background: linear-gradient(165deg, rgba(8, 25, 68, 0.96), rgba(3, 12, 36, 0.98));
             backdrop-filter: blur(20px);
             border: 2px solid var(--border-glow);
             border-radius: var(--radius-lg);
-            padding: 30px;
+            padding: 28px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.75), 0 0 35px rgba(0, 240, 255, 0.22);
             position: relative;
         }
@@ -511,13 +696,13 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 24px;
-            padding-bottom: 16px;
+            margin-bottom: 22px;
+            padding-bottom: 14px;
             border-bottom: 1.5px solid rgba(0, 240, 255, 0.3);
         }
 
         .panel-headline h2 {
-            font-size: 1.4rem;
+            font-size: 1.38rem;
             font-weight: 900;
             color: #ffffff;
             display: flex;
@@ -558,7 +743,6 @@
         }
         .field-group label span.req { color: #f87171; margin-right: 4px; font-weight: 900; }
 
-        /* حقول الإدخال الاحترافية */
         .form-control {
             width: 100%;
             padding: 13px 18px;
@@ -595,9 +779,16 @@
             box-shadow: none;
         }
 
-        select.form-control { 
-            cursor: pointer; 
+        @keyframes fieldFoundPulse {
+            0% { border-color: #00f0ff; box-shadow: 0 0 10px #00f0ff; }
+            50% { border-color: #ffffff; box-shadow: 0 0 35px #00f0ff, inset 0 0 15px rgba(0,240,255,0.4); }
+            100% { border-color: #00f0ff; box-shadow: 0 0 15px rgba(0,240,255,0.4); }
         }
+        .field-highlight-pulse {
+            animation: fieldFoundPulse 0.85s ease-out;
+        }
+
+        select.form-control { cursor: pointer; }
         select.form-control option { 
             background: #06163b; 
             color: #ffffff; 
@@ -644,7 +835,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            margin-top: 22px;
+            margin-top: 20px;
             border: 1px solid rgba(255, 255, 255, 0.25);
             text-shadow: 0 1px 4px rgba(0,0,0,0.4);
         }
@@ -687,19 +878,19 @@
             backdrop-filter: blur(20px);
             border: 1.5px solid var(--border-glow);
             border-radius: var(--radius-lg);
-            padding: 28px;
+            padding: 26px;
             box-shadow: 0 18px 48px rgba(0,0,0,0.7), 0 0 30px rgba(0, 240, 255, 0.15);
             display: flex;
             flex-direction: column;
-            gap: 22px;
+            gap: 20px;
         }
 
         .guide-header-box {
             border-bottom: 1.5px solid rgba(0, 240, 255, 0.3);
-            padding-bottom: 16px;
+            padding-bottom: 14px;
         }
         .guide-header-box h3 {
-            font-size: 1.32rem;
+            font-size: 1.3rem;
             font-weight: 900;
             color: #ffffff;
             display: flex;
@@ -709,7 +900,7 @@
         }
         .guide-header-box p {
             color: var(--accent-cyan);
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             margin-top: 4px;
             font-weight: 700;
         }
@@ -717,21 +908,21 @@
         .tracks-guide-cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 18px;
+            gap: 16px;
         }
 
         .guide-track-card {
             background: rgba(3, 14, 40, 0.85);
             border: 1.5px solid rgba(0, 240, 255, 0.3);
             border-radius: var(--radius-md);
-            padding: 18px 20px;
+            padding: 16px 18px;
             transition: var(--transition);
             position: relative;
             overflow: hidden;
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
         .guide-track-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             border-color: var(--primary-color);
             box-shadow: 0 10px 30px rgba(0, 240, 255, 0.35);
         }
@@ -746,28 +937,28 @@
         .card-art::before { background: #c084fc; }
 
         .guide-track-card h4 {
-            font-size: 1.1rem;
+            font-size: 1.08rem;
             font-weight: 900;
             color: #fff;
-            margin-bottom: 9px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
         .guide-track-card ul {
             list-style: none;
-            font-size: 0.88rem;
+            font-size: 0.86rem;
             color: #e2e8f0;
         }
         .guide-track-card ul li {
-            margin-bottom: 7px;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
         .guide-track-card ul li span.dot {
-            width: 7px;
-            height: 7px;
+            width: 6.5px;
+            height: 6.5px;
             border-radius: 50%;
             background: var(--primary-color);
             box-shadow: 0 0 8px var(--primary-glow);
@@ -777,27 +968,50 @@
             background: linear-gradient(135deg, rgba(0, 102, 255, 0.15), rgba(0, 240, 255, 0.08));
             border: 1.5px dashed rgba(0, 240, 255, 0.45);
             border-radius: var(--radius-md);
-            padding: 18px 22px;
+            padding: 16px 20px;
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 16px;
         }
         .privacy-safe-notice .icon {
-            font-size: 2.3rem;
+            font-size: 2.2rem;
             flex-shrink: 0;
             filter: drop-shadow(0 0 12px var(--primary-glow));
         }
         .privacy-safe-notice .txt h5 {
-            font-size: 1rem;
+            font-size: 0.98rem;
             font-weight: 900;
             color: #ffffff;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
         .privacy-safe-notice .txt p {
-            font-size: 0.88rem;
+            font-size: 0.86rem;
             color: #cbd5e1;
-            line-height: 1.65;
+            line-height: 1.6;
             font-weight: 600;
+        }
+
+        .official-speech-card {
+            background: rgba(3, 14, 40, 0.92);
+            border: 1.5px solid rgba(0, 240, 255, 0.4);
+            border-right: 6px solid var(--primary-color);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            text-align: right;
+            font-size: 0.96rem;
+            line-height: 1.85;
+            color: #f1f5f9;
+            margin-bottom: 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+        }
+
+        .official-speech-signature {
+            margin-top: 12px;
+            padding-top: 8px;
+            border-top: 1.5px dashed rgba(0, 240, 255, 0.35);
+            text-align: left;
+            font-weight: 900;
+            color: var(--primary-color);
         }
 
         .modal-screen {
@@ -826,7 +1040,7 @@
             max-width: 680px;
             max-height: 90vh;
             overflow-y: auto;
-            padding: 34px;
+            padding: 32px;
             box-shadow: 0 20px 65px rgba(0, 0, 0, 0.9), 0 0 50px var(--primary-glow);
             position: relative;
             transform: scale(0.94);
@@ -841,8 +1055,8 @@
             background: rgba(255, 255, 255, 0.12);
             border: none;
             color: #fff;
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             font-size: 20px;
             cursor: pointer;
@@ -855,7 +1069,7 @@
 
         .thank-you-layout { text-align: center; }
         .sovereign-crown {
-            font-size: 58px;
+            font-size: 56px;
             margin-bottom: 12px;
             filter: drop-shadow(0 0 20px var(--primary-glow));
             animation: crownPulse 2s infinite alternate;
@@ -863,35 +1077,12 @@
         @keyframes crownPulse { 0% { transform: scale(1); } 100% { transform: scale(1.12); } }
 
         .thank-title {
-            font-size: 1.65rem;
+            font-size: 1.62rem;
             font-weight: 900;
             color: #ffffff;
             margin-bottom: 6px;
             text-shadow: 0 0 18px rgba(0, 240, 255, 0.85);
             font-family: var(--font-title);
-        }
-
-        .official-speech-card {
-            background: rgba(3, 14, 40, 0.92);
-            border: 1.5px solid rgba(0, 240, 255, 0.4);
-            border-right: 6px solid var(--primary-color);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            text-align: right;
-            font-size: 0.98rem;
-            line-height: 1.85;
-            color: #f1f5f9;
-            margin-bottom: 22px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-        }
-
-        .official-speech-signature {
-            margin-top: 14px;
-            padding-top: 10px;
-            border-top: 1.5px dashed rgba(0, 240, 255, 0.35);
-            text-align: left;
-            font-weight: 900;
-            color: var(--primary-color);
         }
 
         .receipt-summary-grid {
@@ -902,11 +1093,11 @@
             border-radius: var(--radius-md);
             padding: 16px;
             text-align: right;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
             border: 1.5px solid rgba(0, 240, 255, 0.25);
         }
-        .receipt-item .lbl { font-size: 0.78rem; color: var(--accent-cyan); font-weight: 700; }
-        .receipt-item .val { font-size: 1rem; font-weight: 900; color: #ffffff; margin-top: 3px; }
+        .receipt-item .lbl { font-size: 0.76rem; color: var(--accent-cyan); font-weight: 700; }
+        .receipt-item .val { font-size: 0.98rem; font-weight: 900; color: #ffffff; margin-top: 2px; }
 
         .admin-dashboard-box { max-width: 1440px; width: 96vw; }
 
@@ -921,25 +1112,25 @@
             background: rgba(3, 14, 40, 0.9);
             border: 1.5px solid rgba(0, 240, 255, 0.35);
             border-radius: var(--radius-md);
-            padding: 18px;
+            padding: 16px;
             text-align: center;
             box-shadow: 0 6px 20px rgba(0,0,0,0.5);
         }
-        .admin-metric-card .m-title { font-size: 0.88rem; color: var(--accent-cyan); font-weight: 800; }
+        .admin-metric-card .m-title { font-size: 0.86rem; color: var(--accent-cyan); font-weight: 800; }
         .admin-metric-card .m-num {
-            font-size: 2rem;
+            font-size: 1.95rem;
             font-weight: 900;
             color: var(--primary-color);
             margin: 5px 0;
             font-family: var(--font-title);
             text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
         }
-        .admin-metric-card .m-desc { font-size: 0.78rem; color: #cbd5e1; font-weight: 700; }
+        .admin-metric-card .m-desc { font-size: 0.76rem; color: #cbd5e1; font-weight: 700; }
 
         .tracks-breakdown-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 16px;
+            gap: 14px;
             margin-bottom: 24px;
         }
 
@@ -947,15 +1138,15 @@
             background: rgba(2, 10, 30, 0.75);
             border: 1.5px solid rgba(255, 255, 255, 0.12);
             border-radius: var(--radius-md);
-            padding: 16px;
+            padding: 14px;
             box-shadow: 0 6px 18px rgba(0,0,0,0.4);
         }
         .track-stat-pill h4 {
-            font-size: 1rem;
+            font-size: 0.96rem;
             font-weight: 900;
             color: #fff;
-            margin-bottom: 10px;
-            padding-bottom: 8px;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             display: flex;
             justify-content: space-between;
@@ -963,8 +1154,8 @@
         .track-detail-line {
             display: flex;
             justify-content: space-between;
-            font-size: 0.88rem;
-            margin-bottom: 6px;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
             color: #cbd5e1;
             font-weight: 700;
         }
@@ -985,13 +1176,13 @@
         }
         .search-wrapper input {
             width: 100%;
-            padding: 12px 46px 12px 18px;
+            padding: 11px 44px 11px 16px;
             background: rgba(3, 14, 40, 0.92);
             border: 1.5px solid rgba(0, 240, 255, 0.4);
             border-radius: var(--radius-md);
             color: #ffffff;
             font-family: var(--font-main);
-            font-size: 0.98rem;
+            font-size: 0.96rem;
             outline: none;
             transition: var(--transition);
         }
@@ -1001,11 +1192,11 @@
         }
         .search-icon-symbol {
             position: absolute;
-            right: 16px;
+            right: 14px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--primary-color);
-            font-size: 19px;
+            font-size: 18px;
             pointer-events: none;
         }
 
@@ -1016,9 +1207,9 @@
         }
 
         .filter-pill {
-            padding: 7px 16px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.84rem;
+            font-size: 0.82rem;
             font-weight: 800;
             background: rgba(255, 255, 255, 0.06);
             border: 1.5px solid rgba(0, 240, 255, 0.3);
@@ -1049,7 +1240,7 @@
             width: 100%;
             border-collapse: collapse;
             text-align: right;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
         }
         .sovereign-table th {
             position: sticky;
@@ -1057,14 +1248,14 @@
             z-index: 2;
             background: linear-gradient(180deg, #0b2254, #04102e);
             color: var(--primary-color);
-            padding: 14px 16px;
+            padding: 13px 15px;
             font-weight: 900;
             border-bottom: 2px solid var(--primary-color);
             white-space: nowrap;
             text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
         }
         .sovereign-table td {
-            padding: 12px 16px;
+            padding: 11px 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             color: #e2e8f0;
             vertical-align: middle;
@@ -1072,16 +1263,16 @@
         .sovereign-table tbody tr:hover td { background: rgba(0, 240, 255, 0.1); }
 
         .id-col { width: 50px; text-align: center; font-weight: 900; color: var(--primary-color); }
-        .code-col { font-family: monospace; font-weight: 900; color: #38bdf8; white-space: nowrap; font-size: 1rem; }
+        .code-col { font-family: monospace; font-weight: 900; color: #38bdf8; white-space: nowrap; font-size: 0.96rem; }
         .name-col { font-weight: 800; color: #ffffff; min-width: 220px; }
 
         .badge-track {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 900;
             white-space: nowrap;
         }
@@ -1094,9 +1285,9 @@
         .badge-subject {
             display: inline-block;
             background: rgba(0, 240, 255, 0.12);
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 800;
             color: #ffffff;
             border: 1px solid rgba(0, 240, 255, 0.35);
@@ -1106,9 +1297,9 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 4px 10px;
+            padding: 3px 8px;
             border-radius: 12px;
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             font-weight: 800;
         }
         .status-ok { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); }
@@ -1118,12 +1309,12 @@
             background: rgba(0, 240, 255, 0.18);
             border: 1.5px solid var(--primary-color);
             color: #fff;
-            padding: 6px 12px;
-            border-radius: 7px;
-            font-size: 0.78rem;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.76rem;
             font-weight: 800;
             cursor: pointer;
-            margin-left: 5px;
+            margin-left: 4px;
             transition: var(--transition);
         }
         .btn-edit-inline:hover { background: var(--primary-color); color: #010612; box-shadow: 0 0 12px var(--primary-glow); }
@@ -1132,9 +1323,9 @@
             background: rgba(239, 68, 68, 0.18);
             border: 1.5px solid var(--danger);
             color: #fca5a5;
-            padding: 6px 12px;
-            border-radius: 7px;
-            font-size: 0.78rem;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.76rem;
             font-weight: 800;
             cursor: pointer;
             transition: var(--transition);
@@ -1145,18 +1336,18 @@
             background: rgba(2, 9, 28, 0.94);
             border: 1.5px solid rgba(0, 240, 255, 0.3);
             border-radius: var(--radius-md);
-            padding: 18px;
+            padding: 16px;
             margin-bottom: 24px;
         }
         .audit-log-container {
             max-height: 180px;
             overflow-y: auto;
             font-family: monospace;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: #cbd5e1;
         }
         .audit-log-item {
-            padding: 6px 10px;
+            padding: 5px 8px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             display: flex;
             justify-content: space-between;
@@ -1164,10 +1355,10 @@
 
         .admin-command-bar {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
             justify-content: center;
-            padding-top: 20px;
+            padding-top: 18px;
             border-top: 1.5px solid rgba(0, 240, 255, 0.28);
         }
 
@@ -1185,9 +1376,9 @@
             background: rgba(4, 18, 50, 0.97);
             border: 1.5px solid var(--primary-color);
             color: #fff;
-            padding: 14px 22px;
+            padding: 12px 20px;
             border-radius: 12px;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             font-weight: 800;
             box-shadow: 0 12px 35px rgba(0,0,0,0.85), 0 0 20px var(--primary-glow);
             display: flex;
@@ -1383,6 +1574,12 @@
             }
         }
 
+        @media (max-width: 1200px) {
+            .main-stats-interactive-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
         @media (max-width: 1100px) {
             .portal-workspace-grid { grid-template-columns: 1fr; }
         }
@@ -1466,7 +1663,7 @@
     <div class="main-wrapper">
 
         <header class="royal-header">
-            <div class="header-brand">
+            <div class="header-brand" title="انقر مرتين للوصول السريع للإدارة" ondblclick="openAdminGateModal()">
                 <div class="sovereign-badge" title="جمهورية مصر العربية">🦅</div>
                 <div class="header-titles">
                     <h1>منظومة اختيار المسارات <span>الأكاديمية المتقدمة</span></h1>
@@ -1497,7 +1694,7 @@
                     <span>⛶</span> ملء الشاشة
                 </button>
 
-                <button class="tool-btn btn-admin-access" onclick="openAdminGateModal()">
+                <button class="tool-btn btn-admin-access" onclick="openAdminGateModal()" title="اختصار: F2">
                     <span>🔐</span> لوحة التحكم الإدارية
                 </button>
             </div>
@@ -1544,6 +1741,81 @@
                 </div>
             </section>
         </div>
+
+        <!-- التنويه الإحصائي اللحظي المبتكر للشاشة الرئيسية (المسجلين وإحصائيات المسارات وشريط التقدم التفاعلي) -->
+        <section class="live-main-analytics-strip">
+            <div class="strip-top-row">
+                <div class="strip-title-badge">
+                    <span class="pulse-beacon-dot"></span>
+                    <h2>📊 مؤشرات التسجيل اللحظية <span>وتوزيع رغبات المسارات الأكاديمية</span></h2>
+                </div>
+                <div class="strip-progress-overview">
+                    <span class="p-txt">مستوى اكتمال التسجيل العام:</span>
+                    <span class="p-val" id="mainProgressPercentage">0%</span>
+                </div>
+            </div>
+
+            <div class="main-completion-track" title="نسبة الإنجاز اللحظية لتسجيل الطلاب">
+                <div class="main-completion-fill" id="mainProgressFillBar"></div>
+            </div>
+
+            <div class="main-stats-interactive-grid">
+                <div class="stat-card-widget card-total-stat">
+                    <div class="stat-icon-emblem">🎓</div>
+                    <div class="stat-metric-info">
+                        <div class="m-count">
+                            <span id="mainBannerRegisteredCount">0</span>
+                            <span class="unit">/ <span id="mainBannerTotalQuota">44</span> طالب</span>
+                        </div>
+                        <div class="m-title">إجمالي المسجلين بالنظام</div>
+                    </div>
+                </div>
+
+                <div class="stat-card-widget card-med-stat">
+                    <div class="stat-icon-emblem">🩺</div>
+                    <div class="stat-metric-info">
+                        <div class="m-count">
+                            <span id="mainBannerMedCount" style="color: #34d399;">0</span>
+                            <span class="unit">طالب</span>
+                        </div>
+                        <div class="m-title">مسار الطب والعلوم</div>
+                    </div>
+                </div>
+
+                <div class="stat-card-widget card-eng-stat">
+                    <div class="stat-icon-emblem">📐</div>
+                    <div class="stat-metric-info">
+                        <div class="m-count">
+                            <span id="mainBannerEngCount" style="color: #38bdf8;">0</span>
+                            <span class="unit">طالب</span>
+                        </div>
+                        <div class="m-title">مسار الهندسة والتكنولوجيا</div>
+                    </div>
+                </div>
+
+                <div class="stat-card-widget card-bus-stat">
+                    <div class="stat-icon-emblem">💼</div>
+                    <div class="stat-metric-info">
+                        <div class="m-count">
+                            <span id="mainBannerBusCount" style="color: #fbbf24;">0</span>
+                            <span class="unit">طالب</span>
+                        </div>
+                        <div class="m-title">مسار إدارة الأعمال</div>
+                    </div>
+                </div>
+
+                <div class="stat-card-widget card-art-stat">
+                    <div class="stat-icon-emblem">🎨</div>
+                    <div class="stat-metric-info">
+                        <div class="m-count">
+                            <span id="mainBannerArtCount" style="color: #d8b4fe;">0</span>
+                            <span class="unit">طالب</span>
+                        </div>
+                        <div class="m-title">مسار الآداب والفنون</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <main class="portal-workspace-grid">
 
@@ -1656,7 +1928,7 @@
                     </div>
                 </div>
 
-                <div class="official-speech-card" style="margin-bottom: 0;">
+                <div class="official-speech-card">
                     <p>
                         « أبنائي الطلاب وأولياء الأمور، تسجيل الرغبة يتم لمرة واحدة معتمدة بكود الطالب الموحد، ويُرجى تحري الدقة الكاملة عند اختيار المسار والمادة التخصصية المقررة قبل الضغط على زر الاعتماد الرسمي. »
                     </p>
@@ -2404,6 +2676,14 @@
                     e.returnValue = 'جاري مزامنة بيانات الطلاب، هل تريد المغادرة حقاً؟';
                 }
             });
+
+            // اختصار لوحة المفاتيح السري للوحة الإدارة (F2)
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'F2') {
+                    e.preventDefault();
+                    openAdminGateModal();
+                }
+            });
         }
 
         function saveInputDraft() {
@@ -2450,6 +2730,7 @@
         function handleCodeVerification(enteredCode) {
             const code = enteredCode.trim();
             const feedbackEl = document.getElementById('codeVerifyFeedback');
+            const codeInput = document.getElementById('inputStudentCode');
             const nameField = document.getElementById('inputStudentName');
             const addressField = document.getElementById('inputStudentAddress');
             const phoneField = document.getElementById('inputStudentPhone');
@@ -2464,6 +2745,7 @@
                 nameField.value = '';
                 addressField.value = '';
                 phoneField.value = '';
+                codeInput.classList.remove('field-highlight-pulse');
                 [addressField, phoneField, trackSelect, subjectSelect, submitBtn].forEach(el => el.disabled = true);
                 return;
             }
@@ -2473,6 +2755,7 @@
             if (matched) {
                 feedbackEl.innerHTML = `<span class="status-verified">✅ تم التحقق: كود معتمد بالصف الثاني الثانوي (مسلسل: ${matched.id})</span>`;
                 nameField.value = matched.name;
+                codeInput.classList.add('field-highlight-pulse');
                 [addressField, phoneField, trackSelect, submitBtn].forEach(el => el.disabled = false);
 
                 addressField.value = matched.address || '';
@@ -2489,6 +2772,7 @@
                 }
                 triggerSoundEffect('click');
             } else {
+                codeInput.classList.remove('field-highlight-pulse');
                 feedbackEl.innerHTML = code.length >= 8 
                     ? '<span class="status-unverified">⛔ كود غير مدرج بكشوف فصول الخدمات المعتمدة!</span>' 
                     : '<span class="status-idle">⏳ جاري كتابة الكود المكون من 9 أرقام...</span>';
@@ -2693,6 +2977,7 @@
             const pend = total - reg;
             const pct = total > 0 ? Math.round((reg / total) * 100) : 0;
 
+            // تحديث مؤشرات لوحة التحكم الإدارية
             const dashTotal = document.getElementById('dashTotalStudentsCount');
             const dashReg = document.getElementById('dashCountRegistered');
             const dashPct = document.getElementById('dashPercentRegistered');
@@ -2704,6 +2989,17 @@
             if (dashPct) dashPct.textContent = `${pct}% من الإجمالي`;
             if (dashPend) dashPend.textContent = pend;
             if (panelCap) panelCap.textContent = `🔒 فصول الخدمات (${total} طالباً)`;
+
+            // تحديث التنويه الإحصائي للشاشة الرئيسية وشريط التقدم
+            const bannerReg = document.getElementById('mainBannerRegisteredCount');
+            const bannerTotal = document.getElementById('mainBannerTotalQuota');
+            const mainProgressPercent = document.getElementById('mainProgressPercentage');
+            const mainProgressFill = document.getElementById('mainProgressFillBar');
+
+            if (bannerReg) bannerReg.textContent = reg;
+            if (bannerTotal) bannerTotal.textContent = total;
+            if (mainProgressPercent) mainProgressPercent.textContent = `${pct}%`;
+            if (mainProgressFill) mainProgressFill.style.width = `${pct}%`;
 
             const tally = { "الطب": 0, "الهندسة": 0, "أعمال": 0, "أداب وفنون": 0 };
             let medPhys = 0, medMath = 0, engProg = 0, engChem = 0, busAcc = 0, busMgt = 0, artPsych = 0, artFrench = 0;
@@ -2718,6 +3014,18 @@
                 }
             });
 
+            // تحديث بطاقات إحصائيات المسارات في الشاشة الرئيسية
+            const bannerMed = document.getElementById('mainBannerMedCount');
+            const bannerEng = document.getElementById('mainBannerEngCount');
+            const bannerBus = document.getElementById('mainBannerBusCount');
+            const bannerArt = document.getElementById('mainBannerArtCount');
+
+            if (bannerMed) bannerMed.textContent = tally['الطب'];
+            if (bannerEng) bannerEng.textContent = tally['الهندسة'];
+            if (bannerBus) bannerBus.textContent = tally['أعمال'];
+            if (bannerArt) bannerArt.textContent = tally['أداب وفنون'];
+
+            // تحديث بطاقات المسارات في لوحة الإدارة
             const tMed = document.getElementById('dashTotalMed');
             if (tMed) {
                 tMed.textContent = tally['الطب'];
